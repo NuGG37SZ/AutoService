@@ -15,22 +15,22 @@ using System.Windows.Forms;
 
 namespace AutoService.MainForms
 {
-    public partial class Client : Form
+    public partial class Inventorys : Form
     {
-        private ClientImpl clientsImpl = new ClientImpl();
-        public Client()
+        private InventoryImpl inventoryImpl = new InventoryImpl();
+        public Inventorys()
         {
             InitializeComponent();
         }
 
-        private void Client_Load(object sender, EventArgs e)
+        private void Inventorys_Load(object sender, EventArgs e)
         {
-            clientsImpl.SelectAllFields(dataGridView1);
+            inventoryImpl.SelectAllFields(dataGridView1);
         }
 
         private void search_TextChanged(object sender, EventArgs e)
         {
-            clientsImpl.SearchSelect(search, dataGridView1);
+            inventoryImpl.SearchSelect(search, dataGridView1);
         }
 
         private void search_DoubleClick(object sender, EventArgs e)
@@ -40,22 +40,22 @@ namespace AutoService.MainForms
 
         private void reloadGrid_Click(object sender, EventArgs e)
         {
-            clientsImpl.SelectAllFields(dataGridView1);
+            inventoryImpl.SelectAllFields(dataGridView1);
         }
 
         private void addValue_Click(object sender, EventArgs e)
         {
-            OpenForms.OpenFormInNewWindow(new AddClients());
+            OpenForms.OpenFormInNewWindow(new AddInventory());
         }
 
         private void deleteValue_Click(object sender, EventArgs e)
         {
-            OpenForms.OpenFormInNewWindow(new DeleteСlients());
+            OpenForms.OpenFormInNewWindow(new DeleteInventory());
         }
 
         private void reloadValue_Click(object sender, EventArgs e)
         {
-            OpenForms.OpenFormInNewWindow(new UpdateClient());
+            OpenForms.OpenFormInNewWindow(new UpdateInventory());
         }
 
         private void excelImport_Click(object sender, EventArgs e)

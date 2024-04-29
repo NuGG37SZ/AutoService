@@ -12,22 +12,22 @@ using System.Windows.Forms;
 
 namespace AutoService.DeleteForms
 {
-    public partial class DeleteForms : Form
+    public partial class DeleteInventory : Form
     {
-        private ClientImpl clientImpl = new ClientImpl();
-        public DeleteForms()
+        private InventoryImpl inventoryImpl = new InventoryImpl();
+        public DeleteInventory()
         {
             InitializeComponent();
         }
 
-        private void delete_Click(object sender, EventArgs e)
+        private void idInventory_DoubleClick(object sender, EventArgs e)
         {
-            clientImpl.Delete(Convert.ToInt32(idClient.Text));
+            TextHelper.ClearText(idInventory);
         }
 
-        private void idClient_DoubleClick(object sender, EventArgs e)
+        private void delete_Click(object sender, EventArgs e)
         {
-            TextHelper.ClearText(idClient);
+            inventoryImpl.Delete(Convert.ToInt32(idInventory.Text));
         }
     }
 }

@@ -56,7 +56,7 @@ namespace AutoService.MainForms
 
         private void excelImport_Click(object sender, EventArgs e)
         {
-            ImportExcel.ExportExcel(dataGridView1);
+            ExportExcelDataGridView.ExportExcel(dataGridView1);
         }
     }
 }

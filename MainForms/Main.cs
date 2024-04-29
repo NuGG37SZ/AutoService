@@ -56,7 +56,7 @@ namespace AutoService
 
         private void serviceButton_Click(object sender, EventArgs e)
         {
-            OpenForms.OpenFormInPanel(new MaintenanceSchedule(), panel2);
+            OpenForms.OpenFormInPanel(new MaintenanceSchedules(), panel2);
         }
 
         private void reportButton_Click(object sender, EventArgs e)

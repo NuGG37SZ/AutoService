@@ -79,8 +79,20 @@
     <Compile Include="AddForms\AddFinances.Designer.cs">
       <DependentUpon>AddFinances.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddForms\AddInventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddForms\AddInventory.Designer.cs">
+      <DependentUpon>AddInventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddForms\AddMaintenanceSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddForms\AddMaintenanceSchedule.Designer.cs">
+      <DependentUpon>AddMaintenanceSchedule.cs</DependentUpon>
+    </Compile>
     <Compile Include="Classes\DbConnect.cs" />
-    <Compile Include="Classes\ImportExcel.cs" />
+    <Compile Include="Classes\ExportExcelDataGridView.cs" />
     <Compile Include="Classes\OpenForms.cs" />
     <Compile Include="Classes\TextHelper.cs" />
     <Compile Include="DeleteForms\DeleteEmployees.cs">
@@ -95,15 +107,29 @@
     <Compile Include="DeleteForms\DeleteFinances.Designer.cs">
       <DependentUpon>DeleteFinances.cs</DependentUpon>
     </Compile>
-    <Compile Include="DeleteForms\DeleteForms.cs">
+    <Compile Include="DeleteForms\DeleteInventory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DeleteForms\DeleteForms.Designer.cs">
-      <DependentUpon>DeleteForms.cs</DependentUpon>
+    <Compile Include="DeleteForms\DeleteInventory.Designer.cs">
+      <DependentUpon>DeleteInventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteForms\DeleteMaintenanceSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteForms\DeleteMaintenanceSchedule.Designer.cs">
+      <DependentUpon>DeleteMaintenanceSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteForms\DeleteСlients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteForms\DeleteСlients.Designer.cs">
+      <DependentUpon>DeleteСlients.cs</DependentUpon>
     </Compile>
     <Compile Include="Entity\Clients.cs" />
     <Compile Include="Entity\Employees.cs" />
     <Compile Include="Entity\Finances.cs" />
+    <Compile Include="Entity\Inventory.cs" />
+    <Compile Include="Entity\MaintenanceSchedule.cs" />
     <Compile Include="Interface\LoadingElementsCombobox.cs" />
     <Compile Include="Interface\Repository.cs" />
     <Compile Include="MainForms\Client.cs">
@@ -124,17 +150,31 @@
     <Compile Include="MainForms\Finance.Designer.cs">
       <DependentUpon>Finance.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainForms\Inventorys.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForms\Inventorys.Designer.cs">
+      <DependentUpon>Inventorys.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForms\Main.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainForms\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainForms\MaintenanceSchedules.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForms\MaintenanceSchedules.Designer.cs">
+      <DependentUpon>MaintenanceSchedules.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepositoryImpl\ClientImpl.cs" />
     <Compile Include="RepositoryImpl\EmployeeImpl.cs" />
     <Compile Include="RepositoryImpl\FinancesImpl.cs" />
+    <Compile Include="RepositoryImpl\InventoryImpl.cs" />
+    <Compile Include="RepositoryImpl\MaintenanceScheduleImpl.cs" />
     <Compile Include="UpdateForms\UpdateClient.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +193,18 @@
     <Compile Include="UpdateForms\UpdateFinances.Designer.cs">
       <DependentUpon>UpdateFinances.cs</DependentUpon>
     </Compile>
+    <Compile Include="UpdateForms\UpdateInventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateForms\UpdateInventory.Designer.cs">
+      <DependentUpon>UpdateInventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateForms\UpdateMaintenanceSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateForms\UpdateMaintenanceSchedule.Designer.cs">
+      <DependentUpon>UpdateMaintenanceSchedule.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddForms\AddClients.resx">
       <DependentUpon>AddClients.cs</DependentUpon>
     </EmbeddedResource>
@@ -162,14 +214,26 @@
     <EmbeddedResource Include="AddForms\AddFinances.resx">
       <DependentUpon>AddFinances.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddForms\AddInventory.resx">
+      <DependentUpon>AddInventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddForms\AddMaintenanceSchedule.resx">
+      <DependentUpon>AddMaintenanceSchedule.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DeleteForms\DeleteEmployees.resx">
       <DependentUpon>DeleteEmployees.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DeleteForms\DeleteFinances.resx">
       <DependentUpon>DeleteFinances.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DeleteForms\DeleteForms.resx">
-      <DependentUpon>DeleteForms.cs</DependentUpon>
+    <EmbeddedResource Include="DeleteForms\DeleteInventory.resx">
+      <DependentUpon>DeleteInventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteForms\DeleteMaintenanceSchedule.resx">
+      <DependentUpon>DeleteMaintenanceSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteForms\DeleteСlients.resx">
+      <DependentUpon>DeleteСlients.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForms\Client.resx">
       <DependentUpon>Client.cs</DependentUpon>
@@ -180,8 +244,14 @@
     <EmbeddedResource Include="MainForms\Finance.resx">
       <DependentUpon>Finance.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MainForms\Inventorys.resx">
+      <DependentUpon>Inventorys.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForms\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForms\MaintenanceSchedules.resx">
+      <DependentUpon>MaintenanceSchedules.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -200,6 +270,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateForms\UpdateFinances.resx">
       <DependentUpon>UpdateFinances.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateForms\UpdateInventory.resx">
+      <DependentUpon>UpdateInventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateForms\UpdateMaintenanceSchedule.resx">
+      <DependentUpon>UpdateMaintenanceSchedule.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

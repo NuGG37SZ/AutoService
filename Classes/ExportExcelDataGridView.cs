@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace AutoService.Classes
 {
-    public class ImportExcel
+    public class ExportExcelDataGridView
     {
         public static void ExportExcel(DataGridView grid)
         {

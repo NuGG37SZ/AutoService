@@ -1,8 +1,4 @@
-﻿using AutoService.AddForms;
-using AutoService.Classes;
-using AutoService.DeleteForms;
-using AutoService.RepositoryImpl;
-using AutoService.UpdateForms;
+﻿using AutoService.Classes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,22 +11,21 @@ using System.Windows.Forms;
 
 namespace AutoService.MainForms
 {
-    public partial class Client : Form
+    public partial class MaintenanceSchedules : Form
     {
-        private ClientImpl clientsImpl = new ClientImpl();
-        public Client()
+        private MaintenanceScheduleImpl maintenanceScheduleImpl = new MaintenanceScheduleImpl();
+        public MaintenanceSchedules()
         {
             InitializeComponent();
         }
 
-        private void Client_Load(object sender, EventArgs e)
+        private void MaintenanceSchedule_Load(object sender, EventArgs e)
         {
-            clientsImpl.SelectAllFields(dataGridView1);
+            maintenanceScheduleImpl.SelectAllFields(dataGridView1);
         }
-
         private void search_TextChanged(object sender, EventArgs e)
         {
-            clientsImpl.SearchSelect(search, dataGridView1);
+            maintenanceScheduleImpl.SearchSelect(search, dataGridView1);
         }
 
         private void search_DoubleClick(object sender, EventArgs e)
@@ -40,22 +35,22 @@ namespace AutoService.MainForms
 
         private void reloadGrid_Click(object sender, EventArgs e)
         {
-            clientsImpl.SelectAllFields(dataGridView1);
+            maintenanceScheduleImpl.SelectAllFields(dataGridView1);
         }
 
         private void addValue_Click(object sender, EventArgs e)
         {
-            OpenForms.OpenFormInNewWindow(new AddClients());
+            OpenForms.OpenFormInNewWindow(new AddMaintenanceSchedule());
         }
 
         private void deleteValue_Click(object sender, EventArgs e)
         {
-            OpenForms.OpenFormInNewWindow(new DeleteСlients());
+            OpenForms.OpenFormInNewWindow(new DeleteMaintenanceSchedule());
         }
 
         private void reloadValue_Click(object sender, EventArgs e)
         {
-            OpenForms.OpenFormInNewWindow(new UpdateClient());
+            OpenForms.OpenFormInNewWindow(new UpdateMaintenanceSchedule());
         }
 
         private void excelImport_Click(object sender, EventArgs e)

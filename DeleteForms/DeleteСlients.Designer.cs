@@ -1,6 +1,6 @@
 ﻿namespace AutoService.DeleteForms
 {
-    partial class DeleteForms
+    partial class DeleteСlients
     {
         /// <summary>
         /// Required designer variable.
