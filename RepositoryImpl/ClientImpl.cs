@@ -95,7 +95,9 @@ namespace AutoService.RepositoryImpl
 
             string search = $"%{control.Text}%";
 
-            string query = "SELECT * FROM Clients " +
+            string query = "SELECT client_id AS ' ', full_name AS 'ФИО', phone_number AS 'Номер телефона', " +
+                "email AS 'Почта', address AS 'Адрес', notes AS 'Примечание' " +
+                "FROM Clients " +
                 "WHERE full_name LIKE @search " +
                 "OR phone_number LIKE @search " +
                 "OR email LIKE @search " +
@@ -117,7 +119,9 @@ namespace AutoService.RepositoryImpl
         {
             DbConnect.Connect();
 
-            string query = "SELECT * FROM Clients";
+            string query = "SELECT client_id AS ' ', full_name AS 'ФИО', phone_number AS 'Номер телефона', " +
+                "email AS 'Почта', address AS 'Адрес', notes AS 'Примечание' " + 
+                "FROM Clients";
             SQLiteCommand command = new SQLiteCommand(query, DbConnect.connection);
             SQLiteDataAdapter adapter = new SQLiteDataAdapter(command);
             DataTable dataTable = new DataTable();
@@ -125,6 +129,13 @@ namespace AutoService.RepositoryImpl
             dataGridView.DataSource = dataTable;
             dataGridView.AllowUserToAddRows = false;
             dataGridView.RowHeadersVisible = false;
+
+            DataGridViewColumn clientId = dataGridView.Columns[" "];
+            DataGridViewColumn fullName = dataGridView.Columns["ФИО"];
+            DataGridViewColumn notes = dataGridView.Columns["Примечание"];
+            clientId.Width = 70;
+            fullName.Width = 130;
+            notes.Width = 110;
 
             DbConnect.Disconnect();
         }

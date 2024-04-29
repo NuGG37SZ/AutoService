@@ -66,10 +66,9 @@ namespace AutoService.AddForms
                     string partNumber = reader.GetString(1);
                     inventoryDictionary.Add(inventoryId, partNumber);
                 }
-                inventory.DataSource = new BindingSource(inventoryDictionary, null);
+                inventory.DataSource = new BindingSource(inventoryDictionary.ToList(), null);
                 inventory.DisplayMember = "Value";
                 inventory.ValueMember = "Key";
-
                 inventory.Text = "Запчасть";
             }
 

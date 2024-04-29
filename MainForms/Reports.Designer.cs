@@ -122,7 +122,7 @@
             // 
             // panel14
             // 
-            this.panel14.BackColor = System.Drawing.Color.Silver;
+            this.panel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel14.Controls.Add(this.panel18);
             this.panel14.Controls.Add(this.panel17);
             this.panel14.Controls.Add(this.panel15);

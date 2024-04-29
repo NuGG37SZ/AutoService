@@ -96,7 +96,8 @@ namespace AutoService.RepositoryImpl
 
             string search = $"%{control.Text}%";
 
-            string query = "SELECT vehicle_id, Clients.full_name, make, model, year, vin, Vehicles.notes " +
+            string query = "SELECT vehicle_id AS ' ', Clients.full_name 'ФИО', make AS 'Производитель', model AS 'Модель', " +
+                "year AS 'Год', vin 'VIN', Vehicles.notes AS 'Примечание' " +
                 "FROM Vehicles " +
                 "INNER JOIN Clients ON Vehicles.client_id = Clients.client_id " +
                 "WHERE make LIKE @search " +
@@ -120,7 +121,8 @@ namespace AutoService.RepositoryImpl
         {
             DbConnect.Connect();
 
-            string query = "SELECT vehicle_id, Clients.full_name, make, model, year, vin, Vehicles.notes " +
+            string query = "SELECT vehicle_id AS ' ', Clients.full_name 'ФИО', make AS 'Производитель', model AS 'Модель', " +
+                "year AS 'Год', vin 'VIN', Vehicles.notes AS 'Примечание' " +
                 "FROM Vehicles " +
                 "INNER JOIN Clients ON Vehicles.client_id = Clients.client_id ";
             SQLiteCommand command = new SQLiteCommand(query, DbConnect.connection);
@@ -130,6 +132,11 @@ namespace AutoService.RepositoryImpl
             dataGridView.DataSource = dataTable;
             dataGridView.AllowUserToAddRows = false;
             dataGridView.RowHeadersVisible = false;
+
+            DataGridViewColumn vehicleId = dataGridView.Columns[" "];
+            DataGridViewColumn fullName = dataGridView.Columns["ФИО"];
+            vehicleId.Width = 70;
+            fullName.Width = 130;
 
             DbConnect.Disconnect();
         }

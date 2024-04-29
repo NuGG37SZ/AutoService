@@ -78,7 +78,7 @@ namespace AutoService.AddForms
         {
             DbConnect.Connect();
 
-            string query = "SELECT * FROM Clients ORDER BY client_id ";
+            string query = "SELECT client_id, full_name FROM Clients ";
             SQLiteCommand command = new SQLiteCommand(query, DbConnect.connection);
             using (SQLiteDataReader reader = command.ExecuteReader())
             {
@@ -88,11 +88,10 @@ namespace AutoService.AddForms
                     string clientFullName = reader.GetString(1);
                     clientsDictionary.Add(clientId, clientFullName);
                 }
-                client.DataSource = new BindingSource(clientsDictionary, null);
-                client.DisplayMember = "Value";
+                client.DataSource = new BindingSource(clientsDictionary.ToList(), null);
+                client.DisplayMember = "Value"; 
                 client.ValueMember = "Key";
-
-                client.Text = "Клиент";
+                client.Text = "Клинеты";
             }
 
             DbConnect.Disconnect();
