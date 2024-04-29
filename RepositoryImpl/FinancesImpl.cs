@@ -1,7 +1,6 @@
 ﻿using AutoService.Classes;
 using AutoService.Entity;
 using AutoService.Interface;
-using AutoService.MainForms;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -13,29 +12,28 @@ using System.Windows.Forms;
 
 namespace AutoService.RepositoryImpl
 {
-    public class ClientImpl : Repository<Clients>
+    public class FinancesImpl : Repository<Finances>
     {
-        public void Add(Clients entity)
+        public void Add(Finances entity)
         {
             DbConnect.Connect();
 
             var command = DbConnect.connection.CreateCommand();
-            command.CommandText = "INSERT INTO Clients (full_name, phone_number, email, address, notes) " +
-                     "VALUES (@fullName, @phoneNumber, @email, @address, @notes)";
-            command.Parameters.AddWithValue("@fullName", entity.FullName);
-            command.Parameters.AddWithValue("@phoneNumber", entity.PhoneNumber);
-            command.Parameters.AddWithValue("@email", entity.Email);
-            command.Parameters.AddWithValue("@address", entity.Address);
-            command.Parameters.AddWithValue("@notes", entity.Notes);
+            command.CommandText = "INSERT INTO Finances (transaction_date, transaction_type, amount, description) " +
+                     "VALUES (@transaction_date, @transaction_type, @amount, @description)";
+            command.Parameters.AddWithValue("@transaction_date", entity.TransactionDate);
+            command.Parameters.AddWithValue("@transaction_type", entity.TransactionType);
+            command.Parameters.AddWithValue("@amount", entity.Amount);
+            command.Parameters.AddWithValue("@description", entity.Description);
             int rowsAffected = command.ExecuteNonQuery();
 
             if (rowsAffected > 0)
             {
-                MessageBox.Show("Клиент успешно добавлен!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Операция успешно добавлена!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Произошла ошибка клиент не добавлен!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Произошла ошибка, операция не добавлена!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             DbConnect.Disconnect();
@@ -46,45 +44,45 @@ namespace AutoService.RepositoryImpl
             DbConnect.Connect();
 
             var command = DbConnect.connection.CreateCommand();
-            command.CommandText = "DELETE FROM Clients WHERE client_id = @id";
+            command.CommandText = "DELETE FROM Finances WHERE transaction_id = @id";
             command.Parameters.AddWithValue("@id", id);
             int rowsAffected = command.ExecuteNonQuery();
 
             if (rowsAffected > 0)
             {
-                MessageBox.Show("Клиент успешно удален!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Операция успешно удалена!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Произошла ошибка, клиент не удален!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Произошла ошибка, операция не удалена!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             DbConnect.Disconnect();
         }
 
-        public void Update(Clients entity)
+        public void Update(Finances entity)
         {
             DbConnect.Connect();
 
             var command = DbConnect.connection.CreateCommand();
-            command.CommandText = "UPDATE Clients SET full_name = @fullName, phone_number = @phoneNumber, email = @email, address = @address, " +
-                "notes = @notes WHERE client_id = @id";
-            command.Parameters.AddWithValue("@fullName", entity.FullName);
-            command.Parameters.AddWithValue("@phoneNumber", entity.PhoneNumber);
-            command.Parameters.AddWithValue("@email", entity.Email);
-            command.Parameters.AddWithValue("@address", entity.Address);
-            command.Parameters.AddWithValue("@notes", entity.Notes);
+            command.CommandText = "UPDATE Finances SET transaction_date = @transaction_date, transaction_type = @transaction_type," +
+                " amount = @amount, description = @description WHERE transaction_id = @id";
+            command.Parameters.AddWithValue("@transaction_date", entity.TransactionDate);
+            command.Parameters.AddWithValue("@transaction_type", entity.TransactionType);
+            command.Parameters.AddWithValue("@amount", entity.Amount);
+            command.Parameters.AddWithValue("@description", entity.Description);
             command.Parameters.AddWithValue("@id", entity.Id);
             int rowsAffected = command.ExecuteNonQuery();
 
             if (rowsAffected > 0)
             {
-                MessageBox.Show("Клиент успешно изменен!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Операция успешно изменена!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Произошла ошибка, клиент не изменен!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Произошла ошибка, операция не изменена!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            
 
             DbConnect.Disconnect();
         }
@@ -95,14 +93,14 @@ namespace AutoService.RepositoryImpl
 
             string search = $"%{control.Text}%";
 
-            string query = "SELECT * FROM Clients " +
-                "WHERE full_name LIKE @search " +
-                "OR phone_number LIKE @search " +
-                "OR email LIKE @search " +
-                "OR address LIKE @search ";
+            string query = "SELECT * FROM Finances " +
+            "WHERE transaction_type LIKE @search " +
+            "OR amount = @searchNumber OR amount LIKE @search " +
+            "OR description LIKE @search ";
             SQLiteCommand command = new SQLiteCommand(query, DbConnect.connection);
             command.Parameters.AddWithValue("@search", search);
-            command.Parameters.AddWithValue("@search_full", control.Text);
+            command.Parameters.AddWithValue("@searchNumber", control.Text);
+
             SQLiteDataAdapter adapter = new SQLiteDataAdapter(command);
             DataTable dataTable = new DataTable();
             adapter.Fill(dataTable);
@@ -117,7 +115,7 @@ namespace AutoService.RepositoryImpl
         {
             DbConnect.Connect();
 
-            string query = "SELECT * FROM Clients";
+            string query = "SELECT * FROM Finances";
             SQLiteCommand command = new SQLiteCommand(query, DbConnect.connection);
             SQLiteDataAdapter adapter = new SQLiteDataAdapter(command);
             DataTable dataTable = new DataTable();
@@ -128,5 +126,7 @@ namespace AutoService.RepositoryImpl
 
             DbConnect.Disconnect();
         }
+
+
     }
 }

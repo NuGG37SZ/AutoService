@@ -1,7 +1,6 @@
 ﻿using AutoService.Classes;
 using AutoService.Entity;
 using AutoService.Interface;
-using AutoService.MainForms;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -13,29 +12,30 @@ using System.Windows.Forms;
 
 namespace AutoService.RepositoryImpl
 {
-    public class ClientImpl : Repository<Clients>
+    public class EmployeeImpl : Repository<Employees>
     {
-        public void Add(Clients entity)
+        public void Add(Employees entity)
         {
             DbConnect.Connect();
 
             var command = DbConnect.connection.CreateCommand();
-            command.CommandText = "INSERT INTO Clients (full_name, phone_number, email, address, notes) " +
-                     "VALUES (@fullName, @phoneNumber, @email, @address, @notes)";
+            command.CommandText = "INSERT INTO Employees (full_name, position, phone_number, email, schedule, skills) " +
+                     "VALUES (@full_name, @position, @phone_number, @email, @schedule, @skills)";
             command.Parameters.AddWithValue("@fullName", entity.FullName);
+            command.Parameters.AddWithValue("@position", entity.Position);
             command.Parameters.AddWithValue("@phoneNumber", entity.PhoneNumber);
             command.Parameters.AddWithValue("@email", entity.Email);
-            command.Parameters.AddWithValue("@address", entity.Address);
-            command.Parameters.AddWithValue("@notes", entity.Notes);
+            command.Parameters.AddWithValue("@schedule", entity.Schedule);
+            command.Parameters.AddWithValue("@skills", entity.Skills);
             int rowsAffected = command.ExecuteNonQuery();
 
             if (rowsAffected > 0)
             {
-                MessageBox.Show("Клиент успешно добавлен!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Сотрудник успешно добавлен!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Произошла ошибка клиент не добавлен!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Произошла ошибка сотрудник не добавлен!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             DbConnect.Disconnect();
@@ -46,35 +46,37 @@ namespace AutoService.RepositoryImpl
             DbConnect.Connect();
 
             var command = DbConnect.connection.CreateCommand();
-            command.CommandText = "DELETE FROM Clients WHERE client_id = @id";
+            command.CommandText = "DELETE FROM Employees WHERE employee_id = @id";
             command.Parameters.AddWithValue("@id", id);
             int rowsAffected = command.ExecuteNonQuery();
 
             if (rowsAffected > 0)
             {
-                MessageBox.Show("Клиент успешно удален!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Сотрудник успешно удален!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Произошла ошибка, клиент не удален!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Произошла ошибка, сотрудник не удален!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             DbConnect.Disconnect();
         }
 
-        public void Update(Clients entity)
+        public void Update(Employees entity)
         {
             DbConnect.Connect();
 
             var command = DbConnect.connection.CreateCommand();
-            command.CommandText = "UPDATE Clients SET full_name = @fullName, phone_number = @phoneNumber, email = @email, address = @address, " +
-                "notes = @notes WHERE client_id = @id";
-            command.Parameters.AddWithValue("@fullName", entity.FullName);
-            command.Parameters.AddWithValue("@phoneNumber", entity.PhoneNumber);
+            command.CommandText = "UPDATE Employees SET full_name = @full_name, position = @position, phone_number = @phone_number, " +
+                "email = @email, schedule = @schedule, skills = @skills WHERE employee_id = @id";
+            command.Parameters.AddWithValue("@full_name", entity.FullName);
+            command.Parameters.AddWithValue("@position", entity.Position);
+            command.Parameters.AddWithValue("@phone_number", entity.PhoneNumber);
             command.Parameters.AddWithValue("@email", entity.Email);
-            command.Parameters.AddWithValue("@address", entity.Address);
-            command.Parameters.AddWithValue("@notes", entity.Notes);
+            command.Parameters.AddWithValue("@schedule", entity.Schedule);
+            command.Parameters.AddWithValue("@skills", entity.Skills);
             command.Parameters.AddWithValue("@id", entity.Id);
+
             int rowsAffected = command.ExecuteNonQuery();
 
             if (rowsAffected > 0)
@@ -95,11 +97,13 @@ namespace AutoService.RepositoryImpl
 
             string search = $"%{control.Text}%";
 
-            string query = "SELECT * FROM Clients " +
+            string query = "SELECT * FROM Employees " +
                 "WHERE full_name LIKE @search " +
+                "OR position LIKE @search " +
                 "OR phone_number LIKE @search " +
                 "OR email LIKE @search " +
-                "OR address LIKE @search ";
+                "OR schedule LIKE @search " +
+                "OR skills LIKE @search ";
             SQLiteCommand command = new SQLiteCommand(query, DbConnect.connection);
             command.Parameters.AddWithValue("@search", search);
             command.Parameters.AddWithValue("@search_full", control.Text);
@@ -117,7 +121,7 @@ namespace AutoService.RepositoryImpl
         {
             DbConnect.Connect();
 
-            string query = "SELECT * FROM Clients";
+            string query = "SELECT * FROM Employees";
             SQLiteCommand command = new SQLiteCommand(query, DbConnect.connection);
             SQLiteDataAdapter adapter = new SQLiteDataAdapter(command);
             DataTable dataTable = new DataTable();
