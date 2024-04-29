@@ -1,4 +1,8 @@
-﻿using AutoService.Classes;
+﻿using AutoService.AddForms;
+using AutoService.Classes;
+using AutoService.DeleteForms;
+using AutoService.RepositoryImpl;
+using AutoService.UpdateForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

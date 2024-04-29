@@ -15,22 +15,22 @@ using System.Windows.Forms;
 
 namespace AutoService.MainForms
 {
-    public partial class Finance : Form
+    public partial class Orders : Form
     {
-        private FinancesImpl financesImpl = new FinancesImpl();
-        public Finance()
+        private ServiceOrdersImpl serviceOrdersImpl = new ServiceOrdersImpl();
+        public Orders()
         {
             InitializeComponent();
         }
 
-        private void Finances_Load(object sender, EventArgs e)
+        private void Orders_Load(object sender, EventArgs e)
         {
-            financesImpl.SelectAllFields(dataGridView1);
+            serviceOrdersImpl.SelectAllFields(dataGridView1);
         }
 
         private void search_TextChanged(object sender, EventArgs e)
         {
-            financesImpl.SearchSelect(search, dataGridView1);
+            serviceOrdersImpl.SearchSelect(search, dataGridView1);
         }
 
         private void search_DoubleClick(object sender, EventArgs e)
@@ -40,22 +40,23 @@ namespace AutoService.MainForms
 
         private void reloadGrid_Click(object sender, EventArgs e)
         {
-            financesImpl.SelectAllFields(dataGridView1);
+            serviceOrdersImpl.SelectAllFields(dataGridView1);
         }
 
         private void addValue_Click(object sender, EventArgs e)
         {
-            OpenForms.OpenFormInNewWindow(new AddFinances());
+            OpenForms.OpenFormInNewWindow(new AddServiceOrders());
         }
 
         private void deleteValue_Click(object sender, EventArgs e)
         {
-            OpenForms.OpenFormInNewWindow(new DeleteFinances());
+            OpenForms.OpenFormInNewWindow(new DeleteServiceOrders());
         }
+
 
         private void reloadValue_Click(object sender, EventArgs e)
         {
-            OpenForms.OpenFormInNewWindow(new UpdateFinances());
+            OpenForms.OpenFormInNewWindow(new UpdateServiceOrders());
         }
 
         private void excelImport_Click(object sender, EventArgs e)

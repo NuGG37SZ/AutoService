@@ -76,7 +76,7 @@ namespace AutoService.RepositoryImpl
             int rowsAffected = command.ExecuteNonQuery();
 
             var commandDelete = DbConnect.connection.CreateCommand();
-            commandDelete.CommandText = $"DELETE FROM Finances WHERE description = New spare parts, number {id}";
+            commandDelete.CommandText = $"DELETE FROM Finances WHERE description = 'New spare parts, number {id}'";
             commandDelete.ExecuteNonQuery();
 
             if (rowsAffected > 0)
@@ -95,8 +95,12 @@ namespace AutoService.RepositoryImpl
         {
             DbConnect.Connect();
 
-            var command = DbConnect.connection.CreateCommand();
+            float oldValuePrice = getOldValuePrice(entity.Id);
+            float newValuePrice = entity.Price;
+            int oldValueQuantity = getOldValueQuantity(entity.Id);
+            int newValueQuantity = entity.Quantity;
 
+            var command = DbConnect.connection.CreateCommand();
             command.CommandText = "UPDATE Inventory SET part_name = @part_name, part_number = @part_number, quantity = @quantity, " +
                 "price = @price, supplier = @supplier, notes = @notes  WHERE inventory_id = @id";
             command.Parameters.AddWithValue("@part_name", entity.PartName);
@@ -115,6 +119,36 @@ namespace AutoService.RepositoryImpl
             else
             {
                 MessageBox.Show("Произошла ошибка, запчасть не изменена!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            string querySecond = $"SELECT price, quantity FROM Inventory WHERE inventory_id = {entity.Id}";
+            SQLiteCommand commandSecond = new SQLiteCommand(querySecond, DbConnect.connection);
+            using (SQLiteDataReader reader = commandSecond.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    float price = Convert.ToInt32(reader.GetInt32(0));
+                    int quantity = Convert.ToInt32(reader.GetInt32(1));
+
+                    if (oldValueQuantity < newValueQuantity && oldValuePrice < newValuePrice)
+                    {
+                        quantity -= newValueQuantity - oldValueQuantity;
+                        price = newValuePrice - oldValuePrice;
+                        string updateQuery = $"UPDATE Finances SET amount = {price * quantity} " +
+                                $"WHERE description = 'New spare parts, number {entity.Id}'";
+                        SQLiteCommand commandUpdate = new SQLiteCommand(updateQuery, DbConnect.connection);
+                        commandUpdate.ExecuteNonQuery();
+                    }
+                    else
+                    {
+                        quantity += oldValueQuantity - newValueQuantity;
+                        price += oldValuePrice - newValuePrice;
+                        string updateQuery = $"UPDATE Finances SET amount = {price * quantity} " +
+                                $"WHERE description = 'New spare parts, number {entity.Id}'";
+                        SQLiteCommand commandUpdate = new SQLiteCommand(updateQuery, DbConnect.connection);
+                        commandUpdate.ExecuteNonQuery();
+                    }
+                }
             }
 
             DbConnect.Disconnect();
@@ -165,19 +199,55 @@ namespace AutoService.RepositoryImpl
 
         public int getMaxId()
         {
-            int InventoryId = 0;
-            string query = "SELECT MAX(inventory_id) FROM Inventory;";
+            int inventoryId = 0;
+            string query = "SELECT MAX(inventory_id) FROM Inventory";
             SQLiteCommand command = new SQLiteCommand(query, DbConnect.connection);
             using (SQLiteDataReader reader = command.ExecuteReader())
             {
                 if (reader.Read())
                 {
-                    InventoryId = reader.GetInt32(0);
+                    inventoryId = reader.GetInt32(0);
                 }
             }
-            return InventoryId;
+            return inventoryId;
         }
 
+        public float getOldValuePrice(int inventoryId)
+        {
+            float oldValuePrice = 0;
+            string query = $"SELECT price FROM Inventory WHERE inventory_id = {inventoryId} ";
+            SQLiteCommand command = new SQLiteCommand(query, DbConnect.connection);
+            using (SQLiteDataReader reader = command.ExecuteReader())
+            {
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        oldValuePrice = Convert.ToInt32(reader.GetInt32(0));
+
+                    }
+                }
+            }
+            return oldValuePrice;
+        }
+
+        public int getOldValueQuantity(int inventoryId)
+        {
+            int oldValueQuantity = 0;
+            string query = $"SELECT quantity FROM Inventory WHERE inventory_id = {inventoryId} ";
+            SQLiteCommand command = new SQLiteCommand(query, DbConnect.connection);
+            using (SQLiteDataReader reader = command.ExecuteReader())
+            {
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        oldValueQuantity = Convert.ToInt32(reader.GetInt32(0));
+                    }
+                }
+            }
+            return oldValueQuantity;
+        }
 
     }
 }

@@ -15,22 +15,22 @@ using System.Windows.Forms;
 
 namespace AutoService.MainForms
 {
-    public partial class Finance : Form
+    public partial class Vehicle : Form
     {
-        private FinancesImpl financesImpl = new FinancesImpl();
-        public Finance()
+        private VehiclesImpl vehiclesImpl = new VehiclesImpl();
+        public Vehicle()
         {
             InitializeComponent();
         }
 
-        private void Finances_Load(object sender, EventArgs e)
+        private void Vehicle_Load(object sender, EventArgs e)
         {
-            financesImpl.SelectAllFields(dataGridView1);
+            vehiclesImpl.SelectAllFields(dataGridView1);
         }
 
         private void search_TextChanged(object sender, EventArgs e)
         {
-            financesImpl.SearchSelect(search, dataGridView1);
+            vehiclesImpl.SearchSelect(search, dataGridView1);
         }
 
         private void search_DoubleClick(object sender, EventArgs e)
@@ -40,22 +40,22 @@ namespace AutoService.MainForms
 
         private void reloadGrid_Click(object sender, EventArgs e)
         {
-            financesImpl.SelectAllFields(dataGridView1);
+            vehiclesImpl.SelectAllFields(dataGridView1);
         }
 
         private void addValue_Click(object sender, EventArgs e)
         {
-            OpenForms.OpenFormInNewWindow(new AddFinances());
+            OpenForms.OpenFormInNewWindow(new AddVehicles());
         }
 
         private void deleteValue_Click(object sender, EventArgs e)
         {
-            OpenForms.OpenFormInNewWindow(new DeleteFinances());
+            OpenForms.OpenFormInNewWindow(new DeleteVehicles());
         }
 
         private void reloadValue_Click(object sender, EventArgs e)
         {
-            OpenForms.OpenFormInNewWindow(new UpdateFinances());
+            OpenForms.OpenFormInNewWindow(new UpdateVehicles());
         }
 
         private void excelImport_Click(object sender, EventArgs e)
