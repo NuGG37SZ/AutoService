@@ -18,9 +18,10 @@ namespace AutoService.RepositoryImpl
         {
             try
             {
-                int maxId = getMaxId();
-
                 DbConnect.Connect();
+
+                int maxId = getMaxId(DbConnect.connection); 
+
                 var command = DbConnect.connection.CreateCommand();
                 command.CommandText = "INSERT INTO Inventory (part_name, part_number, quantity, price, supplier, notes) " +
                          "VALUES (@part_name, @part_number, @quantity, @price, @supplier, @notes)";
@@ -32,14 +33,30 @@ namespace AutoService.RepositoryImpl
                 command.Parameters.AddWithValue("@notes", entity.Notes);
                 int rowsAffected = command.ExecuteNonQuery();
 
-                string insertFinanceQuery = "INSERT INTO Finances (transaction_date, transaction_type, amount, description) " +
-                        "VALUES (@transaction_date, @transaction_type, @amount, @description)";
-                SQLiteCommand commandInsertFinance = new SQLiteCommand(insertFinanceQuery, DbConnect.connection);
-                commandInsertFinance.Parameters.AddWithValue("@transaction_date", DateTime.Now);
-                commandInsertFinance.Parameters.AddWithValue("@transaction_type", "Withdrawal");
-                commandInsertFinance.Parameters.AddWithValue("@amount", entity.Price * entity.Quantity);
-                commandInsertFinance.Parameters.AddWithValue("@description", $"New spare parts, number {maxId}");
-                commandInsertFinance.ExecuteNonQuery();
+                string checkFinanceQuery = "SELECT COUNT(*) FROM Finances WHERE description = @description";
+                SQLiteCommand commandCheckFinance = new SQLiteCommand(checkFinanceQuery, DbConnect.connection);
+                commandCheckFinance.Parameters.AddWithValue("@description", $"New spare parts, number {maxId}");
+                int count = Convert.ToInt32(commandCheckFinance.ExecuteScalar());
+
+                if (count > 0)
+                {
+                    string updateFinanceQuery = "UPDATE Finances SET transaction_date = @transaction_date, amount = @amount WHERE description = @description";
+                    SQLiteCommand commandUpdateFinance = new SQLiteCommand(updateFinanceQuery, DbConnect.connection);
+                    commandUpdateFinance.Parameters.AddWithValue("@transaction_date", DateTime.Now);
+                    commandUpdateFinance.Parameters.AddWithValue("@amount", entity.Price * entity.Quantity);
+                    commandUpdateFinance.Parameters.AddWithValue("@description", $"New spare parts, number {maxId}");
+                    commandUpdateFinance.ExecuteNonQuery();
+                }
+                else
+                {
+                    string insertFinanceQuery = "INSERT INTO Finances (transaction_date, transaction_type, amount, description) VALUES (@transaction_date, @transaction_type, @amount, @description)";
+                    SQLiteCommand commandInsertFinance = new SQLiteCommand(insertFinanceQuery, DbConnect.connection);
+                    commandInsertFinance.Parameters.AddWithValue("@transaction_date", DateTime.Now);
+                    commandInsertFinance.Parameters.AddWithValue("@transaction_type", "Withdrawal");
+                    commandInsertFinance.Parameters.AddWithValue("@amount", entity.Price * entity.Quantity);
+                    commandInsertFinance.Parameters.AddWithValue("@description", $"New spare parts, number {maxId}");
+                    commandInsertFinance.ExecuteNonQuery();
+                }
 
                 if (rowsAffected > 0)
                 {
@@ -49,7 +66,6 @@ namespace AutoService.RepositoryImpl
                 {
                     MessageBox.Show("Произошла ошибка, запчасть не добавлена!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
             }
             catch (SQLiteException ex)
             {
@@ -95,11 +111,6 @@ namespace AutoService.RepositoryImpl
         {
             DbConnect.Connect();
 
-            float oldValuePrice = getOldValuePrice(entity.Id);
-            float newValuePrice = entity.Price;
-            int oldValueQuantity = getOldValueQuantity(entity.Id);
-            int newValueQuantity = entity.Quantity;
-
             var command = DbConnect.connection.CreateCommand();
             command.CommandText = "UPDATE Inventory SET part_name = @part_name, part_number = @part_number, quantity = @quantity, " +
                 "price = @price, supplier = @supplier, notes = @notes  WHERE inventory_id = @id";
@@ -125,29 +136,18 @@ namespace AutoService.RepositoryImpl
             SQLiteCommand commandSecond = new SQLiteCommand(querySecond, DbConnect.connection);
             using (SQLiteDataReader reader = commandSecond.ExecuteReader())
             {
-                while (reader.Read())
+                if (reader.HasRows)
                 {
-                    float price = Convert.ToInt32(reader.GetInt32(0));
-                    int quantity = Convert.ToInt32(reader.GetInt32(1));
+                    reader.Read();
+                    int priceOrdinal = reader.GetOrdinal("price");
+                    int quantityOrdinal = reader.GetOrdinal("quantity");
+                    float newPrice = reader.GetFloat(priceOrdinal);
+                    int newQuantity = reader.GetInt32(quantityOrdinal);
 
-                    if (oldValueQuantity < newValueQuantity && oldValuePrice < newValuePrice)
-                    {
-                        quantity -= newValueQuantity - oldValueQuantity;
-                        price = newValuePrice - oldValuePrice;
-                        string updateQuery = $"UPDATE Finances SET amount = {price * quantity} " +
-                                $"WHERE description = 'New spare parts, number {entity.Id}'";
-                        SQLiteCommand commandUpdate = new SQLiteCommand(updateQuery, DbConnect.connection);
-                        commandUpdate.ExecuteNonQuery();
-                    }
-                    else
-                    {
-                        quantity += oldValueQuantity - newValueQuantity;
-                        price += oldValuePrice - newValuePrice;
-                        string updateQuery = $"UPDATE Finances SET amount = {price * quantity} " +
-                                $"WHERE description = 'New spare parts, number {entity.Id}'";
-                        SQLiteCommand commandUpdate = new SQLiteCommand(updateQuery, DbConnect.connection);
-                        commandUpdate.ExecuteNonQuery();
-                    }
+                    string updateQuery = $"UPDATE Finances SET amount = {newPrice * newQuantity} " +
+                            $"WHERE description = 'New spare parts, number {entity.Id}'";
+                    SQLiteCommand commandUpdate = new SQLiteCommand(updateQuery, DbConnect.connection);
+                    commandUpdate.ExecuteNonQuery();
                 }
             }
 
@@ -160,7 +160,9 @@ namespace AutoService.RepositoryImpl
 
             string search = $"%{control.Text}%";
 
-            string query = "SELECT * FROM Inventory " +
+            string query = "SELECT inventory_id AS ' ', part_name AS 'Наименование', part_number AS 'Номер', quantity AS 'Количество', " +
+                "price AS 'Стоимость', supplier AS 'Поставщик', notes AS 'Примечание' " +
+                "FROM Inventory " +
             "WHERE part_name LIKE @search " +
             "OR part_name LIKE @search " +
             "OR part_number LIKE @search " +
@@ -185,7 +187,9 @@ namespace AutoService.RepositoryImpl
         {
             DbConnect.Connect();
 
-            string query = "SELECT * FROM Inventory";
+            string query = "SELECT inventory_id AS ' ', part_name AS 'Наименование', part_number AS 'Номер', quantity AS 'Количество', " +
+                "price AS 'Стоимость', supplier AS 'Поставщик', notes AS 'Примечание' " +
+                "FROM Inventory ";
             SQLiteCommand command = new SQLiteCommand(query, DbConnect.connection);
             SQLiteDataAdapter adapter = new SQLiteDataAdapter(command);
             DataTable dataTable = new DataTable();
@@ -194,10 +198,21 @@ namespace AutoService.RepositoryImpl
             dataGridView.AllowUserToAddRows = false;
             dataGridView.RowHeadersVisible = false;
 
+            DataGridViewColumn inventoryId = dataGridView.Columns[" "];
+            DataGridViewColumn quantity = dataGridView.Columns["Количество"];
+            DataGridViewColumn name = dataGridView.Columns["Наименование"];
+            DataGridViewColumn price = dataGridView.Columns["Стоимость"];
+            DataGridViewColumn supplier = dataGridView.Columns["Поставщик"];
+            price.Width = 70;
+            supplier.Width = 130;
+            quantity.Width = 70;
+            name.Width = 130;
+            inventoryId.Width = 50;
+
             DbConnect.Disconnect();
         }
 
-        public int getMaxId()
+        public int getMaxId(SQLiteConnection connection)
         {
             int inventoryId = 0;
             string query = "SELECT MAX(inventory_id) FROM Inventory";
@@ -214,6 +229,7 @@ namespace AutoService.RepositoryImpl
 
         public float getOldValuePrice(int inventoryId)
         {
+            DbConnect.Connect();
             float oldValuePrice = 0;
             string query = $"SELECT price FROM Inventory WHERE inventory_id = {inventoryId} ";
             SQLiteCommand command = new SQLiteCommand(query, DbConnect.connection);
@@ -223,16 +239,18 @@ namespace AutoService.RepositoryImpl
                 {
                     while (reader.Read())
                     {
-                        oldValuePrice = Convert.ToInt32(reader.GetInt32(0));
+                        oldValuePrice = reader.GetFloat(0);
 
                     }
                 }
             }
+            DbConnect.Disconnect();
             return oldValuePrice;
         }
 
         public int getOldValueQuantity(int inventoryId)
         {
+            DbConnect.Connect();
             int oldValueQuantity = 0;
             string query = $"SELECT quantity FROM Inventory WHERE inventory_id = {inventoryId} ";
             SQLiteCommand command = new SQLiteCommand(query, DbConnect.connection);
@@ -246,6 +264,7 @@ namespace AutoService.RepositoryImpl
                     }
                 }
             }
+            DbConnect.Disconnect();
             return oldValueQuantity;
         }
 

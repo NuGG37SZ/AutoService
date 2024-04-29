@@ -39,7 +39,7 @@ namespace AutoService.Graph
             {
                 string queryBalance = $"SELECT SUM(amount) " +
                       $"FROM Finances " +
-                      $"WHERE transaction_type = 'Withdrawal' AND " +
+                      $"WHERE transaction_type = 'Expense' AND " +
                       $"strftime('%Y', CAST(transaction_date AS TEXT)) = '{currentYear}' " +
                       $"AND strftime('%m', CAST(transaction_date AS TEXT)) = '{month.ToString("00")}'";
                 using (SQLiteCommand command = new SQLiteCommand(queryBalance, DbConnect.connection))

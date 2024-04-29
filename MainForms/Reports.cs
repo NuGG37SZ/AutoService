@@ -25,8 +25,6 @@ namespace AutoService.MainForms
             ReportCurrentMonth();
         }
 
-
-
         private void firstDate_DoubleClick(object sender, EventArgs e)
         {
             TextHelper.ClearText(firstDate);
@@ -54,7 +52,7 @@ namespace AutoService.MainForms
             DbConnect.Connect();
 
             string queryFirstMonth = "SELECT SUM(amount) FROM Finances " +
-            "WHERE (transaction_type = 'Deposit' OR transaction_type = 'Withdrawal') " +
+            "WHERE transaction_type = 'Expense' " +
             "AND transaction_date BETWEEN @firstDate AND @secondDate";
             using (SQLiteCommand command = new SQLiteCommand(queryFirstMonth, DbConnect.connection))
             {
@@ -69,7 +67,7 @@ namespace AutoService.MainForms
             expenses.Text = amountExpenses.ToString();
 
             string querySecondMonth = "SELECT SUM(amount) FROM Finances " +
-                "WHERE transaction_type = 'Entering' " +
+                "WHERE transaction_type = 'Income' " +
                 "AND transaction_date BETWEEN @firstDate AND @secondDate";
             using (SQLiteCommand command = new SQLiteCommand(querySecondMonth, DbConnect.connection))
             {
@@ -97,8 +95,7 @@ namespace AutoService.MainForms
             float amountParishes = 0;
             float balanceMonth;
 
-            string queryFirstMonth = "SELECT SUM(amount) FROM Finances WHERE (transaction_type = 'Deposit' " +
-                "OR transaction_type = 'Withdrawal') " +
+            string queryFirstMonth = "SELECT SUM(amount) FROM Finances WHERE transaction_type = 'Expense' " +
                 "AND (strftime('%Y', transaction_date) = strftime('%Y', 'now') " +
                 "AND strftime('%m', transaction_date) = strftime('%m', 'now'))";
             using (SQLiteCommand command = new SQLiteCommand(queryFirstMonth, DbConnect.connection))
@@ -111,7 +108,7 @@ namespace AutoService.MainForms
             }
             expenses.Text = amountExpenses.ToString();
 
-            string querySecondMonth = "SELECT SUM(amount) FROM Finances WHERE transaction_type = 'Entering' " +
+            string querySecondMonth = "SELECT SUM(amount) FROM Finances WHERE transaction_type = 'Income' " +
                 "AND (strftime('%Y', transaction_date) = strftime('%Y', 'now') " +
                 "AND strftime('%m', transaction_date) = strftime('%m', 'now'))";
             using (SQLiteCommand command = new SQLiteCommand(querySecondMonth, DbConnect.connection))

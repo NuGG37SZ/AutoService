@@ -93,7 +93,9 @@ namespace AutoService.RepositoryImpl
 
             string search = $"%{control.Text}%";
 
-            string query = "SELECT * FROM Finances " +
+            string query = "SELECT transaction_id AS ' ', transaction_date AS 'Дата транкзации', transaction_type AS 'Тип', " +
+                "amount AS 'Сумма', description AS 'Описание' " +
+                "FROM Finances " +
             "WHERE transaction_type LIKE @search " +
             "OR amount = @searchNumber OR amount LIKE @search " +
             "OR description LIKE @search ";
@@ -115,7 +117,9 @@ namespace AutoService.RepositoryImpl
         {
             DbConnect.Connect();
 
-            string query = "SELECT * FROM Finances";
+            string query = "SELECT transaction_id AS ' ', transaction_date AS 'Дата транкзации', transaction_type AS 'Тип', " +
+                "amount AS 'Сумма', description AS 'Описание' " +
+                "FROM Finances ";
             SQLiteCommand command = new SQLiteCommand(query, DbConnect.connection);
             SQLiteDataAdapter adapter = new SQLiteDataAdapter(command);
             DataTable dataTable = new DataTable();
@@ -123,6 +127,17 @@ namespace AutoService.RepositoryImpl
             dataGridView.DataSource = dataTable;
             dataGridView.AllowUserToAddRows = false;
             dataGridView.RowHeadersVisible = false;
+
+            DataGridViewColumn transactionId = dataGridView.Columns[" "];
+            DataGridViewColumn transactionDate = dataGridView.Columns["Дата транкзации"];
+            DataGridViewColumn transactionType = dataGridView.Columns["Тип"];
+            DataGridViewColumn amount = dataGridView.Columns["Сумма"];
+            DataGridViewColumn description  = dataGridView.Columns["Описание"];
+            description.Width = 190;
+            amount.Width = 100;
+            transactionType.Width = 130;
+            transactionDate.Width = 130;
+            transactionId.Width = 50;
 
             DbConnect.Disconnect();
         }

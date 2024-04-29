@@ -135,7 +135,7 @@ namespace AutoService.RepositoryImpl
 
             DataGridViewColumn vehicleId = dataGridView.Columns[" "];
             DataGridViewColumn fullName = dataGridView.Columns["ФИО"];
-            vehicleId.Width = 70;
+            vehicleId.Width = 50;
             fullName.Width = 130;
 
             DbConnect.Disconnect();

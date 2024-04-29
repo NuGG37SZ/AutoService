@@ -72,7 +72,7 @@ namespace AutoService.Graph
 
             for (int month = 1; month <= 12; month++)
             {
-                string queryBalance = $"SELECT SUM(CASE WHEN transaction_type = 'Entering' " +
+                string queryBalance = $"SELECT SUM(CASE WHEN transaction_type = 'Income' " +
                       $"THEN amount ELSE -amount END) AS Balance " +
                       $"FROM Finances " +
                       $"WHERE strftime('%Y', CAST(transaction_date AS TEXT)) = '{currentYear}' " +

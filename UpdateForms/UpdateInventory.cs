@@ -57,14 +57,14 @@ namespace AutoService.UpdateForms
                         string partName = reader["part_name"].ToString();
                         string partNumber = reader["part_number"].ToString();
                         int quantitys = Convert.ToInt32(reader["quantity"]);
-                        string prices = reader["price"].ToString();
+                        float prices = reader.GetFloat(reader.GetOrdinal("price")); 
                         string suppliers = reader["supplier"].ToString();
                         string notesStr = reader["notes"].ToString();
 
                         name.Text = partName;
                         number.Text = partNumber;
                         quantity.Text = quantitys.ToString();
-                        price.Text = prices;
+                        price.Text = prices.ToString(); 
                         supplier.Text = suppliers;
                         notes.Text = notesStr;
                     }

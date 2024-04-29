@@ -133,9 +133,9 @@ namespace AutoService.RepositoryImpl
             DataGridViewColumn clientId = dataGridView.Columns[" "];
             DataGridViewColumn fullName = dataGridView.Columns["ФИО"];
             DataGridViewColumn notes = dataGridView.Columns["Примечание"];
-            clientId.Width = 70;
+            clientId.Width = 50;
             fullName.Width = 130;
-            notes.Width = 110;
+            notes.Width = 120;
 
             DbConnect.Disconnect();
         }
