@@ -16,7 +16,15 @@ namespace AutoService
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Main());
+            SignUp signUp = new SignUp();
+
+            if (signUp.ShowDialog() == DialogResult.OK)
+            {
+                if (!signUp.IsDisposed)
+                {
+                    Application.Run(new Main());
+                }
+            }
         }
     }
 }

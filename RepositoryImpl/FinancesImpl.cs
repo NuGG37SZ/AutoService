@@ -1,6 +1,8 @@
 ﻿using AutoService.Classes;
 using AutoService.Entity;
 using AutoService.Interface;
+using AutoService.MainForms;
+using Guna.UI2.WinForms.Suite;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -43,20 +45,84 @@ namespace AutoService.RepositoryImpl
         {
             DbConnect.Connect();
 
-            var command = DbConnect.connection.CreateCommand();
-            command.CommandText = "DELETE FROM Finances WHERE transaction_id = @id";
-            command.Parameters.AddWithValue("@id", id);
-            int rowsAffected = command.ExecuteNonQuery();
-
-            if (rowsAffected > 0)
+            string idStr = "";
+            string querySelect = $"SELECT description FROM Finances WHERE transaction_id = {id} ";
+            SQLiteCommand commandSelect = new SQLiteCommand(querySelect, DbConnect.connection);
+            using (SQLiteDataReader reader = commandSelect.ExecuteReader())
             {
-                MessageBox.Show("Операция успешно удалена!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show("Произошла ошибка, операция не удалена!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        string description = reader.GetString(0);
+
+                        if (description.StartsWith("New order, number "))
+                        {
+                            idStr = getNumberFromString(description);
+                        } 
+
+                        if (description.StartsWith("New spare parts, number"))
+                        {
+                            idStr = getNumberFromString(description);
+                        }
+                    }
+                }
             }
 
+            int? inventoryId = null;
+            if (!string.IsNullOrEmpty(idStr))
+            {
+                inventoryId = int.Parse(idStr);
+            }
+
+            int? orderId = null;
+            if (!string.IsNullOrEmpty(idStr))
+            {
+                orderId = int.Parse(idStr);
+            }
+
+            using (SQLiteTransaction transaction = DbConnect.connection.BeginTransaction())
+            {
+                try
+                {
+                    var command = DbConnect.connection.CreateCommand();
+                    command.CommandText = "DELETE FROM Finances WHERE transaction_id = @id";
+                    command.Parameters.AddWithValue("@id", id);
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Операция успешно удалена!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        if (orderId.HasValue)
+                        {
+                            string query = "DELETE FROM ServiceOrders WHERE order_id = @id";
+                            SQLiteCommand commandDelete = new SQLiteCommand(query, DbConnect.connection);
+                            commandDelete.Parameters.AddWithValue("@id", orderId.Value);
+                            commandDelete.ExecuteNonQuery();
+                        }
+
+                        if (inventoryId.HasValue)
+                        {
+                            string query = "DELETE FROM Inventory WHERE inventory_id = @id";
+                            SQLiteCommand commandDelete = new SQLiteCommand(query, DbConnect.connection);
+                            commandDelete.Parameters.AddWithValue("@id", inventoryId.Value);
+                            commandDelete.ExecuteNonQuery();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Произошла ошибка, операция не удалена!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                    transaction.Commit();
+                }
+                catch (Exception ex)
+                {
+                    transaction.Rollback();
+                    MessageBox.Show($"Ошибка: {ex.Message}");
+                }
+            }
             DbConnect.Disconnect();
         }
 
@@ -64,28 +130,53 @@ namespace AutoService.RepositoryImpl
         {
             DbConnect.Connect();
 
+            bool isSparePartsOrder = entity.Description.StartsWith("New spare parts, number");
+
             var command = DbConnect.connection.CreateCommand();
             command.CommandText = "UPDATE Finances SET transaction_date = @transaction_date, transaction_type = @transaction_type," +
-                " amount = @amount, description = @description WHERE transaction_id = @id";
+                (isSparePartsOrder ? " description = @description" : " amount = @amount, description = @description") +
+                " WHERE transaction_id = @id";
+
             command.Parameters.AddWithValue("@transaction_date", entity.TransactionDate);
             command.Parameters.AddWithValue("@transaction_type", entity.TransactionType);
-            command.Parameters.AddWithValue("@amount", entity.Amount);
+            if (!isSparePartsOrder)
+            {
+                command.Parameters.AddWithValue("@amount", entity.Amount);
+            }
             command.Parameters.AddWithValue("@description", entity.Description);
             command.Parameters.AddWithValue("@id", entity.Id);
             int rowsAffected = command.ExecuteNonQuery();
 
+            if (entity.Description.StartsWith("New order, number "))
+            {
+                string idStr = getNumberFromString(entity.Description);
+                int orderId = int.Parse(idStr);
+
+                string updateQuery = $"UPDATE ServiceOrders SET estimated_cost = {entity.Amount} " +
+                                $"WHERE order_id = {orderId}";
+                SQLiteCommand commandUpdate = new SQLiteCommand(updateQuery, DbConnect.connection);
+                commandUpdate.ExecuteNonQuery();
+            }
+
             if (rowsAffected > 0)
             {
-                MessageBox.Show("Операция успешно изменена!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (isSparePartsOrder)
+                {
+                    MessageBox.Show("Операция успешна! Но цена не обновлена, так как эта транкзация на запчасти.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Операция успешно изменена!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             else
             {
                 MessageBox.Show("Произошла ошибка, операция не изменена!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
 
             DbConnect.Disconnect();
         }
+
 
         public void SearchSelect(Control control, DataGridView dataGridView)
         {
@@ -142,6 +233,18 @@ namespace AutoService.RepositoryImpl
             DbConnect.Disconnect();
         }
 
-
+        public string getNumberFromString(string str)
+        {
+            StringBuilder result = new StringBuilder();
+            foreach (char c in str)
+            {
+                if (char.IsDigit(c))
+                {
+                    result.Append(c);
+                }
+            }
+            return result.ToString();
+        }
+            
     }
 }

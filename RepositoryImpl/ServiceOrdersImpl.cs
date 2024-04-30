@@ -47,7 +47,7 @@ namespace AutoService.RepositoryImpl
                     "VALUES (@transaction_date, @transaction_type, @amount, @description)";
                 SQLiteCommand commandInsertFinance = new SQLiteCommand(insertFinanceQuery, DbConnect.connection);
                 commandInsertFinance.Parameters.AddWithValue("@transaction_date", DateTime.Now);
-                commandInsertFinance.Parameters.AddWithValue("@transaction_type", "Entering");
+                commandInsertFinance.Parameters.AddWithValue("@transaction_type", "Income");
                 commandInsertFinance.Parameters.AddWithValue("@amount", entity.EstimatedCost);
                 commandInsertFinance.Parameters.AddWithValue("@description", $"New order, number {maxId}");
                 commandInsertFinance.ExecuteNonQuery();
@@ -124,21 +124,13 @@ namespace AutoService.RepositoryImpl
                         MessageBox.Show("Произошла ошибка, заказ не изменен!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
-                    try
-                    {
-                        string updateFinancesQuery = "UPDATE Finances " +
-                        "SET amount = @estimated_cost " +
-                        "WHERE description = @description";
-                        SQLiteCommand updateFinancesCommand = new SQLiteCommand(updateFinancesQuery, DbConnect.connection);
-                        updateFinancesCommand.Parameters.AddWithValue("@estimated_cost", entity.EstimatedCost);
-                        updateFinancesCommand.Parameters.AddWithValue("@description", $"New order, number {entity.Id}");
-                        int rowsAffectedFinances = updateFinancesCommand.ExecuteNonQuery();
-                    }
-                    catch (Exception ex)
-                    {
-                        transaction.Rollback();
-                        MessageBox.Show($"Ошибка при обновлении записи в Finances: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    string updateFinancesQuery = "UPDATE Finances " +
+                    "SET amount = @estimated_cost " +
+                    "WHERE description = @description";
+                    SQLiteCommand updateFinancesCommand = new SQLiteCommand(updateFinancesQuery, DbConnect.connection);
+                    updateFinancesCommand.Parameters.AddWithValue("@estimated_cost", entity.EstimatedCost);
+                    updateFinancesCommand.Parameters.AddWithValue("@description", $"New order, number {entity.Id}");
+                    updateFinancesCommand.ExecuteNonQuery();
 
                     string checkFinancesQuery = "SELECT COUNT(*) FROM Finances WHERE description = @description";
                     SQLiteCommand checkFinancesCommand = new SQLiteCommand(checkFinancesQuery, DbConnect.connection);
@@ -153,6 +145,7 @@ namespace AutoService.RepositoryImpl
                         insertFinancesCommand.Parameters.AddWithValue("@description", $"New order, number {entity.Id}");
                         insertFinancesCommand.ExecuteNonQuery();
                     }
+
                     transaction.Commit();
                 }
                 catch (Exception ex)
