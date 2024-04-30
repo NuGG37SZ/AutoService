@@ -13,7 +13,7 @@ namespace AutoService.Classes
         {
             if (grid == null || grid.Rows.Count <= 0)
             {
-                MessageBox.Show("Данные для экспорта не обнаружены.", "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Данные для экспорта не обнаружены.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             try
@@ -33,8 +33,9 @@ namespace AutoService.Classes
                     }
                 }
 
-                excel.Range[excel.Cells[1, 1], excel.Cells[1, grid.Columns.Count]].Interior.Color = System.Drawing.Color.LightBlue.ToArgb();
-                excel.Range[excel.Cells[1, 1], excel.Cells[grid.Rows.Count + 1, grid.Columns.Count]].Borders.LineStyle = Microsoft.Office.Interop.Excel.XlLineStyle.xlContinuous;
+                excel.Range[excel.Cells[1, 1], excel.Cells[1, grid.Columns.Count]].Interior.Color = System.Drawing.Color.Transparent;
+                excel.Range[excel.Cells[1, 1], excel.Cells[grid.Rows.Count + 1, grid.Columns.Count]].Borders.LineStyle = 
+                    Microsoft.Office.Interop.Excel.XlLineStyle.xlContinuous;
 
                 excel.Columns.AutoFit();
                 excel.Visible = true;
@@ -42,7 +43,7 @@ namespace AutoService.Classes
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Произошла ошибка: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"Произошла ошибка: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }

@@ -129,14 +129,14 @@ namespace AutoService.RepositoryImpl
             dataGridView.RowHeadersVisible = false;
 
             DataGridViewColumn transactionId = dataGridView.Columns[" "];
-            DataGridViewColumn transactionDate = dataGridView.Columns["Дата транкзации"];
+            DataGridViewColumn transactionDates = dataGridView.Columns["Дата транкзации"];
             DataGridViewColumn transactionType = dataGridView.Columns["Тип"];
             DataGridViewColumn amount = dataGridView.Columns["Сумма"];
             DataGridViewColumn description  = dataGridView.Columns["Описание"];
             description.Width = 190;
             amount.Width = 100;
             transactionType.Width = 130;
-            transactionDate.Width = 130;
+            transactionDates.Width = 130;
             transactionId.Width = 50;
 
             DbConnect.Disconnect();

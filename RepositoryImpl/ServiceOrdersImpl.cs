@@ -4,6 +4,7 @@ using AutoService.Interface;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Common;
 using System.Data.SQLite;
 using System.Linq;
 using System.Text;
@@ -18,7 +19,6 @@ namespace AutoService.RepositoryImpl
         {
             try
             {
-                int maxId = getMaxId();
                 DbConnect.Connect();
                 var command = DbConnect.connection.CreateCommand();
                 command.CommandText = "INSERT INTO ServiceOrders (client_id, vehicle_id, order_date, service_type, `status`, estimated_cost, notes) " +
@@ -40,6 +40,8 @@ namespace AutoService.RepositoryImpl
                 {
                     MessageBox.Show("Произошла ошибка, заказ не добавлен!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+
+                int maxId = getMaxId();
 
                 string insertFinanceQuery = "INSERT INTO Finances (transaction_date, transaction_type, amount, description) " +
                     "VALUES (@transaction_date, @transaction_type, @amount, @description)";
@@ -75,7 +77,7 @@ namespace AutoService.RepositoryImpl
             int rowsAffected = command.ExecuteNonQuery();
 
             var commandDelete = DbConnect.connection.CreateCommand();
-            commandDelete.CommandText = $"DELETE FROM Finances WHERE description = 'New order, number number {id}'";
+            commandDelete.CommandText = $"DELETE FROM Finances WHERE description = 'New order, number {id}'";
             commandDelete.ExecuteNonQuery();
 
             if (rowsAffected > 0)
@@ -94,27 +96,70 @@ namespace AutoService.RepositoryImpl
         {
             DbConnect.Connect();
 
-            var command = DbConnect.connection.CreateCommand();
-            command.CommandText = "UPDATE ServiceOrders SET client_id = @client_id, vehicle_id = @vehicle_id, order_date = @order_date, " +
-                "service_type = @service_type, status = @status, estimated_cost = @estimated_cost, notes = @notes  WHERE order_id = @id";
-
-            command.Parameters.AddWithValue("@client_id", entity.ClientId);
-            command.Parameters.AddWithValue("@vehicle_id", entity.VehicleId);
-            command.Parameters.AddWithValue("@order_date", entity.OrderDate);
-            command.Parameters.AddWithValue("@service_type", entity.ServiceType);
-            command.Parameters.AddWithValue("@status", entity.Status);
-            command.Parameters.AddWithValue("@estimated_cost", entity.EstimatedCost);
-            command.Parameters.AddWithValue("@notes", entity.Notes);
-            command.Parameters.AddWithValue("@id", entity.Id);
-            int rowsAffected = command.ExecuteNonQuery();
-
-            if (rowsAffected > 0)
+            using (var transaction = DbConnect.connection.BeginTransaction())
             {
-                MessageBox.Show("Заказ успешно изменен!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show("Произошла ошибка, заказ не изменен!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                try
+                {
+                    string updateServiceOrderQuery = "UPDATE ServiceOrders " +
+                        "SET client_id = @client_id, vehicle_id = @vehicle_id, order_date = @order_date, " +
+                        "service_type = @service_type, status = @status, estimated_cost = @estimated_cost, notes = @notes " +
+                        "WHERE order_id = @id";
+                    SQLiteCommand updateServiceOrderCommand = new SQLiteCommand(updateServiceOrderQuery, DbConnect.connection);
+                    updateServiceOrderCommand.Parameters.AddWithValue("@client_id", entity.ClientId);
+                    updateServiceOrderCommand.Parameters.AddWithValue("@vehicle_id", entity.VehicleId);
+                    updateServiceOrderCommand.Parameters.AddWithValue("@order_date", entity.OrderDate);
+                    updateServiceOrderCommand.Parameters.AddWithValue("@service_type", entity.ServiceType);
+                    updateServiceOrderCommand.Parameters.AddWithValue("@status", entity.Status);
+                    updateServiceOrderCommand.Parameters.AddWithValue("@estimated_cost", entity.EstimatedCost);
+                    updateServiceOrderCommand.Parameters.AddWithValue("@notes", entity.Notes);
+                    updateServiceOrderCommand.Parameters.AddWithValue("@id", entity.Id);
+                    int rowsAffectedServiceOrder = updateServiceOrderCommand.ExecuteNonQuery();
+
+                    if (rowsAffectedServiceOrder > 0)
+                    {
+                        MessageBox.Show("Заказ успешно изменен!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Произошла ошибка, заказ не изменен!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                    try
+                    {
+                        string updateFinancesQuery = "UPDATE Finances " +
+                        "SET amount = @estimated_cost " +
+                        "WHERE description = @description";
+                        SQLiteCommand updateFinancesCommand = new SQLiteCommand(updateFinancesQuery, DbConnect.connection);
+                        updateFinancesCommand.Parameters.AddWithValue("@estimated_cost", entity.EstimatedCost);
+                        updateFinancesCommand.Parameters.AddWithValue("@description", $"New order, number {entity.Id}");
+                        int rowsAffectedFinances = updateFinancesCommand.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        transaction.Rollback();
+                        MessageBox.Show($"Ошибка при обновлении записи в Finances: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                    string checkFinancesQuery = "SELECT COUNT(*) FROM Finances WHERE description = @description";
+                    SQLiteCommand checkFinancesCommand = new SQLiteCommand(checkFinancesQuery, DbConnect.connection);
+                    checkFinancesCommand.Parameters.AddWithValue("@description", $"New order, number {entity.Id}");
+                    int existingRecordsCount = Convert.ToInt32(checkFinancesCommand.ExecuteScalar());
+
+                    if (existingRecordsCount == 0)
+                    {
+                        string insertFinancesQuery = "INSERT INTO Finances (amount, description) VALUES (@amount, @description)";
+                        SQLiteCommand insertFinancesCommand = new SQLiteCommand(insertFinancesQuery, DbConnect.connection);
+                        insertFinancesCommand.Parameters.AddWithValue("@amount", entity.EstimatedCost);
+                        insertFinancesCommand.Parameters.AddWithValue("@description", $"New order, number {entity.Id}");
+                        insertFinancesCommand.ExecuteNonQuery();
+                    }
+                    transaction.Commit();
+                }
+                catch (Exception ex)
+                {
+                    transaction.Rollback();
+                    MessageBox.Show($"Ошибка при обновлении заказа: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
 
             DbConnect.Disconnect();
@@ -181,7 +226,7 @@ namespace AutoService.RepositoryImpl
             SQLiteCommand command = new SQLiteCommand(query, DbConnect.connection);
             using (SQLiteDataReader reader = command.ExecuteReader())
             {
-                if (reader.Read())
+                while (reader.Read())
                 {
                     orderId = reader.GetInt32(0);
                 }

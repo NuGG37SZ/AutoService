@@ -1,6 +1,7 @@
 ﻿using AutoService.Classes;
 using AutoService.Entity;
 using AutoService.Interface;
+using AutoService.MainForms;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -20,8 +21,6 @@ namespace AutoService.RepositoryImpl
             {
                 DbConnect.Connect();
 
-                int maxId = getMaxId(DbConnect.connection); 
-
                 var command = DbConnect.connection.CreateCommand();
                 command.CommandText = "INSERT INTO Inventory (part_name, part_number, quantity, price, supplier, notes) " +
                          "VALUES (@part_name, @part_number, @quantity, @price, @supplier, @notes)";
@@ -33,31 +32,6 @@ namespace AutoService.RepositoryImpl
                 command.Parameters.AddWithValue("@notes", entity.Notes);
                 int rowsAffected = command.ExecuteNonQuery();
 
-                string checkFinanceQuery = "SELECT COUNT(*) FROM Finances WHERE description = @description";
-                SQLiteCommand commandCheckFinance = new SQLiteCommand(checkFinanceQuery, DbConnect.connection);
-                commandCheckFinance.Parameters.AddWithValue("@description", $"New spare parts, number {maxId}");
-                int count = Convert.ToInt32(commandCheckFinance.ExecuteScalar());
-
-                if (count > 0)
-                {
-                    string updateFinanceQuery = "UPDATE Finances SET transaction_date = @transaction_date, amount = @amount WHERE description = @description";
-                    SQLiteCommand commandUpdateFinance = new SQLiteCommand(updateFinanceQuery, DbConnect.connection);
-                    commandUpdateFinance.Parameters.AddWithValue("@transaction_date", DateTime.Now);
-                    commandUpdateFinance.Parameters.AddWithValue("@amount", entity.Price * entity.Quantity);
-                    commandUpdateFinance.Parameters.AddWithValue("@description", $"New spare parts, number {maxId}");
-                    commandUpdateFinance.ExecuteNonQuery();
-                }
-                else
-                {
-                    string insertFinanceQuery = "INSERT INTO Finances (transaction_date, transaction_type, amount, description) VALUES (@transaction_date, @transaction_type, @amount, @description)";
-                    SQLiteCommand commandInsertFinance = new SQLiteCommand(insertFinanceQuery, DbConnect.connection);
-                    commandInsertFinance.Parameters.AddWithValue("@transaction_date", DateTime.Now);
-                    commandInsertFinance.Parameters.AddWithValue("@transaction_type", "Withdrawal");
-                    commandInsertFinance.Parameters.AddWithValue("@amount", entity.Price * entity.Quantity);
-                    commandInsertFinance.Parameters.AddWithValue("@description", $"New spare parts, number {maxId}");
-                    commandInsertFinance.ExecuteNonQuery();
-                }
-
                 if (rowsAffected > 0)
                 {
                     MessageBox.Show("Запчасть успешно добавлена!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -66,6 +40,29 @@ namespace AutoService.RepositoryImpl
                 {
                     MessageBox.Show("Произошла ошибка, запчасть не добавлена!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+
+                int maxId = 0;
+                string query = $"SELECT MAX(inventory_id) FROM Inventory ";
+                SQLiteCommand commandSecond = new SQLiteCommand(query, DbConnect.connection);
+                using (SQLiteDataReader reader = commandSecond.ExecuteReader())
+                {
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            maxId = reader.GetInt32(0);
+                        }
+                    }
+                }
+
+                string insertFinanceQuery = "INSERT INTO Finances (transaction_date, transaction_type, amount, description) " +
+                    "VALUES (@transaction_date, @transaction_type, @amount, @description)";
+                SQLiteCommand commandInsertFinance = new SQLiteCommand(insertFinanceQuery, DbConnect.connection);
+                commandInsertFinance.Parameters.AddWithValue("@transaction_date", DateTime.Now);
+                commandInsertFinance.Parameters.AddWithValue("@transaction_type", "Expense");
+                commandInsertFinance.Parameters.AddWithValue("@amount", entity.Price * entity.Quantity);
+                commandInsertFinance.Parameters.AddWithValue("@description", $"New spare parts, number {maxId}");
+                commandInsertFinance.ExecuteNonQuery();
             }
             catch (SQLiteException ex)
             {
@@ -138,16 +135,16 @@ namespace AutoService.RepositoryImpl
             {
                 if (reader.HasRows)
                 {
-                    reader.Read();
-                    int priceOrdinal = reader.GetOrdinal("price");
-                    int quantityOrdinal = reader.GetOrdinal("quantity");
-                    float newPrice = reader.GetFloat(priceOrdinal);
-                    int newQuantity = reader.GetInt32(quantityOrdinal);
+                   while(reader.Read())
+                   {
+                        float newPrice = reader.GetFloat(0);
+                        int newQuantity = reader.GetInt32(1);
 
-                    string updateQuery = $"UPDATE Finances SET amount = {newPrice * newQuantity} " +
-                            $"WHERE description = 'New spare parts, number {entity.Id}'";
-                    SQLiteCommand commandUpdate = new SQLiteCommand(updateQuery, DbConnect.connection);
-                    commandUpdate.ExecuteNonQuery();
+                        string updateQuery = $"UPDATE Finances SET amount = {newPrice * newQuantity} " +
+                                $"WHERE description = 'New spare parts, number {entity.Id}'";
+                        SQLiteCommand commandUpdate = new SQLiteCommand(updateQuery, DbConnect.connection);
+                        commandUpdate.ExecuteNonQuery();
+                   }
                 }
             }
 
@@ -212,21 +209,6 @@ namespace AutoService.RepositoryImpl
             DbConnect.Disconnect();
         }
 
-        public int getMaxId(SQLiteConnection connection)
-        {
-            int inventoryId = 0;
-            string query = "SELECT MAX(inventory_id) FROM Inventory";
-            SQLiteCommand command = new SQLiteCommand(query, DbConnect.connection);
-            using (SQLiteDataReader reader = command.ExecuteReader())
-            {
-                if (reader.Read())
-                {
-                    inventoryId = reader.GetInt32(0);
-                }
-            }
-            return inventoryId;
-        }
-
         public float getOldValuePrice(int inventoryId)
         {
             DbConnect.Connect();
@@ -240,7 +222,6 @@ namespace AutoService.RepositoryImpl
                     while (reader.Read())
                     {
                         oldValuePrice = reader.GetFloat(0);
-
                     }
                 }
             }
