@@ -24,6 +24,7 @@ namespace AutoService
 
         public void ValidateSignUp()
         {
+            DbConnect.Connect();
             string query = "SELECT * FROM Users";
             string passwordToLogin = Hashing.Hash(password.Text);
             bool isUserValid = false;
@@ -56,6 +57,7 @@ namespace AutoService
             {
                 MessageBox.Show("Перепроверьте введенные данные!!!");
             }
+            DbConnect.Disconnect();
         }
 
         private void registerButton_Click(object sender, EventArgs e)

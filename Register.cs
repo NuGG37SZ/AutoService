@@ -23,6 +23,7 @@ namespace AutoService
 
         private void registerButton_Click(object sender, EventArgs e)
         {
+            DbConnect.Connect();
             string query = "INSERT INTO Users (login, password) " +
             "VALUES (@login, @password)";
             if (password.Text.Equals(confirmationPassword.Text))
@@ -42,6 +43,7 @@ namespace AutoService
             {
                 MessageBox.Show("Пароли не совпадают");
             }
+            DbConnect.Disconnect();
         }
 
         private void enterButton_Click(object sender, EventArgs e)
