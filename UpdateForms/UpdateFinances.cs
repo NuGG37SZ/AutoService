@@ -93,20 +93,6 @@ namespace AutoService.UpdateForms
                 transaction.DataSource = financesIdList;
             }
             DbConnect.Disconnect();
-
-            DbConnect.Connect();
-            string querySecond = "SELECT DISTINCT transaction_type FROM Finances ";
-            SQLiteCommand commandSecond = new SQLiteCommand(querySecond, DbConnect.connection);
-            using (SQLiteDataReader reader = commandSecond.ExecuteReader())
-            {
-                while (reader.Read())
-                {
-                    string transactionType = reader.GetString(0);
-                    financesTransactionType.Add(transactionType);
-                }
-                transactionType.DataSource = financesTransactionType;
-            }
-            DbConnect.Disconnect();
         }
     }
 }

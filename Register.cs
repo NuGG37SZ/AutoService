@@ -36,6 +36,7 @@ namespace AutoService
                         command.Parameters.AddWithValue("@password", Hashing.Hash(password.Text));
                         command.ExecuteNonQuery();
                         MessageBox.Show("Вы успешно зарегестрировались!");
+                        MessageBox.Show(Hashing.Hash(password.Text));
                     }
                 }
             }

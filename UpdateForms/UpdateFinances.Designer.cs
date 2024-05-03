@@ -68,6 +68,9 @@
             // 
             this.transactionType.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.transactionType.FormattingEnabled = true;
+            this.transactionType.Items.AddRange(new object[] {
+            "Income",
+            "Expense"});
             this.transactionType.Location = new System.Drawing.Point(12, 164);
             this.transactionType.Name = "transactionType";
             this.transactionType.Size = new System.Drawing.Size(166, 29);

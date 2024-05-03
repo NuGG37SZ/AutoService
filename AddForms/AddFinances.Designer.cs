@@ -30,20 +30,20 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.description = new System.Windows.Forms.TextBox();
-            this.amount = new System.Windows.Forms.TextBox();
-            this.transactionType = new System.Windows.Forms.TextBox();
             this.transactionDate = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.save = new System.Windows.Forms.Button();
+            this.amount = new System.Windows.Forms.TextBox();
+            this.transactionType = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel1.Controls.Add(this.transactionType);
             this.panel1.Controls.Add(this.description);
             this.panel1.Controls.Add(this.amount);
-            this.panel1.Controls.Add(this.transactionType);
             this.panel1.Controls.Add(this.transactionDate);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -61,26 +61,6 @@
             this.description.TabIndex = 20;
             this.description.Text = "Описание";
             this.description.DoubleClick += new System.EventHandler(this.description_DoubleClick);
-            // 
-            // amount
-            // 
-            this.amount.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.amount.Location = new System.Drawing.Point(103, 119);
-            this.amount.Name = "amount";
-            this.amount.Size = new System.Drawing.Size(198, 29);
-            this.amount.TabIndex = 19;
-            this.amount.Text = "Сумма";
-            this.amount.DoubleClick += new System.EventHandler(this.amount_DoubleClick);
-            // 
-            // transactionType
-            // 
-            this.transactionType.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.transactionType.Location = new System.Drawing.Point(103, 84);
-            this.transactionType.Name = "transactionType";
-            this.transactionType.Size = new System.Drawing.Size(198, 29);
-            this.transactionType.TabIndex = 17;
-            this.transactionType.Text = "Тип операции";
-            this.transactionType.DoubleClick += new System.EventHandler(this.transactionType_DoubleClick);
             // 
             // transactionDate
             // 
@@ -117,6 +97,29 @@
             this.save.UseVisualStyleBackColor = false;
             this.save.Click += new System.EventHandler(this.save_Click);
             // 
+            // amount
+            // 
+            this.amount.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.amount.Location = new System.Drawing.Point(103, 119);
+            this.amount.Name = "amount";
+            this.amount.Size = new System.Drawing.Size(198, 29);
+            this.amount.TabIndex = 19;
+            this.amount.Text = "Сумма";
+            this.amount.DoubleClick += new System.EventHandler(this.amount_DoubleClick);
+            // 
+            // transactionType
+            // 
+            this.transactionType.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.transactionType.FormattingEnabled = true;
+            this.transactionType.Items.AddRange(new object[] {
+            "Income",
+            "Expense"});
+            this.transactionType.Location = new System.Drawing.Point(103, 84);
+            this.transactionType.Name = "transactionType";
+            this.transactionType.Size = new System.Drawing.Size(198, 29);
+            this.transactionType.TabIndex = 34;
+            this.transactionType.Text = "Тип транкзации";
+            // 
             // AddFinances
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -138,10 +141,10 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox description;
-        private System.Windows.Forms.TextBox amount;
-        private System.Windows.Forms.TextBox transactionType;
         private System.Windows.Forms.TextBox transactionDate;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button save;
+        private System.Windows.Forms.ComboBox transactionType;
+        private System.Windows.Forms.TextBox amount;
     }
 }
