@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.orders = new System.Windows.Forms.ComboBox();
-            this.inventory = new System.Windows.Forms.ComboBox();
+            this.Orders = new System.Windows.Forms.ComboBox();
+            this.Inventory = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.delete = new System.Windows.Forms.Button();
+            this.Delete = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel1.Controls.Add(this.orders);
-            this.panel1.Controls.Add(this.inventory);
+            this.panel1.Controls.Add(this.Orders);
+            this.panel1.Controls.Add(this.Inventory);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -48,25 +48,25 @@
             this.panel1.Size = new System.Drawing.Size(384, 378);
             this.panel1.TabIndex = 27;
             // 
-            // orders
+            // Orders
             // 
-            this.orders.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.orders.FormattingEnabled = true;
-            this.orders.Location = new System.Drawing.Point(116, 49);
-            this.orders.Name = "orders";
-            this.orders.Size = new System.Drawing.Size(171, 29);
-            this.orders.TabIndex = 25;
-            this.orders.Text = "айди заказа";
+            this.Orders.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Orders.FormattingEnabled = true;
+            this.Orders.Location = new System.Drawing.Point(116, 49);
+            this.Orders.Name = "Orders";
+            this.Orders.Size = new System.Drawing.Size(171, 29);
+            this.Orders.TabIndex = 25;
+            this.Orders.Text = "айди заказа";
             // 
-            // inventory
+            // Inventory
             // 
-            this.inventory.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.inventory.FormattingEnabled = true;
-            this.inventory.Location = new System.Drawing.Point(116, 84);
-            this.inventory.Name = "inventory";
-            this.inventory.Size = new System.Drawing.Size(171, 29);
-            this.inventory.TabIndex = 24;
-            this.inventory.Text = "запчасть";
+            this.Inventory.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Inventory.FormattingEnabled = true;
+            this.Inventory.Location = new System.Drawing.Point(116, 84);
+            this.Inventory.Name = "Inventory";
+            this.Inventory.Size = new System.Drawing.Size(171, 29);
+            this.Inventory.TabIndex = 24;
+            this.Inventory.Text = "запчасть";
             // 
             // label1
             // 
@@ -78,27 +78,27 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Удалить запчасть из заказа";
             // 
-            // delete
+            // Delete
             // 
-            this.delete.BackColor = System.Drawing.Color.Red;
-            this.delete.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.delete.FlatAppearance.BorderSize = 0;
-            this.delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.delete.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.delete.Location = new System.Drawing.Point(0, 378);
-            this.delete.Name = "delete";
-            this.delete.Size = new System.Drawing.Size(384, 33);
-            this.delete.TabIndex = 28;
-            this.delete.Text = "Удалить";
-            this.delete.UseVisualStyleBackColor = false;
-            this.delete.Click += new System.EventHandler(this.delete_Click);
+            this.Delete.BackColor = System.Drawing.Color.Red;
+            this.Delete.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.Delete.FlatAppearance.BorderSize = 0;
+            this.Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Delete.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Delete.Location = new System.Drawing.Point(0, 378);
+            this.Delete.Name = "Delete";
+            this.Delete.Size = new System.Drawing.Size(384, 33);
+            this.Delete.TabIndex = 28;
+            this.Delete.Text = "Удалить";
+            this.Delete.UseVisualStyleBackColor = false;
+            this.Delete.Click += new System.EventHandler(this.Delete_Click);
             // 
             // DeleteOrdersParts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 411);
-            this.Controls.Add(this.delete);
+            this.Controls.Add(this.Delete);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
@@ -114,9 +114,9 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ComboBox orders;
-        private System.Windows.Forms.ComboBox inventory;
+        private System.Windows.Forms.ComboBox Orders;
+        private System.Windows.Forms.ComboBox Inventory;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button delete;
+        private System.Windows.Forms.Button Delete;
     }
 }

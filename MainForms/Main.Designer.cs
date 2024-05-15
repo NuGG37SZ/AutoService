@@ -31,23 +31,23 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel14 = new System.Windows.Forms.Panel();
-            this.orderPartsButton = new Guna.UI2.WinForms.Guna2Button();
+            this.OrderPartsButton = new Guna.UI2.WinForms.Guna2Button();
             this.panel13 = new System.Windows.Forms.Panel();
-            this.reportButton = new Guna.UI2.WinForms.Guna2Button();
+            this.ReportButton = new Guna.UI2.WinForms.Guna2Button();
             this.panel12 = new System.Windows.Forms.Panel();
-            this.serviceButton = new Guna.UI2.WinForms.Guna2Button();
+            this.ServiceButton = new Guna.UI2.WinForms.Guna2Button();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.moneyButton = new Guna.UI2.WinForms.Guna2Button();
+            this.MoneyButton = new Guna.UI2.WinForms.Guna2Button();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.inventoryButton = new Guna.UI2.WinForms.Guna2Button();
+            this.InventoryButton = new Guna.UI2.WinForms.Guna2Button();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.staffButton = new Guna.UI2.WinForms.Guna2Button();
+            this.StaffButton = new Guna.UI2.WinForms.Guna2Button();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.orderButton = new Guna.UI2.WinForms.Guna2Button();
+            this.OrderButton = new Guna.UI2.WinForms.Guna2Button();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.carButton = new Guna.UI2.WinForms.Guna2Button();
+            this.CarButton = new Guna.UI2.WinForms.Guna2Button();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.clientButton = new Guna.UI2.WinForms.Guna2Button();
+            this.ClientButton = new Guna.UI2.WinForms.Guna2Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -86,161 +86,161 @@
             // 
             // panel14
             // 
-            this.panel14.Controls.Add(this.orderPartsButton);
+            this.panel14.Controls.Add(this.OrderPartsButton);
             this.panel14.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel14.Location = new System.Drawing.Point(0, 412);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(171, 39);
             this.panel14.TabIndex = 9;
             // 
-            // orderPartsButton
+            // OrderPartsButton
             // 
-            this.orderPartsButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.orderPartsButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.orderPartsButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.orderPartsButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.orderPartsButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.orderPartsButton.FillColor = System.Drawing.Color.Transparent;
-            this.orderPartsButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.orderPartsButton.ForeColor = System.Drawing.Color.White;
-            this.orderPartsButton.Image = ((System.Drawing.Image)(resources.GetObject("orderPartsButton.Image")));
-            this.orderPartsButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.orderPartsButton.ImageOffset = new System.Drawing.Point(11, 0);
-            this.orderPartsButton.ImageSize = new System.Drawing.Size(32, 32);
-            this.orderPartsButton.Location = new System.Drawing.Point(0, 0);
-            this.orderPartsButton.Name = "orderPartsButton";
-            this.orderPartsButton.Size = new System.Drawing.Size(171, 39);
-            this.orderPartsButton.TabIndex = 0;
-            this.orderPartsButton.Text = "Запчасти ";
-            this.orderPartsButton.TextOffset = new System.Drawing.Point(12, 0);
-            this.orderPartsButton.Click += new System.EventHandler(this.orderPartsButton_Click);
+            this.OrderPartsButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.OrderPartsButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.OrderPartsButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.OrderPartsButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.OrderPartsButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.OrderPartsButton.FillColor = System.Drawing.Color.Transparent;
+            this.OrderPartsButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.OrderPartsButton.ForeColor = System.Drawing.Color.White;
+            this.OrderPartsButton.Image = ((System.Drawing.Image)(resources.GetObject("OrderPartsButton.Image")));
+            this.OrderPartsButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.OrderPartsButton.ImageOffset = new System.Drawing.Point(11, 0);
+            this.OrderPartsButton.ImageSize = new System.Drawing.Size(32, 32);
+            this.OrderPartsButton.Location = new System.Drawing.Point(0, 0);
+            this.OrderPartsButton.Name = "OrderPartsButton";
+            this.OrderPartsButton.Size = new System.Drawing.Size(171, 39);
+            this.OrderPartsButton.TabIndex = 0;
+            this.OrderPartsButton.Text = "Запчасти ";
+            this.OrderPartsButton.TextOffset = new System.Drawing.Point(12, 0);
+            this.OrderPartsButton.Click += new System.EventHandler(this.OrderPartsButton_Click);
             // 
             // panel13
             // 
-            this.panel13.Controls.Add(this.reportButton);
+            this.panel13.Controls.Add(this.ReportButton);
             this.panel13.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel13.Location = new System.Drawing.Point(0, 373);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(171, 39);
             this.panel13.TabIndex = 8;
             // 
-            // reportButton
+            // ReportButton
             // 
-            this.reportButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.reportButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.reportButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.reportButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.reportButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.reportButton.FillColor = System.Drawing.Color.Transparent;
-            this.reportButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.reportButton.ForeColor = System.Drawing.Color.White;
-            this.reportButton.Image = ((System.Drawing.Image)(resources.GetObject("reportButton.Image")));
-            this.reportButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.reportButton.ImageOffset = new System.Drawing.Point(10, 0);
-            this.reportButton.ImageSize = new System.Drawing.Size(32, 32);
-            this.reportButton.Location = new System.Drawing.Point(0, 0);
-            this.reportButton.Name = "reportButton";
-            this.reportButton.Size = new System.Drawing.Size(171, 39);
-            this.reportButton.TabIndex = 0;
-            this.reportButton.Text = "Отчет";
-            this.reportButton.TextOffset = new System.Drawing.Point(-2, 0);
-            this.reportButton.Click += new System.EventHandler(this.reportButton_Click);
+            this.ReportButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.ReportButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.ReportButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.ReportButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.ReportButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ReportButton.FillColor = System.Drawing.Color.Transparent;
+            this.ReportButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ReportButton.ForeColor = System.Drawing.Color.White;
+            this.ReportButton.Image = ((System.Drawing.Image)(resources.GetObject("ReportButton.Image")));
+            this.ReportButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.ReportButton.ImageOffset = new System.Drawing.Point(10, 0);
+            this.ReportButton.ImageSize = new System.Drawing.Size(32, 32);
+            this.ReportButton.Location = new System.Drawing.Point(0, 0);
+            this.ReportButton.Name = "ReportButton";
+            this.ReportButton.Size = new System.Drawing.Size(171, 39);
+            this.ReportButton.TabIndex = 0;
+            this.ReportButton.Text = "Отчет";
+            this.ReportButton.TextOffset = new System.Drawing.Point(-2, 0);
+            this.ReportButton.Click += new System.EventHandler(this.ReportButton_Click);
             // 
             // panel12
             // 
-            this.panel12.Controls.Add(this.serviceButton);
+            this.panel12.Controls.Add(this.ServiceButton);
             this.panel12.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel12.Location = new System.Drawing.Point(0, 334);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(171, 39);
             this.panel12.TabIndex = 7;
             // 
-            // serviceButton
+            // ServiceButton
             // 
-            this.serviceButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.serviceButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.serviceButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.serviceButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.serviceButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.serviceButton.FillColor = System.Drawing.Color.Transparent;
-            this.serviceButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.serviceButton.ForeColor = System.Drawing.Color.White;
-            this.serviceButton.Image = ((System.Drawing.Image)(resources.GetObject("serviceButton.Image")));
-            this.serviceButton.ImageOffset = new System.Drawing.Point(2, 0);
-            this.serviceButton.ImageSize = new System.Drawing.Size(32, 32);
-            this.serviceButton.Location = new System.Drawing.Point(0, 0);
-            this.serviceButton.Name = "serviceButton";
-            this.serviceButton.Size = new System.Drawing.Size(171, 39);
-            this.serviceButton.TabIndex = 0;
-            this.serviceButton.Text = "Обслуживание";
-            this.serviceButton.TextOffset = new System.Drawing.Point(4, 0);
-            this.serviceButton.Click += new System.EventHandler(this.serviceButton_Click);
+            this.ServiceButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.ServiceButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.ServiceButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.ServiceButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.ServiceButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ServiceButton.FillColor = System.Drawing.Color.Transparent;
+            this.ServiceButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ServiceButton.ForeColor = System.Drawing.Color.White;
+            this.ServiceButton.Image = ((System.Drawing.Image)(resources.GetObject("ServiceButton.Image")));
+            this.ServiceButton.ImageOffset = new System.Drawing.Point(2, 0);
+            this.ServiceButton.ImageSize = new System.Drawing.Size(32, 32);
+            this.ServiceButton.Location = new System.Drawing.Point(0, 0);
+            this.ServiceButton.Name = "ServiceButton";
+            this.ServiceButton.Size = new System.Drawing.Size(171, 39);
+            this.ServiceButton.TabIndex = 0;
+            this.ServiceButton.Text = "Обслуживание";
+            this.ServiceButton.TextOffset = new System.Drawing.Point(4, 0);
+            this.ServiceButton.Click += new System.EventHandler(this.ServiceButton_Click);
             // 
             // panel11
             // 
-            this.panel11.Controls.Add(this.moneyButton);
+            this.panel11.Controls.Add(this.MoneyButton);
             this.panel11.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel11.Location = new System.Drawing.Point(0, 295);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(171, 39);
             this.panel11.TabIndex = 6;
             // 
-            // moneyButton
+            // MoneyButton
             // 
-            this.moneyButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.moneyButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.moneyButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.moneyButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.moneyButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.moneyButton.FillColor = System.Drawing.Color.Transparent;
-            this.moneyButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.moneyButton.ForeColor = System.Drawing.Color.White;
-            this.moneyButton.Image = ((System.Drawing.Image)(resources.GetObject("moneyButton.Image")));
-            this.moneyButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.moneyButton.ImageOffset = new System.Drawing.Point(12, 0);
-            this.moneyButton.ImageSize = new System.Drawing.Size(32, 32);
-            this.moneyButton.Location = new System.Drawing.Point(0, 0);
-            this.moneyButton.Name = "moneyButton";
-            this.moneyButton.Size = new System.Drawing.Size(171, 39);
-            this.moneyButton.TabIndex = 0;
-            this.moneyButton.Text = "Финансы";
-            this.moneyButton.TextOffset = new System.Drawing.Point(7, 0);
-            this.moneyButton.Click += new System.EventHandler(this.moneyButton_Click);
+            this.MoneyButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.MoneyButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.MoneyButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.MoneyButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.MoneyButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MoneyButton.FillColor = System.Drawing.Color.Transparent;
+            this.MoneyButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.MoneyButton.ForeColor = System.Drawing.Color.White;
+            this.MoneyButton.Image = ((System.Drawing.Image)(resources.GetObject("MoneyButton.Image")));
+            this.MoneyButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.MoneyButton.ImageOffset = new System.Drawing.Point(12, 0);
+            this.MoneyButton.ImageSize = new System.Drawing.Size(32, 32);
+            this.MoneyButton.Location = new System.Drawing.Point(0, 0);
+            this.MoneyButton.Name = "MoneyButton";
+            this.MoneyButton.Size = new System.Drawing.Size(171, 39);
+            this.MoneyButton.TabIndex = 0;
+            this.MoneyButton.Text = "Финансы";
+            this.MoneyButton.TextOffset = new System.Drawing.Point(7, 0);
+            this.MoneyButton.Click += new System.EventHandler(this.MoneyButton_Click);
             // 
             // panel10
             // 
-            this.panel10.Controls.Add(this.inventoryButton);
+            this.panel10.Controls.Add(this.InventoryButton);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel10.Location = new System.Drawing.Point(0, 255);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(171, 40);
             this.panel10.TabIndex = 5;
             // 
-            // inventoryButton
+            // InventoryButton
             // 
-            this.inventoryButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.inventoryButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.inventoryButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.inventoryButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.inventoryButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.inventoryButton.FillColor = System.Drawing.Color.Transparent;
-            this.inventoryButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.inventoryButton.ForeColor = System.Drawing.Color.White;
-            this.inventoryButton.Image = ((System.Drawing.Image)(resources.GetObject("inventoryButton.Image")));
-            this.inventoryButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.inventoryButton.ImageOffset = new System.Drawing.Point(9, 0);
-            this.inventoryButton.ImageSize = new System.Drawing.Size(32, 32);
-            this.inventoryButton.Location = new System.Drawing.Point(0, 0);
-            this.inventoryButton.Name = "inventoryButton";
-            this.inventoryButton.Size = new System.Drawing.Size(171, 40);
-            this.inventoryButton.TabIndex = 0;
-            this.inventoryButton.Text = "Инвентарь";
-            this.inventoryButton.TextOffset = new System.Drawing.Point(12, 0);
-            this.inventoryButton.Click += new System.EventHandler(this.inventoryButton_Click);
+            this.InventoryButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.InventoryButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.InventoryButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.InventoryButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.InventoryButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.InventoryButton.FillColor = System.Drawing.Color.Transparent;
+            this.InventoryButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.InventoryButton.ForeColor = System.Drawing.Color.White;
+            this.InventoryButton.Image = ((System.Drawing.Image)(resources.GetObject("InventoryButton.Image")));
+            this.InventoryButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.InventoryButton.ImageOffset = new System.Drawing.Point(9, 0);
+            this.InventoryButton.ImageSize = new System.Drawing.Size(32, 32);
+            this.InventoryButton.Location = new System.Drawing.Point(0, 0);
+            this.InventoryButton.Name = "InventoryButton";
+            this.InventoryButton.Size = new System.Drawing.Size(171, 40);
+            this.InventoryButton.TabIndex = 0;
+            this.InventoryButton.Text = "Инвентарь";
+            this.InventoryButton.TextOffset = new System.Drawing.Point(12, 0);
+            this.InventoryButton.Click += new System.EventHandler(this.InventoryButton_Click);
             // 
             // panel9
             // 
-            this.panel9.Controls.Add(this.staffButton);
+            this.panel9.Controls.Add(this.StaffButton);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.panel9.Location = new System.Drawing.Point(0, 218);
@@ -248,119 +248,119 @@
             this.panel9.Size = new System.Drawing.Size(171, 37);
             this.panel9.TabIndex = 4;
             // 
-            // staffButton
+            // StaffButton
             // 
-            this.staffButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.staffButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.staffButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.staffButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.staffButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.staffButton.FillColor = System.Drawing.Color.Transparent;
-            this.staffButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.staffButton.ForeColor = System.Drawing.Color.White;
-            this.staffButton.Image = ((System.Drawing.Image)(resources.GetObject("staffButton.Image")));
-            this.staffButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.staffButton.ImageOffset = new System.Drawing.Point(7, 0);
-            this.staffButton.ImageSize = new System.Drawing.Size(32, 32);
-            this.staffButton.Location = new System.Drawing.Point(0, 0);
-            this.staffButton.Name = "staffButton";
-            this.staffButton.Size = new System.Drawing.Size(171, 37);
-            this.staffButton.TabIndex = 0;
-            this.staffButton.Text = "Сотрудники";
-            this.staffButton.TextOffset = new System.Drawing.Point(15, 0);
-            this.staffButton.Click += new System.EventHandler(this.staffButton_Click);
+            this.StaffButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.StaffButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.StaffButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.StaffButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.StaffButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.StaffButton.FillColor = System.Drawing.Color.Transparent;
+            this.StaffButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StaffButton.ForeColor = System.Drawing.Color.White;
+            this.StaffButton.Image = ((System.Drawing.Image)(resources.GetObject("StaffButton.Image")));
+            this.StaffButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.StaffButton.ImageOffset = new System.Drawing.Point(7, 0);
+            this.StaffButton.ImageSize = new System.Drawing.Size(32, 32);
+            this.StaffButton.Location = new System.Drawing.Point(0, 0);
+            this.StaffButton.Name = "StaffButton";
+            this.StaffButton.Size = new System.Drawing.Size(171, 37);
+            this.StaffButton.TabIndex = 0;
+            this.StaffButton.Text = "Сотрудники";
+            this.StaffButton.TextOffset = new System.Drawing.Point(15, 0);
+            this.StaffButton.Click += new System.EventHandler(this.StaffButton_Click);
             // 
             // panel8
             // 
-            this.panel8.Controls.Add(this.orderButton);
+            this.panel8.Controls.Add(this.OrderButton);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel8.Location = new System.Drawing.Point(0, 179);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(171, 39);
             this.panel8.TabIndex = 3;
             // 
-            // orderButton
+            // OrderButton
             // 
-            this.orderButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.orderButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.orderButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.orderButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.orderButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.orderButton.FillColor = System.Drawing.Color.Transparent;
-            this.orderButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.orderButton.ForeColor = System.Drawing.Color.White;
-            this.orderButton.Image = ((System.Drawing.Image)(resources.GetObject("orderButton.Image")));
-            this.orderButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.orderButton.ImageOffset = new System.Drawing.Point(2, 0);
-            this.orderButton.ImageSize = new System.Drawing.Size(40, 40);
-            this.orderButton.Location = new System.Drawing.Point(0, 0);
-            this.orderButton.Name = "orderButton";
-            this.orderButton.Size = new System.Drawing.Size(171, 39);
-            this.orderButton.TabIndex = 0;
-            this.orderButton.Text = "Заказы";
-            this.orderButton.TextOffset = new System.Drawing.Point(-3, 0);
-            this.orderButton.Click += new System.EventHandler(this.orderButton_Click);
+            this.OrderButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.OrderButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.OrderButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.OrderButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.OrderButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.OrderButton.FillColor = System.Drawing.Color.Transparent;
+            this.OrderButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.OrderButton.ForeColor = System.Drawing.Color.White;
+            this.OrderButton.Image = ((System.Drawing.Image)(resources.GetObject("OrderButton.Image")));
+            this.OrderButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.OrderButton.ImageOffset = new System.Drawing.Point(2, 0);
+            this.OrderButton.ImageSize = new System.Drawing.Size(40, 40);
+            this.OrderButton.Location = new System.Drawing.Point(0, 0);
+            this.OrderButton.Name = "OrderButton";
+            this.OrderButton.Size = new System.Drawing.Size(171, 39);
+            this.OrderButton.TabIndex = 0;
+            this.OrderButton.Text = "Заказы";
+            this.OrderButton.TextOffset = new System.Drawing.Point(-3, 0);
+            this.OrderButton.Click += new System.EventHandler(this.OrderButton_Click);
             // 
             // panel7
             // 
-            this.panel7.Controls.Add(this.carButton);
+            this.panel7.Controls.Add(this.CarButton);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel7.Location = new System.Drawing.Point(0, 140);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(171, 39);
             this.panel7.TabIndex = 2;
             // 
-            // carButton
+            // CarButton
             // 
-            this.carButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.carButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.carButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.carButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.carButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.carButton.FillColor = System.Drawing.Color.Transparent;
-            this.carButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.carButton.ForeColor = System.Drawing.Color.White;
-            this.carButton.Image = ((System.Drawing.Image)(resources.GetObject("carButton.Image")));
-            this.carButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.carButton.ImageOffset = new System.Drawing.Point(5, 0);
-            this.carButton.ImageSize = new System.Drawing.Size(32, 32);
-            this.carButton.Location = new System.Drawing.Point(0, 0);
-            this.carButton.Name = "carButton";
-            this.carButton.Size = new System.Drawing.Size(171, 39);
-            this.carButton.TabIndex = 0;
-            this.carButton.Text = "Автомобили";
-            this.carButton.TextOffset = new System.Drawing.Point(15, 0);
-            this.carButton.Click += new System.EventHandler(this.carButton_Click);
+            this.CarButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.CarButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.CarButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.CarButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.CarButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CarButton.FillColor = System.Drawing.Color.Transparent;
+            this.CarButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CarButton.ForeColor = System.Drawing.Color.White;
+            this.CarButton.Image = ((System.Drawing.Image)(resources.GetObject("CarButton.Image")));
+            this.CarButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.CarButton.ImageOffset = new System.Drawing.Point(5, 0);
+            this.CarButton.ImageSize = new System.Drawing.Size(32, 32);
+            this.CarButton.Location = new System.Drawing.Point(0, 0);
+            this.CarButton.Name = "CarButton";
+            this.CarButton.Size = new System.Drawing.Size(171, 39);
+            this.CarButton.TabIndex = 0;
+            this.CarButton.Text = "Автомобили";
+            this.CarButton.TextOffset = new System.Drawing.Point(15, 0);
+            this.CarButton.Click += new System.EventHandler(this.CarButton_Click);
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.clientButton);
+            this.panel6.Controls.Add(this.ClientButton);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(0, 101);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(171, 39);
             this.panel6.TabIndex = 1;
             // 
-            // clientButton
+            // ClientButton
             // 
-            this.clientButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.clientButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.clientButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.clientButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.clientButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.clientButton.FillColor = System.Drawing.Color.Transparent;
-            this.clientButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.clientButton.ForeColor = System.Drawing.Color.White;
-            this.clientButton.Image = ((System.Drawing.Image)(resources.GetObject("clientButton.Image")));
-            this.clientButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.clientButton.ImageSize = new System.Drawing.Size(40, 40);
-            this.clientButton.Location = new System.Drawing.Point(0, 0);
-            this.clientButton.Name = "clientButton";
-            this.clientButton.Size = new System.Drawing.Size(171, 39);
-            this.clientButton.TabIndex = 0;
-            this.clientButton.Text = "Клиенты";
-            this.clientButton.TextOffset = new System.Drawing.Point(5, 0);
-            this.clientButton.Click += new System.EventHandler(this.clientButton_Click);
+            this.ClientButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.ClientButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.ClientButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.ClientButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.ClientButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ClientButton.FillColor = System.Drawing.Color.Transparent;
+            this.ClientButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ClientButton.ForeColor = System.Drawing.Color.White;
+            this.ClientButton.Image = ((System.Drawing.Image)(resources.GetObject("ClientButton.Image")));
+            this.ClientButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.ClientButton.ImageSize = new System.Drawing.Size(40, 40);
+            this.ClientButton.Location = new System.Drawing.Point(0, 0);
+            this.ClientButton.Name = "ClientButton";
+            this.ClientButton.Size = new System.Drawing.Size(171, 39);
+            this.ClientButton.TabIndex = 0;
+            this.ClientButton.Text = "Клиенты";
+            this.ClientButton.TextOffset = new System.Drawing.Point(5, 0);
+            this.ClientButton.Click += new System.EventHandler(this.ClientButton_Click);
             // 
             // panel3
             // 
@@ -429,23 +429,23 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel14;
-        private Guna.UI2.WinForms.Guna2Button orderPartsButton;
+        private Guna.UI2.WinForms.Guna2Button OrderPartsButton;
         private System.Windows.Forms.Panel panel13;
-        private Guna.UI2.WinForms.Guna2Button reportButton;
+        private Guna.UI2.WinForms.Guna2Button ReportButton;
         private System.Windows.Forms.Panel panel12;
-        private Guna.UI2.WinForms.Guna2Button serviceButton;
+        private Guna.UI2.WinForms.Guna2Button ServiceButton;
         private System.Windows.Forms.Panel panel11;
-        private Guna.UI2.WinForms.Guna2Button moneyButton;
+        private Guna.UI2.WinForms.Guna2Button MoneyButton;
         private System.Windows.Forms.Panel panel10;
-        private Guna.UI2.WinForms.Guna2Button inventoryButton;
+        private Guna.UI2.WinForms.Guna2Button InventoryButton;
         private System.Windows.Forms.Panel panel9;
-        private Guna.UI2.WinForms.Guna2Button staffButton;
+        private Guna.UI2.WinForms.Guna2Button StaffButton;
         private System.Windows.Forms.Panel panel8;
-        private Guna.UI2.WinForms.Guna2Button orderButton;
+        private Guna.UI2.WinForms.Guna2Button OrderButton;
         private System.Windows.Forms.Panel panel7;
-        private Guna.UI2.WinForms.Guna2Button carButton;
+        private Guna.UI2.WinForms.Guna2Button CarButton;
         private System.Windows.Forms.Panel panel6;
-        private Guna.UI2.WinForms.Guna2Button clientButton;
+        private Guna.UI2.WinForms.Guna2Button ClientButton;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel4;

@@ -4,13 +4,7 @@ using AutoService.Interface;
 using AutoService.RepositoryImpl;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SQLite;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AutoService.UpdateForms
@@ -28,15 +22,15 @@ namespace AutoService.UpdateForms
 
         public Finances InitializationEmployees()
         {
-            DateTime dateTransaction = Convert.ToDateTime(transactionDate.Text);
+            DateTime dateTransaction = Convert.ToDateTime(TransactionDate.Text);
 
             Finances finances = new Finances
             {
-                Id = Convert.ToInt32(transaction.SelectedValue),
+                Id = Convert.ToInt32(Transaction.SelectedValue),
                 TransactionDate = dateTransaction,
-                TransactionType = transactionType.SelectedValue.ToString(),
-                Amount = float.Parse(amount.Text),
-                Description = description.Text,
+                TransactionType = TransactionType.SelectedValue.ToString(),
+                Amount = float.Parse(Amount.Text),
+                Description = Description.Text,
             };
             return finances;
         }
@@ -46,10 +40,11 @@ namespace AutoService.UpdateForms
             LoadElemntsToCombobox();
         }
 
-        private void transaction_SelectedValueChanged(object sender, EventArgs e)
+        private void Transaction_SelectedValueChanged(object sender, EventArgs e)
         {
             DbConnect.Connect();
-            string query = $"SELECT * FROM Finances WHERE transaction_id = {Convert.ToInt32(transaction.Text)}";
+            string query = $"SELECT * FROM Finances " +
+                $"WHERE transaction_id = {Convert.ToInt32(Transaction.Text)}";
             SQLiteCommand command = new SQLiteCommand(query, DbConnect.connection);
             using (SQLiteDataReader reader = command.ExecuteReader())
             {
@@ -62,10 +57,10 @@ namespace AutoService.UpdateForms
                         float amounts = Convert.ToSingle(reader["amount"]);
                         string descriptions = reader["description"].ToString();
 
-                        transactionDate.Text = transactionDates;
-                        transactionType.Text = transactionTypes;
-                        amount.Text = amounts.ToString();
-                        description.Text = descriptions;
+                        TransactionDate.Text = transactionDates;
+                        TransactionType.Text = transactionTypes;
+                        Amount.Text = amounts.ToString();
+                        Description.Text = descriptions;
                     }
 
                 }
@@ -73,7 +68,7 @@ namespace AutoService.UpdateForms
             DbConnect.Disconnect();
         }
 
-        private void reload_Click(object sender, EventArgs e)
+        private void Reload_Click(object sender, EventArgs e)
         {
             financesImpl.Update(InitializationEmployees());
         }
@@ -90,7 +85,7 @@ namespace AutoService.UpdateForms
                     int transactionId = reader.GetInt32(0);
                     financesIdList.Add(transactionId);
                 }
-                transaction.DataSource = financesIdList;
+                Transaction.DataSource = financesIdList;
             }
             DbConnect.Disconnect();
         }

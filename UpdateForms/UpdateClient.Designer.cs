@@ -34,15 +34,15 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.notes = new System.Windows.Forms.TextBox();
+            this.Notes = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.address = new System.Windows.Forms.TextBox();
-            this.client = new System.Windows.Forms.ComboBox();
+            this.Address = new System.Windows.Forms.TextBox();
+            this.Client = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.email = new System.Windows.Forms.TextBox();
-            this.phoneNumber = new System.Windows.Forms.TextBox();
-            this.fullName = new System.Windows.Forms.TextBox();
-            this.reload = new System.Windows.Forms.Button();
+            this.Email = new System.Windows.Forms.TextBox();
+            this.PhoneNumber = new System.Windows.Forms.TextBox();
+            this.FullName = new System.Windows.Forms.TextBox();
+            this.Reload = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,14 +54,14 @@
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.notes);
+            this.panel1.Controls.Add(this.Notes);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.address);
-            this.panel1.Controls.Add(this.client);
+            this.panel1.Controls.Add(this.Address);
+            this.panel1.Controls.Add(this.Client);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.email);
-            this.panel1.Controls.Add(this.phoneNumber);
-            this.panel1.Controls.Add(this.fullName);
+            this.panel1.Controls.Add(this.Email);
+            this.panel1.Controls.Add(this.PhoneNumber);
+            this.panel1.Controls.Add(this.FullName);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -118,13 +118,13 @@
             this.label3.TabIndex = 26;
             this.label3.Text = "ФИО";
             // 
-            // notes
+            // Notes
             // 
-            this.notes.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.notes.Location = new System.Drawing.Point(12, 164);
-            this.notes.Name = "notes";
-            this.notes.Size = new System.Drawing.Size(166, 29);
-            this.notes.TabIndex = 17;
+            this.Notes.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Notes.Location = new System.Drawing.Point(12, 164);
+            this.Notes.Name = "Notes";
+            this.Notes.Size = new System.Drawing.Size(166, 29);
+            this.Notes.TabIndex = 17;
             // 
             // label2
             // 
@@ -136,23 +136,23 @@
             this.label2.TabIndex = 25;
             this.label2.Text = "Айди клиента для обновления";
             // 
-            // address
+            // Address
             // 
-            this.address.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.address.Location = new System.Drawing.Point(206, 164);
-            this.address.Name = "address";
-            this.address.Size = new System.Drawing.Size(166, 29);
-            this.address.TabIndex = 16;
+            this.Address.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Address.Location = new System.Drawing.Point(206, 164);
+            this.Address.Name = "Address";
+            this.Address.Size = new System.Drawing.Size(166, 29);
+            this.Address.TabIndex = 16;
             // 
-            // client
+            // Client
             // 
-            this.client.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.client.FormattingEnabled = true;
-            this.client.Location = new System.Drawing.Point(12, 64);
-            this.client.Name = "client";
-            this.client.Size = new System.Drawing.Size(166, 29);
-            this.client.TabIndex = 23;
-            this.client.SelectedValueChanged += new System.EventHandler(this.client_SelectedValueChanged);
+            this.Client.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Client.FormattingEnabled = true;
+            this.Client.Location = new System.Drawing.Point(12, 64);
+            this.Client.Name = "Client";
+            this.Client.Size = new System.Drawing.Size(166, 29);
+            this.Client.TabIndex = 23;
+            this.Client.SelectedValueChanged += new System.EventHandler(this.Client_SelectedValueChanged);
             // 
             // label1
             // 
@@ -164,51 +164,51 @@
             this.label1.TabIndex = 24;
             this.label1.Text = "Обновление Клиента";
             // 
-            // email
+            // Email
             // 
-            this.email.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.email.Location = new System.Drawing.Point(12, 114);
-            this.email.Name = "email";
-            this.email.Size = new System.Drawing.Size(166, 29);
-            this.email.TabIndex = 15;
+            this.Email.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Email.Location = new System.Drawing.Point(12, 114);
+            this.Email.Name = "Email";
+            this.Email.Size = new System.Drawing.Size(166, 29);
+            this.Email.TabIndex = 15;
             // 
-            // phoneNumber
+            // PhoneNumber
             // 
-            this.phoneNumber.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.phoneNumber.Location = new System.Drawing.Point(206, 114);
-            this.phoneNumber.Name = "phoneNumber";
-            this.phoneNumber.Size = new System.Drawing.Size(166, 29);
-            this.phoneNumber.TabIndex = 14;
+            this.PhoneNumber.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.PhoneNumber.Location = new System.Drawing.Point(206, 114);
+            this.PhoneNumber.Name = "PhoneNumber";
+            this.PhoneNumber.Size = new System.Drawing.Size(166, 29);
+            this.PhoneNumber.TabIndex = 14;
             // 
-            // fullName
+            // FullName
             // 
-            this.fullName.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.fullName.Location = new System.Drawing.Point(206, 64);
-            this.fullName.Name = "fullName";
-            this.fullName.Size = new System.Drawing.Size(166, 29);
-            this.fullName.TabIndex = 6;
+            this.FullName.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.FullName.Location = new System.Drawing.Point(206, 64);
+            this.FullName.Name = "FullName";
+            this.FullName.Size = new System.Drawing.Size(166, 29);
+            this.FullName.TabIndex = 6;
             // 
-            // reload
+            // Reload
             // 
-            this.reload.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.reload.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.reload.FlatAppearance.BorderSize = 0;
-            this.reload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.reload.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.reload.Location = new System.Drawing.Point(0, 378);
-            this.reload.Name = "reload";
-            this.reload.Size = new System.Drawing.Size(384, 33);
-            this.reload.TabIndex = 31;
-            this.reload.Text = "Обновить";
-            this.reload.UseVisualStyleBackColor = false;
-            this.reload.Click += new System.EventHandler(this.reload_Click);
+            this.Reload.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.Reload.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.Reload.FlatAppearance.BorderSize = 0;
+            this.Reload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Reload.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Reload.Location = new System.Drawing.Point(0, 378);
+            this.Reload.Name = "Reload";
+            this.Reload.Size = new System.Drawing.Size(384, 33);
+            this.Reload.TabIndex = 31;
+            this.Reload.Text = "Обновить";
+            this.Reload.UseVisualStyleBackColor = false;
+            this.Reload.Click += new System.EventHandler(this.Reload_Click);
             // 
             // UpdateClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 411);
-            this.Controls.Add(this.reload);
+            this.Controls.Add(this.Reload);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
@@ -229,14 +229,14 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox notes;
+        private System.Windows.Forms.TextBox Notes;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox address;
-        private System.Windows.Forms.ComboBox client;
+        private System.Windows.Forms.TextBox Address;
+        private System.Windows.Forms.ComboBox Client;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox email;
-        private System.Windows.Forms.TextBox phoneNumber;
-        private System.Windows.Forms.TextBox fullName;
-        private System.Windows.Forms.Button reload;
+        private System.Windows.Forms.TextBox Email;
+        private System.Windows.Forms.TextBox PhoneNumber;
+        private System.Windows.Forms.TextBox FullName;
+        private System.Windows.Forms.Button Reload;
     }
 }

@@ -1,16 +1,7 @@
 ﻿using AutoService.Classes;
 using AutoService.Entity;
-using AutoService.MainForms;
 using AutoService.RepositoryImpl;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AutoService.AddForms
@@ -25,41 +16,41 @@ namespace AutoService.AddForms
 
         public Finances InitializationEmployees()
         {
-            DateTime dateTransaction = Convert.ToDateTime(transactionDate.Text);
+            DateTime dateTransaction = Convert.ToDateTime(TransactionDate.Text);
 
             Finances finances = new Finances
             {
                 TransactionDate = dateTransaction,
-                TransactionType = transactionType.Text,
-                Amount = float.Parse(amount.Text),
-                Description = description.Text,
+                TransactionType = TransactionType.Text,
+                Amount = float.Parse(Amount.Text),
+                Description = Description.Text,
             };
             return finances;
         }
 
-        private void save_Click(object sender, EventArgs e)
+        private void Save_Click(object sender, EventArgs e)
         {
             financesImpl.Add(InitializationEmployees());
         }
 
-        private void transactionDate_DoubleClick(object sender, EventArgs e)
+        private void TransactionDate_DoubleClick(object sender, EventArgs e)
         {
-            TextHelper.ClearText(transactionDate);
+            TextHelper.ClearText(TransactionDate);
         }
 
-        private void transactionType_DoubleClick(object sender, EventArgs e)
+        private void TransactionType_DoubleClick(object sender, EventArgs e)
         {
-            TextHelper.ClearText(transactionType);
+            TextHelper.ClearText(TransactionType);
         }
 
-        private void amount_DoubleClick(object sender, EventArgs e)
+        private void Amount_DoubleClick(object sender, EventArgs e)
         {
-            TextHelper.ClearText(amount);
+            TextHelper.ClearText(Amount);
         }
 
-        private void description_DoubleClick(object sender, EventArgs e)
+        private void Description_DoubleClick(object sender, EventArgs e)
         {
-            TextHelper.ClearText(description);
+            TextHelper.ClearText(Description);
         }
     }
 }

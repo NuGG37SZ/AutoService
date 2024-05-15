@@ -29,22 +29,22 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.description = new System.Windows.Forms.TextBox();
-            this.transactionDate = new System.Windows.Forms.TextBox();
+            this.TransactionType = new System.Windows.Forms.ComboBox();
+            this.Description = new System.Windows.Forms.TextBox();
+            this.Amount = new System.Windows.Forms.TextBox();
+            this.TransactionDate = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.save = new System.Windows.Forms.Button();
-            this.amount = new System.Windows.Forms.TextBox();
-            this.transactionType = new System.Windows.Forms.ComboBox();
+            this.Save = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel1.Controls.Add(this.transactionType);
-            this.panel1.Controls.Add(this.description);
-            this.panel1.Controls.Add(this.amount);
-            this.panel1.Controls.Add(this.transactionDate);
+            this.panel1.Controls.Add(this.TransactionType);
+            this.panel1.Controls.Add(this.Description);
+            this.panel1.Controls.Add(this.Amount);
+            this.panel1.Controls.Add(this.TransactionDate);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -52,25 +52,48 @@
             this.panel1.Size = new System.Drawing.Size(384, 381);
             this.panel1.TabIndex = 22;
             // 
-            // description
+            // TransactionType
             // 
-            this.description.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.description.Location = new System.Drawing.Point(103, 154);
-            this.description.Name = "description";
-            this.description.Size = new System.Drawing.Size(198, 29);
-            this.description.TabIndex = 20;
-            this.description.Text = "Описание";
-            this.description.DoubleClick += new System.EventHandler(this.description_DoubleClick);
+            this.TransactionType.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TransactionType.FormattingEnabled = true;
+            this.TransactionType.Items.AddRange(new object[] {
+            "Income",
+            "Expense"});
+            this.TransactionType.Location = new System.Drawing.Point(103, 84);
+            this.TransactionType.Name = "TransactionType";
+            this.TransactionType.Size = new System.Drawing.Size(198, 29);
+            this.TransactionType.TabIndex = 34;
+            this.TransactionType.Text = "Тип транкзации";
             // 
-            // transactionDate
+            // Description
             // 
-            this.transactionDate.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.transactionDate.Location = new System.Drawing.Point(103, 49);
-            this.transactionDate.Name = "transactionDate";
-            this.transactionDate.Size = new System.Drawing.Size(198, 29);
-            this.transactionDate.TabIndex = 16;
-            this.transactionDate.Text = "Дата операции";
-            this.transactionDate.DoubleClick += new System.EventHandler(this.transactionDate_DoubleClick);
+            this.Description.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Description.Location = new System.Drawing.Point(103, 154);
+            this.Description.Name = "Description";
+            this.Description.Size = new System.Drawing.Size(198, 29);
+            this.Description.TabIndex = 20;
+            this.Description.Text = "Описание";
+            this.Description.DoubleClick += new System.EventHandler(this.Description_DoubleClick);
+            // 
+            // Amount
+            // 
+            this.Amount.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Amount.Location = new System.Drawing.Point(103, 119);
+            this.Amount.Name = "Amount";
+            this.Amount.Size = new System.Drawing.Size(198, 29);
+            this.Amount.TabIndex = 19;
+            this.Amount.Text = "Сумма";
+            this.Amount.DoubleClick += new System.EventHandler(this.Amount_DoubleClick);
+            // 
+            // TransactionDate
+            // 
+            this.TransactionDate.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TransactionDate.Location = new System.Drawing.Point(103, 49);
+            this.TransactionDate.Name = "TransactionDate";
+            this.TransactionDate.Size = new System.Drawing.Size(198, 29);
+            this.TransactionDate.TabIndex = 16;
+            this.TransactionDate.Text = "Дата операции";
+            this.TransactionDate.DoubleClick += new System.EventHandler(this.TransactionDate_DoubleClick);
             // 
             // label2
             // 
@@ -82,50 +105,27 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Добавление Операции";
             // 
-            // save
+            // Save
             // 
-            this.save.BackColor = System.Drawing.Color.LimeGreen;
-            this.save.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.save.FlatAppearance.BorderSize = 0;
-            this.save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.save.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.save.Location = new System.Drawing.Point(0, 378);
-            this.save.Name = "save";
-            this.save.Size = new System.Drawing.Size(384, 33);
-            this.save.TabIndex = 24;
-            this.save.Text = "Сохранить";
-            this.save.UseVisualStyleBackColor = false;
-            this.save.Click += new System.EventHandler(this.save_Click);
-            // 
-            // amount
-            // 
-            this.amount.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.amount.Location = new System.Drawing.Point(103, 119);
-            this.amount.Name = "amount";
-            this.amount.Size = new System.Drawing.Size(198, 29);
-            this.amount.TabIndex = 19;
-            this.amount.Text = "Сумма";
-            this.amount.DoubleClick += new System.EventHandler(this.amount_DoubleClick);
-            // 
-            // transactionType
-            // 
-            this.transactionType.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.transactionType.FormattingEnabled = true;
-            this.transactionType.Items.AddRange(new object[] {
-            "Income",
-            "Expense"});
-            this.transactionType.Location = new System.Drawing.Point(103, 84);
-            this.transactionType.Name = "transactionType";
-            this.transactionType.Size = new System.Drawing.Size(198, 29);
-            this.transactionType.TabIndex = 34;
-            this.transactionType.Text = "Тип транкзации";
+            this.Save.BackColor = System.Drawing.Color.LimeGreen;
+            this.Save.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.Save.FlatAppearance.BorderSize = 0;
+            this.Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Save.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Save.Location = new System.Drawing.Point(0, 378);
+            this.Save.Name = "Save";
+            this.Save.Size = new System.Drawing.Size(384, 33);
+            this.Save.TabIndex = 24;
+            this.Save.Text = "Сохранить";
+            this.Save.UseVisualStyleBackColor = false;
+            this.Save.Click += new System.EventHandler(this.Save_Click);
             // 
             // AddFinances
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 411);
-            this.Controls.Add(this.save);
+            this.Controls.Add(this.Save);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
@@ -140,11 +140,11 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox description;
-        private System.Windows.Forms.TextBox transactionDate;
+        private System.Windows.Forms.TextBox Description;
+        private System.Windows.Forms.TextBox TransactionDate;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button save;
-        private System.Windows.Forms.ComboBox transactionType;
-        private System.Windows.Forms.TextBox amount;
+        private System.Windows.Forms.Button Save;
+        private System.Windows.Forms.ComboBox TransactionType;
+        private System.Windows.Forms.TextBox Amount;
     }
 }

@@ -4,13 +4,7 @@ using AutoService.Interface;
 using AutoService.RepositoryImpl;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SQLite;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AutoService.UpdateForms
@@ -33,25 +27,26 @@ namespace AutoService.UpdateForms
 
         public MaintenanceSchedule InitializationMaintenanceSchedules()
         {
-            DateTime lastServiceDates = Convert.ToDateTime(lastServiceDate.Text);
-            DateTime nextServiceDates = Convert.ToDateTime(nextServiceDate.Text);
+            DateTime lastServiceDates = Convert.ToDateTime(LastServiceDate.Text);
+            DateTime nextServiceDates = Convert.ToDateTime(NextServiceDate.Text);
 
             MaintenanceSchedule maintenanceSchedules = new MaintenanceSchedule
             {
-                Id = Convert.ToInt32(schedule.SelectedValue),
-                VehicleId = Convert.ToInt32(car.SelectedValue),
+                Id = Convert.ToInt32(Schedule.SelectedValue),
+                VehicleId = Convert.ToInt32(Car.SelectedValue),
                 LastServiceDate = lastServiceDates,
                 NextServiceDate = nextServiceDates,
-                ServiceType = serviceType.Text,
-                Notes = notes.Text,
+                ServiceType = ServiceType.Text,
+                Notes = Notes.Text,
             };
             return maintenanceSchedules;
         }
 
-        private void schedule_SelectedValueChanged(object sender, EventArgs e)
+        private void Schedule_SelectedValueChanged(object sender, EventArgs e)
         {
             DbConnect.Connect();
-            string query = $"SELECT * FROM MaintenanceSchedule WHERE schedule_id = {Convert.ToInt32(schedule.Text)}";
+            string query = $"SELECT * FROM MaintenanceSchedule " +
+                $"WHERE schedule_id = {Convert.ToInt32(Schedule.Text)}";
             SQLiteCommand command = new SQLiteCommand(query, DbConnect.connection);
             using (SQLiteDataReader reader = command.ExecuteReader())
             {
@@ -65,18 +60,18 @@ namespace AutoService.UpdateForms
                         string serviceTypes = reader["service_type"].ToString();
                         string notesStr = reader["notes"].ToString();
 
-                        car.SelectedValue = vehicleId;
-                        lastServiceDate.Text = lastServiceDates;
-                        nextServiceDate.Text = nextServiceDates;
-                        serviceType.Text = serviceTypes;
-                        notes.Text = notesStr;
+                        Car.SelectedValue = vehicleId;
+                        LastServiceDate.Text = lastServiceDates;
+                        NextServiceDate.Text = nextServiceDates;
+                        ServiceType.Text = serviceTypes;
+                        Notes.Text = notesStr;
                     }
                 }
             }
             DbConnect.Disconnect();
         }
 
-        private void reload_Click(object sender, EventArgs e)
+        private void Reload_Click(object sender, EventArgs e)
         {
             maintenanceScheduleImpl.Update(InitializationMaintenanceSchedules());
         }
@@ -94,9 +89,9 @@ namespace AutoService.UpdateForms
                     string vehicleVin = reader.GetString(1);
                     vehicleDictionary.Add(vehicleId, vehicleVin);
                 }
-                car.DataSource = new BindingSource(vehicleDictionary, null);
-                car.DisplayMember = "Value";
-                car.ValueMember = "Key";
+                Car.DataSource = new BindingSource(vehicleDictionary, null);
+                Car.DisplayMember = "Value";
+                Car.ValueMember = "Key";
             }
             DbConnect.Disconnect();
 
@@ -110,7 +105,7 @@ namespace AutoService.UpdateForms
                     string transactionType = reader.GetString(0);
                     serviceTypeList.Add(transactionType);
                 }
-                serviceType.DataSource = serviceTypeList;
+                ServiceType.DataSource = serviceTypeList;
             }
             DbConnect.Disconnect();
 
@@ -124,7 +119,7 @@ namespace AutoService.UpdateForms
                     int scheduleId = reader.GetInt32(0);
                     scheduleIdList.Add(scheduleId);
                 }
-                schedule.DataSource = scheduleIdList;
+                Schedule.DataSource = scheduleIdList;
             }
             DbConnect.Disconnect();
         }

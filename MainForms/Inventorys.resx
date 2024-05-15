@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="excelImport.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ExcelImport.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DwAACw8BkvkDpQAAAs9JREFUWEftll1IU2EYxwdepvv0nLOudFA3Bbq5OUudpqnMrzmsU5Q628qFYW1Z
+        DgAACw4BQL7hQQAAAs9JREFUWEftll1IU2EYxwdepvv0nLOudFA3Bbq5OUudpqnMrzmsU5Q628qFYW1Z
         pqXuy+mMMukiiDKUWRKni+gqujLQ7CoiKvEmIogiIggiylz8OxubzXl0O3i6ygf+t8/v9zzv+x6OaLM2
         K1llT7aNqYL2kGrSjvWy7W77nHbWi2TJm/Es5Dxxk9H2ySsVeDipCoSjmXE3RtsnLy4YV/gIaGe8dLR9
         8uKCceWfCWSPH8VaUQXbBBRg6DQq0OAnAyaGHKxjSH8tQ/qqGWqgHpSvDqSvFqSnhk01SFc1iH4jtg40
@@ -136,7 +136,7 @@
         r7QWE9H2m/Xfl0j0B8+4nX1AqyniAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="reloadValue.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ReloadValue.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
         4wAAAOMBD+bfpwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAANNSURBVFhH7ZfZ
@@ -157,7 +157,7 @@
         DVEojgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="deleteValue.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="DeleteValue.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         DAAACwwBP0AiyAAABFhJREFUaEPtmEtvG1UUxy2gLLpsYYEaSlKaNiRt/Ri/n4nt+G0nduPYTsU2X4Gq
@@ -182,7 +182,7 @@
         TkSuQmCC
 </value>
   </data>
-  <data name="addValue.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="AddValue.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         DAAACwwBP0AiyAAAAsZJREFUaEPtmbluFEEQhldcASFHxPESFhaOnCFLM6h7gpGRyXkFWySbecmNZa94
@@ -200,7 +200,7 @@
         PL3eH7Hg7J86oD9jAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="reloadGrid.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ReloadGrid.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
         JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAATrzAAE68wEXCzLMAAAAB3RJ

@@ -1,15 +1,10 @@
 ﻿using AutoService.Classes;
 using AutoService.Entity;
 using AutoService.Interface;
-using AutoService.MainForms;
-using Guna.UI2.WinForms.Suite;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SQLite;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AutoService.RepositoryImpl
@@ -46,7 +41,8 @@ namespace AutoService.RepositoryImpl
             DbConnect.Connect();
 
             string idStr = "";
-            string querySelect = $"SELECT description FROM Finances WHERE transaction_id = {id} ";
+            string querySelect = $"SELECT description FROM Finances " +
+                $"WHERE transaction_id = {id} ";
             SQLiteCommand commandSelect = new SQLiteCommand(querySelect, DbConnect.connection);
             using (SQLiteDataReader reader = commandSelect.ExecuteReader())
             {
@@ -86,7 +82,8 @@ namespace AutoService.RepositoryImpl
                 try
                 {
                     var command = DbConnect.connection.CreateCommand();
-                    command.CommandText = "DELETE FROM Finances WHERE transaction_id = @id";
+                    command.CommandText = "DELETE FROM Finances " +
+                        "WHERE transaction_id = @id";
                     command.Parameters.AddWithValue("@id", id);
                     int rowsAffected = command.ExecuteNonQuery();
 
@@ -96,7 +93,8 @@ namespace AutoService.RepositoryImpl
 
                         if (orderId.HasValue)
                         {
-                            string query = "DELETE FROM ServiceOrders WHERE order_id = @id";
+                            string query = "DELETE FROM ServiceOrders " +
+                                "WHERE order_id = @id";
                             SQLiteCommand commandDelete = new SQLiteCommand(query, DbConnect.connection);
                             commandDelete.Parameters.AddWithValue("@id", orderId.Value);
                             commandDelete.ExecuteNonQuery();
@@ -104,7 +102,8 @@ namespace AutoService.RepositoryImpl
 
                         if (inventoryId.HasValue)
                         {
-                            string query = "DELETE FROM Inventory WHERE inventory_id = @id";
+                            string query = "DELETE FROM Inventory " +
+                                "WHERE inventory_id = @id";
                             SQLiteCommand commandDelete = new SQLiteCommand(query, DbConnect.connection);
                             commandDelete.Parameters.AddWithValue("@id", inventoryId.Value);
                             commandDelete.ExecuteNonQuery();
@@ -152,7 +151,8 @@ namespace AutoService.RepositoryImpl
                 string idStr = getNumberFromString(entity.Description);
                 int orderId = int.Parse(idStr);
 
-                string updateQuery = $"UPDATE ServiceOrders SET estimated_cost = {entity.Amount} " +
+                string updateQuery = $"UPDATE ServiceOrders " +
+                                $"SET estimated_cost = {entity.Amount} " +
                                 $"WHERE order_id = {orderId}";
                 SQLiteCommand commandUpdate = new SQLiteCommand(updateQuery, DbConnect.connection);
                 commandUpdate.ExecuteNonQuery();
@@ -187,9 +187,9 @@ namespace AutoService.RepositoryImpl
             string query = "SELECT transaction_id AS ' ', transaction_date AS 'Дата транкзации', transaction_type AS 'Тип', " +
                 "amount AS 'Сумма', description AS 'Описание' " +
                 "FROM Finances " +
-            "WHERE transaction_type LIKE @search " +
-            "OR amount = @searchNumber OR amount LIKE @search " +
-            "OR description LIKE @search ";
+                "WHERE transaction_type LIKE @search " +
+                "OR amount = @searchNumber OR amount LIKE @search " +
+                "OR description LIKE @search ";
             SQLiteCommand command = new SQLiteCommand(query, DbConnect.connection);
             command.Parameters.AddWithValue("@search", search);
             command.Parameters.AddWithValue("@searchNumber", control.Text);

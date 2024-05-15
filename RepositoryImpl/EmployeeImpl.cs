@@ -1,13 +1,8 @@
 ﻿using AutoService.Classes;
 using AutoService.Entity;
 using AutoService.Interface;
-using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SQLite;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AutoService.RepositoryImpl
@@ -46,7 +41,8 @@ namespace AutoService.RepositoryImpl
             DbConnect.Connect();
 
             var command = DbConnect.connection.CreateCommand();
-            command.CommandText = "DELETE FROM Employees WHERE employee_id = @id";
+            command.CommandText = "DELETE FROM Employees " +
+                "WHERE employee_id = @id";
             command.Parameters.AddWithValue("@id", id);
             int rowsAffected = command.ExecuteNonQuery();
 
@@ -68,7 +64,8 @@ namespace AutoService.RepositoryImpl
 
             var command = DbConnect.connection.CreateCommand();
             command.CommandText = "UPDATE Employees SET full_name = @full_name, position = @position, phone_number = @phone_number, " +
-                "email = @email, schedule = @schedule, skills = @skills WHERE employee_id = @id";
+                "email = @email, schedule = @schedule, skills = @skills " +
+                "WHERE employee_id = @id";
             command.Parameters.AddWithValue("@full_name", entity.FullName);
             command.Parameters.AddWithValue("@position", entity.Position);
             command.Parameters.AddWithValue("@phone_number", entity.PhoneNumber);

@@ -1,18 +1,10 @@
 ﻿using AutoService.Classes;
 using AutoService.Entity;
 using AutoService.Interface;
-using AutoService.MainForms;
 using AutoService.RepositoryImpl;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SQLite;
-using System.Drawing;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AutoService.AddForms
@@ -35,45 +27,46 @@ namespace AutoService.AddForms
         public MaintenanceSchedule InitializationMaintenanceSchedules()
         {
             
-            DateTime lastServiceDates = Convert.ToDateTime(lastServiceDate.Text);
-            DateTime nextServiceDates = Convert.ToDateTime(nextServiceDate.Text);
+            DateTime lastServiceDates = Convert.ToDateTime(LastServiceDate.Text);
+            DateTime nextServiceDates = Convert.ToDateTime(NextServiceDate.Text);
 
             MaintenanceSchedule maintenanceSchedules = new MaintenanceSchedule
             {
-                VehicleId = Convert.ToInt32(car.SelectedValue),
+                VehicleId = Convert.ToInt32(Car.SelectedValue),
                 LastServiceDate = lastServiceDates,
                 NextServiceDate = nextServiceDates,
-                ServiceType = serviceType.Text,
-                Notes = note.Text,
+                ServiceType = ServiceType.Text,
+                Notes = Notes.Text,
             };
             return maintenanceSchedules;
         }
 
-        private void save_Click(object sender, EventArgs e)
+        private void Save_Click(object sender, EventArgs e)
         {
             maintenanceScheduleImpl.Add(InitializationMaintenanceSchedules());
         }
 
-        private void lastServiceDate_DoubleClick(object sender, EventArgs e)
+        private void LastServiceDate_DoubleClick(object sender, EventArgs e)
         {
-            TextHelper.ClearText(lastServiceDate);
+            TextHelper.ClearText(LastServiceDate);
         }
 
-        private void nextServiceDate_DoubleClick(object sender, EventArgs e)
+        private void NextServiceDate_DoubleClick(object sender, EventArgs e)
         {
-            TextHelper.ClearText(nextServiceDate);
+            TextHelper.ClearText(NextServiceDate);
         }
 
-        private void note_DoubleClick(object sender, EventArgs e)
+        private void Notes_DoubleClick(object sender, EventArgs e)
         {
-            TextHelper.ClearText(note);
+            TextHelper.ClearText(Notes);
         }
 
         public void LoadElemntsToCombobox()
         {
             DbConnect.Connect();
 
-            string query = "SELECT * FROM Vehicles ORDER BY vehicle_id ";
+            string query = "SELECT * FROM Vehicles " +
+                "ORDER BY vehicle_id ";
             SQLiteCommand command = new SQLiteCommand(query, DbConnect.connection);
             using (SQLiteDataReader reader = command.ExecuteReader())
             {
@@ -83,11 +76,11 @@ namespace AutoService.AddForms
                     string vehiclesVin = reader.GetString(5);
                     vehicleDictionary.Add(vehiclesId, vehiclesVin);
                 }
-                car.DataSource = new BindingSource(vehicleDictionary, null);
-                car.DisplayMember = "Value";
-                car.ValueMember = "Key";
+                Car.DataSource = new BindingSource(vehicleDictionary, null);
+                Car.DisplayMember = "Value";
+                Car.ValueMember = "Key";
 
-                car.Text = "Автомобиль";
+                Car.Text = "Автомобиль";
             }
 
             string querySecond = "SELECT DISTINCT service_type FROM ServiceOrders ";
@@ -99,9 +92,9 @@ namespace AutoService.AddForms
                     string serviceTypeField = reader.GetString(0);
                     serviceTypeList.Add(serviceTypeField);
                 }
-                serviceType.DataSource = serviceTypeList;
+                ServiceType.DataSource = serviceTypeList;
 
-                serviceType.Text = "Тип услуги";
+                ServiceType.Text = "Тип услуги";
             }
 
             DbConnect.Disconnect();

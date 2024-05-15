@@ -29,20 +29,20 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.inventory = new System.Windows.Forms.ComboBox();
-            this.orders = new System.Windows.Forms.ComboBox();
-            this.quantity = new System.Windows.Forms.TextBox();
+            this.Inventory = new System.Windows.Forms.ComboBox();
+            this.Orders = new System.Windows.Forms.ComboBox();
+            this.Quantity = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.save = new System.Windows.Forms.Button();
+            this.Save = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel1.Controls.Add(this.inventory);
-            this.panel1.Controls.Add(this.orders);
-            this.panel1.Controls.Add(this.quantity);
+            this.panel1.Controls.Add(this.Inventory);
+            this.panel1.Controls.Add(this.Orders);
+            this.panel1.Controls.Add(this.Quantity);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -50,35 +50,35 @@
             this.panel1.Size = new System.Drawing.Size(384, 381);
             this.panel1.TabIndex = 12;
             // 
-            // inventory
+            // Inventory
             // 
-            this.inventory.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.inventory.FormattingEnabled = true;
-            this.inventory.Location = new System.Drawing.Point(103, 84);
-            this.inventory.Name = "inventory";
-            this.inventory.Size = new System.Drawing.Size(198, 29);
-            this.inventory.TabIndex = 23;
-            this.inventory.Text = "Запчасть";
+            this.Inventory.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Inventory.FormattingEnabled = true;
+            this.Inventory.Location = new System.Drawing.Point(103, 84);
+            this.Inventory.Name = "Inventory";
+            this.Inventory.Size = new System.Drawing.Size(198, 29);
+            this.Inventory.TabIndex = 23;
+            this.Inventory.Text = "Запчасть";
             // 
-            // orders
+            // Orders
             // 
-            this.orders.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.orders.FormattingEnabled = true;
-            this.orders.Location = new System.Drawing.Point(103, 49);
-            this.orders.Name = "orders";
-            this.orders.Size = new System.Drawing.Size(198, 29);
-            this.orders.TabIndex = 22;
-            this.orders.Text = "Номер заказа";
+            this.Orders.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Orders.FormattingEnabled = true;
+            this.Orders.Location = new System.Drawing.Point(103, 49);
+            this.Orders.Name = "Orders";
+            this.Orders.Size = new System.Drawing.Size(198, 29);
+            this.Orders.TabIndex = 22;
+            this.Orders.Text = "Номер заказа";
             // 
-            // quantity
+            // Quantity
             // 
-            this.quantity.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.quantity.Location = new System.Drawing.Point(103, 119);
-            this.quantity.Name = "quantity";
-            this.quantity.Size = new System.Drawing.Size(198, 29);
-            this.quantity.TabIndex = 15;
-            this.quantity.Text = "Количество";
-            this.quantity.DoubleClick += new System.EventHandler(this.quantity_DoubleClick);
+            this.Quantity.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Quantity.Location = new System.Drawing.Point(103, 119);
+            this.Quantity.Name = "Quantity";
+            this.Quantity.Size = new System.Drawing.Size(198, 29);
+            this.Quantity.TabIndex = 15;
+            this.Quantity.Text = "Количество";
+            this.Quantity.DoubleClick += new System.EventHandler(this.Quantity_DoubleClick);
             // 
             // label1
             // 
@@ -90,27 +90,27 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Добавление запчасти в заказ";
             // 
-            // save
+            // Save
             // 
-            this.save.BackColor = System.Drawing.Color.LimeGreen;
-            this.save.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.save.FlatAppearance.BorderSize = 0;
-            this.save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.save.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.save.Location = new System.Drawing.Point(0, 378);
-            this.save.Name = "save";
-            this.save.Size = new System.Drawing.Size(384, 33);
-            this.save.TabIndex = 14;
-            this.save.Text = "Сохранить";
-            this.save.UseVisualStyleBackColor = false;
-            this.save.Click += new System.EventHandler(this.save_Click);
+            this.Save.BackColor = System.Drawing.Color.LimeGreen;
+            this.Save.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.Save.FlatAppearance.BorderSize = 0;
+            this.Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Save.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Save.Location = new System.Drawing.Point(0, 378);
+            this.Save.Name = "Save";
+            this.Save.Size = new System.Drawing.Size(384, 33);
+            this.Save.TabIndex = 14;
+            this.Save.Text = "Сохранить";
+            this.Save.UseVisualStyleBackColor = false;
+            this.Save.Click += new System.EventHandler(this.Save_Click);
             // 
             // AddOrderParts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 411);
-            this.Controls.Add(this.save);
+            this.Controls.Add(this.Save);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
@@ -126,10 +126,10 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ComboBox inventory;
-        private System.Windows.Forms.ComboBox orders;
-        private System.Windows.Forms.TextBox quantity;
+        private System.Windows.Forms.ComboBox Inventory;
+        private System.Windows.Forms.ComboBox Orders;
+        private System.Windows.Forms.TextBox Quantity;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button save;
+        private System.Windows.Forms.Button Save;
     }
 }

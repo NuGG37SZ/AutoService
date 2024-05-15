@@ -4,13 +4,7 @@ using AutoService.Interface;
 using AutoService.RepositoryImpl;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SQLite;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AutoService.UpdateForms
@@ -32,26 +26,26 @@ namespace AutoService.UpdateForms
         {
             Employees employees = new Employees
             {
-                Id = Convert.ToInt32(employee.Text),
-                FullName = fullName.Text,
-                Position = position.Text,
-                PhoneNumber = phoneNumber.Text,
-                Email = email.Text,
-                Schedule = schedule.Text,
-                Skills = skills.Text
+                Id = Convert.ToInt32(Employee.Text),
+                FullName = FullName.Text,
+                Position = Position.Text,
+                PhoneNumber = PhoneNumber.Text,
+                Email = Email.Text,
+                Schedule = Schedule.Text,
+                Skills = Skills.Text
             };
             return employees;
         }
 
-        private void reload_Click(object sender, EventArgs e)
+        private void Reload_Click(object sender, EventArgs e)
         {
             employeeImpl.Update(InitializationEmployees());
         }
 
-        private void employee_SelectedValueChanged(object sender, EventArgs e)
+        private void Employee_SelectedValueChanged(object sender, EventArgs e)
         {
             DbConnect.Connect();
-            string query = $"SELECT * FROM Employees WHERE employee_id = {Convert.ToInt32(employee.Text)}";
+            string query = $"SELECT * FROM Employees WHERE employee_id = {Convert.ToInt32(Employee.Text)}";
             SQLiteCommand command = new SQLiteCommand(query, DbConnect.connection);
             using (SQLiteDataReader reader = command.ExecuteReader())
             {
@@ -66,12 +60,12 @@ namespace AutoService.UpdateForms
                         string schedules = reader["schedule"].ToString();
                         string skillStr = reader["skills"].ToString();
 
-                        fullName.Text = fullNames;
-                        phoneNumber.Text = phoneNumbers;
-                        position.Text = positions;
-                        email.Text = emails;
-                        schedule.Text = schedules;
-                        skills.Text = skillStr;
+                        FullName.Text = fullNames;
+                        PhoneNumber.Text = phoneNumbers;
+                        Position.Text = positions;
+                        Email.Text = emails;
+                        Schedule.Text = schedules;
+                        Skills.Text = skillStr;
                     }
                 }
             }
@@ -90,7 +84,7 @@ namespace AutoService.UpdateForms
                     int employeeId = reader.GetInt32(0);
                     employeesList.Add(employeeId);
                 }
-                employee.DataSource = employeesList;
+                Employee.DataSource = employeesList;
             }
             DbConnect.Disconnect();
         }

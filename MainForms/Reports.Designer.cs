@@ -29,22 +29,22 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Reports));
-            this.reloadButton = new Guna.UI2.WinForms.Guna2Button();
-            this.applyFilter = new Guna.UI2.WinForms.Guna2Button();
+            this.ReloadButton = new Guna.UI2.WinForms.Guna2Button();
+            this.ApplyFilter = new Guna.UI2.WinForms.Guna2Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.secondDate = new System.Windows.Forms.TextBox();
-            this.firstDate = new System.Windows.Forms.TextBox();
+            this.SecondDate = new System.Windows.Forms.TextBox();
+            this.FirstDate = new System.Windows.Forms.TextBox();
             this.panel14 = new System.Windows.Forms.Panel();
             this.panel18 = new System.Windows.Forms.Panel();
-            this.buttonParishes = new Guna.UI2.WinForms.Guna2Button();
+            this.ButtonParishes = new Guna.UI2.WinForms.Guna2Button();
             this.parishes = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel17 = new System.Windows.Forms.Panel();
-            this.buttonExpenses = new Guna.UI2.WinForms.Guna2Button();
+            this.ButtonExpenses = new Guna.UI2.WinForms.Guna2Button();
             this.expenses = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel15 = new System.Windows.Forms.Panel();
-            this.buttonBalance = new Guna.UI2.WinForms.Guna2Button();
+            this.ButtonBalance = new Guna.UI2.WinForms.Guna2Button();
             this.balanceMoney = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -56,38 +56,38 @@
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // reloadButton
+            // ReloadButton
             // 
-            this.reloadButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.reloadButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.reloadButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.reloadButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.reloadButton.FillColor = System.Drawing.Color.RoyalBlue;
-            this.reloadButton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.reloadButton.ForeColor = System.Drawing.Color.White;
-            this.reloadButton.Image = ((System.Drawing.Image)(resources.GetObject("reloadButton.Image")));
-            this.reloadButton.Location = new System.Drawing.Point(386, 24);
-            this.reloadButton.Name = "reloadButton";
-            this.reloadButton.Size = new System.Drawing.Size(30, 26);
-            this.reloadButton.TabIndex = 30;
-            this.reloadButton.Click += new System.EventHandler(this.reloadButton_Click);
+            this.ReloadButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.ReloadButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.ReloadButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.ReloadButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.ReloadButton.FillColor = System.Drawing.Color.RoyalBlue;
+            this.ReloadButton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ReloadButton.ForeColor = System.Drawing.Color.White;
+            this.ReloadButton.Image = ((System.Drawing.Image)(resources.GetObject("ReloadButton.Image")));
+            this.ReloadButton.Location = new System.Drawing.Point(386, 24);
+            this.ReloadButton.Name = "ReloadButton";
+            this.ReloadButton.Size = new System.Drawing.Size(30, 26);
+            this.ReloadButton.TabIndex = 30;
+            this.ReloadButton.Click += new System.EventHandler(this.ReloadButton_Click);
             // 
-            // applyFilter
+            // ApplyFilter
             // 
-            this.applyFilter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.applyFilter.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.applyFilter.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.applyFilter.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.applyFilter.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.applyFilter.FillColor = System.Drawing.Color.LimeGreen;
-            this.applyFilter.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.applyFilter.ForeColor = System.Drawing.Color.White;
-            this.applyFilter.Image = ((System.Drawing.Image)(resources.GetObject("applyFilter.Image")));
-            this.applyFilter.Location = new System.Drawing.Point(342, 24);
-            this.applyFilter.Name = "applyFilter";
-            this.applyFilter.Size = new System.Drawing.Size(30, 26);
-            this.applyFilter.TabIndex = 29;
-            this.applyFilter.Click += new System.EventHandler(this.applyFilter_Click);
+            this.ApplyFilter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.ApplyFilter.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.ApplyFilter.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.ApplyFilter.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.ApplyFilter.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.ApplyFilter.FillColor = System.Drawing.Color.LimeGreen;
+            this.ApplyFilter.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ApplyFilter.ForeColor = System.Drawing.Color.White;
+            this.ApplyFilter.Image = ((System.Drawing.Image)(resources.GetObject("ApplyFilter.Image")));
+            this.ApplyFilter.Location = new System.Drawing.Point(342, 24);
+            this.ApplyFilter.Name = "ApplyFilter";
+            this.ApplyFilter.Size = new System.Drawing.Size(30, 26);
+            this.ApplyFilter.TabIndex = 29;
+            this.ApplyFilter.Click += new System.EventHandler(this.ApplyFilter_Click);
             // 
             // label6
             // 
@@ -100,25 +100,25 @@
             this.label6.TabIndex = 28;
             this.label6.Text = "-";
             // 
-            // secondDate
+            // SecondDate
             // 
-            this.secondDate.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.secondDate.Location = new System.Drawing.Point(187, 24);
-            this.secondDate.Name = "secondDate";
-            this.secondDate.Size = new System.Drawing.Size(136, 26);
-            this.secondDate.TabIndex = 27;
-            this.secondDate.Text = "Дата по";
-            this.secondDate.DoubleClick += new System.EventHandler(this.secondDate_DoubleClick);
+            this.SecondDate.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.SecondDate.Location = new System.Drawing.Point(187, 24);
+            this.SecondDate.Name = "SecondDate";
+            this.SecondDate.Size = new System.Drawing.Size(136, 26);
+            this.SecondDate.TabIndex = 27;
+            this.SecondDate.Text = "Дата по";
+            this.SecondDate.DoubleClick += new System.EventHandler(this.SecondDate_DoubleClick);
             // 
-            // firstDate
+            // FirstDate
             // 
-            this.firstDate.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.firstDate.Location = new System.Drawing.Point(14, 24);
-            this.firstDate.Name = "firstDate";
-            this.firstDate.Size = new System.Drawing.Size(136, 26);
-            this.firstDate.TabIndex = 26;
-            this.firstDate.Text = "Дата с";
-            this.firstDate.DoubleClick += new System.EventHandler(this.firstDate_DoubleClick);
+            this.FirstDate.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.FirstDate.Location = new System.Drawing.Point(14, 24);
+            this.FirstDate.Name = "FirstDate";
+            this.FirstDate.Size = new System.Drawing.Size(136, 26);
+            this.FirstDate.TabIndex = 26;
+            this.FirstDate.Text = "Дата с";
+            this.FirstDate.DoubleClick += new System.EventHandler(this.FirstDate_DoubleClick);
             // 
             // panel14
             // 
@@ -134,7 +134,7 @@
             // panel18
             // 
             this.panel18.BackColor = System.Drawing.Color.White;
-            this.panel18.Controls.Add(this.buttonParishes);
+            this.panel18.Controls.Add(this.ButtonParishes);
             this.panel18.Controls.Add(this.parishes);
             this.panel18.Controls.Add(this.label4);
             this.panel18.Location = new System.Drawing.Point(338, 137);
@@ -142,23 +142,23 @@
             this.panel18.Size = new System.Drawing.Size(255, 97);
             this.panel18.TabIndex = 2;
             // 
-            // buttonParishes
+            // ButtonParishes
             // 
-            this.buttonParishes.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonParishes.BackgroundImage")));
-            this.buttonParishes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonParishes.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.buttonParishes.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.buttonParishes.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.buttonParishes.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.buttonParishes.FillColor = System.Drawing.Color.Transparent;
-            this.buttonParishes.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.buttonParishes.ForeColor = System.Drawing.Color.White;
-            this.buttonParishes.Location = new System.Drawing.Point(218, 12);
-            this.buttonParishes.Name = "buttonParishes";
-            this.buttonParishes.Size = new System.Drawing.Size(25, 25);
-            this.buttonParishes.TabIndex = 4;
-            this.buttonParishes.Text = "guna2Button15";
-            this.buttonParishes.Click += new System.EventHandler(this.buttonParishes_Click);
+            this.ButtonParishes.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ButtonParishes.BackgroundImage")));
+            this.ButtonParishes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ButtonParishes.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.ButtonParishes.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.ButtonParishes.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.ButtonParishes.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.ButtonParishes.FillColor = System.Drawing.Color.Transparent;
+            this.ButtonParishes.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonParishes.ForeColor = System.Drawing.Color.White;
+            this.ButtonParishes.Location = new System.Drawing.Point(218, 12);
+            this.ButtonParishes.Name = "ButtonParishes";
+            this.ButtonParishes.Size = new System.Drawing.Size(25, 25);
+            this.ButtonParishes.TabIndex = 4;
+            this.ButtonParishes.Text = "guna2Button15";
+            this.ButtonParishes.Click += new System.EventHandler(this.ButtonParishes_Click);
             // 
             // parishes
             // 
@@ -183,7 +183,7 @@
             // panel17
             // 
             this.panel17.BackColor = System.Drawing.Color.White;
-            this.panel17.Controls.Add(this.buttonExpenses);
+            this.panel17.Controls.Add(this.ButtonExpenses);
             this.panel17.Controls.Add(this.expenses);
             this.panel17.Controls.Add(this.label5);
             this.panel17.Location = new System.Drawing.Point(16, 137);
@@ -191,23 +191,23 @@
             this.panel17.Size = new System.Drawing.Size(255, 97);
             this.panel17.TabIndex = 1;
             // 
-            // buttonExpenses
+            // ButtonExpenses
             // 
-            this.buttonExpenses.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonExpenses.BackgroundImage")));
-            this.buttonExpenses.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonExpenses.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.buttonExpenses.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.buttonExpenses.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.buttonExpenses.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.buttonExpenses.FillColor = System.Drawing.Color.Transparent;
-            this.buttonExpenses.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.buttonExpenses.ForeColor = System.Drawing.Color.White;
-            this.buttonExpenses.Location = new System.Drawing.Point(219, 12);
-            this.buttonExpenses.Name = "buttonExpenses";
-            this.buttonExpenses.Size = new System.Drawing.Size(25, 25);
-            this.buttonExpenses.TabIndex = 5;
-            this.buttonExpenses.Text = "guna2Button16";
-            this.buttonExpenses.Click += new System.EventHandler(this.buttonExpenses_Click);
+            this.ButtonExpenses.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ButtonExpenses.BackgroundImage")));
+            this.ButtonExpenses.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ButtonExpenses.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.ButtonExpenses.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.ButtonExpenses.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.ButtonExpenses.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.ButtonExpenses.FillColor = System.Drawing.Color.Transparent;
+            this.ButtonExpenses.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonExpenses.ForeColor = System.Drawing.Color.White;
+            this.ButtonExpenses.Location = new System.Drawing.Point(219, 12);
+            this.ButtonExpenses.Name = "ButtonExpenses";
+            this.ButtonExpenses.Size = new System.Drawing.Size(25, 25);
+            this.ButtonExpenses.TabIndex = 5;
+            this.ButtonExpenses.Text = "guna2Button16";
+            this.ButtonExpenses.Click += new System.EventHandler(this.ButtonExpenses_Click);
             // 
             // expenses
             // 
@@ -232,7 +232,7 @@
             // panel15
             // 
             this.panel15.BackColor = System.Drawing.Color.White;
-            this.panel15.Controls.Add(this.buttonBalance);
+            this.panel15.Controls.Add(this.ButtonBalance);
             this.panel15.Controls.Add(this.balanceMoney);
             this.panel15.Controls.Add(this.label2);
             this.panel15.Location = new System.Drawing.Point(187, 22);
@@ -240,23 +240,23 @@
             this.panel15.Size = new System.Drawing.Size(255, 97);
             this.panel15.TabIndex = 0;
             // 
-            // buttonBalance
+            // ButtonBalance
             // 
-            this.buttonBalance.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonBalance.BackgroundImage")));
-            this.buttonBalance.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonBalance.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.buttonBalance.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.buttonBalance.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.buttonBalance.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.buttonBalance.FillColor = System.Drawing.Color.Transparent;
-            this.buttonBalance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.buttonBalance.ForeColor = System.Drawing.Color.White;
-            this.buttonBalance.Location = new System.Drawing.Point(219, 8);
-            this.buttonBalance.Name = "buttonBalance";
-            this.buttonBalance.Size = new System.Drawing.Size(25, 25);
-            this.buttonBalance.TabIndex = 2;
-            this.buttonBalance.Text = "guna2Button13";
-            this.buttonBalance.Click += new System.EventHandler(this.buttonBalance_Click);
+            this.ButtonBalance.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ButtonBalance.BackgroundImage")));
+            this.ButtonBalance.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ButtonBalance.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.ButtonBalance.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.ButtonBalance.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.ButtonBalance.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.ButtonBalance.FillColor = System.Drawing.Color.Transparent;
+            this.ButtonBalance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonBalance.ForeColor = System.Drawing.Color.White;
+            this.ButtonBalance.Location = new System.Drawing.Point(219, 8);
+            this.ButtonBalance.Name = "ButtonBalance";
+            this.ButtonBalance.Size = new System.Drawing.Size(25, 25);
+            this.ButtonBalance.TabIndex = 2;
+            this.ButtonBalance.Text = "guna2Button13";
+            this.ButtonBalance.Click += new System.EventHandler(this.ButtonBalance_Click);
             // 
             // balanceMoney
             // 
@@ -291,10 +291,10 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel1.Controls.Add(this.secondDate);
-            this.panel1.Controls.Add(this.reloadButton);
-            this.panel1.Controls.Add(this.firstDate);
-            this.panel1.Controls.Add(this.applyFilter);
+            this.panel1.Controls.Add(this.SecondDate);
+            this.panel1.Controls.Add(this.ReloadButton);
+            this.panel1.Controls.Add(this.FirstDate);
+            this.panel1.Controls.Add(this.ApplyFilter);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Location = new System.Drawing.Point(0, 99);
             this.panel1.Name = "panel1";
@@ -331,22 +331,22 @@
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2Button reloadButton;
-        private Guna.UI2.WinForms.Guna2Button applyFilter;
+        private Guna.UI2.WinForms.Guna2Button ReloadButton;
+        private Guna.UI2.WinForms.Guna2Button ApplyFilter;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox secondDate;
-        private System.Windows.Forms.TextBox firstDate;
+        private System.Windows.Forms.TextBox SecondDate;
+        private System.Windows.Forms.TextBox FirstDate;
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Panel panel18;
-        private Guna.UI2.WinForms.Guna2Button buttonParishes;
+        private Guna.UI2.WinForms.Guna2Button ButtonParishes;
         private System.Windows.Forms.Label parishes;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel17;
-        private Guna.UI2.WinForms.Guna2Button buttonExpenses;
+        private Guna.UI2.WinForms.Guna2Button ButtonExpenses;
         private System.Windows.Forms.Label expenses;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel15;
-        private Guna.UI2.WinForms.Guna2Button buttonBalance;
+        private Guna.UI2.WinForms.Guna2Button ButtonBalance;
         private System.Windows.Forms.Label balanceMoney;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;

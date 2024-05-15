@@ -2,13 +2,8 @@
 using AutoService.Entity;
 using AutoService.Interface;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Data.Common;
 using System.Data.SQLite;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AutoService.RepositoryImpl
@@ -72,12 +67,14 @@ namespace AutoService.RepositoryImpl
             DbConnect.Connect();
 
             var command = DbConnect.connection.CreateCommand();
-            command.CommandText = "DELETE FROM ServiceOrders WHERE order_id = @id";
+            command.CommandText = "DELETE FROM ServiceOrders " +
+                "WHERE order_id = @id";
             command.Parameters.AddWithValue("@id", id);
             int rowsAffected = command.ExecuteNonQuery();
 
             var commandDelete = DbConnect.connection.CreateCommand();
-            commandDelete.CommandText = $"DELETE FROM Finances WHERE description = 'New order, number {id}'";
+            commandDelete.CommandText = $"DELETE FROM Finances " +
+                $"WHERE description = 'New order, number {id}'";
             commandDelete.ExecuteNonQuery();
 
             if (rowsAffected > 0)

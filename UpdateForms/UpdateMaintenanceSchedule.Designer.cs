@@ -29,53 +29,53 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.serviceType = new System.Windows.Forms.ComboBox();
+            this.ServiceType = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.nextServiceDate = new System.Windows.Forms.TextBox();
-            this.car = new System.Windows.Forms.ComboBox();
+            this.NextServiceDate = new System.Windows.Forms.TextBox();
+            this.Car = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.notes = new System.Windows.Forms.TextBox();
-            this.schedule = new System.Windows.Forms.ComboBox();
+            this.Notes = new System.Windows.Forms.TextBox();
+            this.Schedule = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.lastServiceDate = new System.Windows.Forms.TextBox();
-            this.reload = new System.Windows.Forms.Button();
+            this.LastServiceDate = new System.Windows.Forms.TextBox();
+            this.Reload = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel1.Controls.Add(this.serviceType);
+            this.panel1.Controls.Add(this.ServiceType);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.nextServiceDate);
-            this.panel1.Controls.Add(this.car);
+            this.panel1.Controls.Add(this.NextServiceDate);
+            this.panel1.Controls.Add(this.Car);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.notes);
-            this.panel1.Controls.Add(this.schedule);
+            this.panel1.Controls.Add(this.Notes);
+            this.panel1.Controls.Add(this.Schedule);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.lastServiceDate);
+            this.panel1.Controls.Add(this.LastServiceDate);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(384, 382);
             this.panel1.TabIndex = 31;
             // 
-            // serviceType
+            // ServiceType
             // 
-            this.serviceType.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.serviceType.FormattingEnabled = true;
-            this.serviceType.Location = new System.Drawing.Point(206, 64);
-            this.serviceType.Name = "serviceType";
-            this.serviceType.Size = new System.Drawing.Size(166, 29);
-            this.serviceType.TabIndex = 37;
+            this.ServiceType.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ServiceType.FormattingEnabled = true;
+            this.ServiceType.Location = new System.Drawing.Point(206, 64);
+            this.ServiceType.Name = "ServiceType";
+            this.ServiceType.Size = new System.Drawing.Size(166, 29);
+            this.ServiceType.TabIndex = 37;
             // 
             // label5
             // 
@@ -87,22 +87,22 @@
             this.label5.TabIndex = 36;
             this.label5.Text = "Следующая дата посещения";
             // 
-            // nextServiceDate
+            // NextServiceDate
             // 
-            this.nextServiceDate.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.nextServiceDate.Location = new System.Drawing.Point(206, 164);
-            this.nextServiceDate.Name = "nextServiceDate";
-            this.nextServiceDate.Size = new System.Drawing.Size(166, 29);
-            this.nextServiceDate.TabIndex = 35;
+            this.NextServiceDate.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.NextServiceDate.Location = new System.Drawing.Point(206, 164);
+            this.NextServiceDate.Name = "NextServiceDate";
+            this.NextServiceDate.Size = new System.Drawing.Size(166, 29);
+            this.NextServiceDate.TabIndex = 35;
             // 
-            // car
+            // Car
             // 
-            this.car.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.car.FormattingEnabled = true;
-            this.car.Location = new System.Drawing.Point(12, 114);
-            this.car.Name = "car";
-            this.car.Size = new System.Drawing.Size(166, 29);
-            this.car.TabIndex = 32;
+            this.Car.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Car.FormattingEnabled = true;
+            this.Car.Location = new System.Drawing.Point(12, 114);
+            this.Car.Name = "Car";
+            this.Car.Size = new System.Drawing.Size(166, 29);
+            this.Car.TabIndex = 32;
             // 
             // label7
             // 
@@ -154,23 +154,23 @@
             this.label2.TabIndex = 25;
             this.label2.Text = "Айди обслуживания для обновления";
             // 
-            // notes
+            // Notes
             // 
-            this.notes.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.notes.Location = new System.Drawing.Point(206, 114);
-            this.notes.Name = "notes";
-            this.notes.Size = new System.Drawing.Size(166, 29);
-            this.notes.TabIndex = 16;
+            this.Notes.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Notes.Location = new System.Drawing.Point(206, 114);
+            this.Notes.Name = "Notes";
+            this.Notes.Size = new System.Drawing.Size(166, 29);
+            this.Notes.TabIndex = 16;
             // 
-            // schedule
+            // Schedule
             // 
-            this.schedule.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.schedule.FormattingEnabled = true;
-            this.schedule.Location = new System.Drawing.Point(12, 64);
-            this.schedule.Name = "schedule";
-            this.schedule.Size = new System.Drawing.Size(166, 29);
-            this.schedule.TabIndex = 23;
-            this.schedule.SelectedValueChanged += new System.EventHandler(this.schedule_SelectedValueChanged);
+            this.Schedule.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Schedule.FormattingEnabled = true;
+            this.Schedule.Location = new System.Drawing.Point(12, 64);
+            this.Schedule.Name = "Schedule";
+            this.Schedule.Size = new System.Drawing.Size(166, 29);
+            this.Schedule.TabIndex = 23;
+            this.Schedule.SelectedValueChanged += new System.EventHandler(this.Schedule_SelectedValueChanged);
             // 
             // label1
             // 
@@ -182,35 +182,35 @@
             this.label1.TabIndex = 24;
             this.label1.Text = "Обновление Обслуживания";
             // 
-            // lastServiceDate
+            // LastServiceDate
             // 
-            this.lastServiceDate.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lastServiceDate.Location = new System.Drawing.Point(12, 164);
-            this.lastServiceDate.Name = "lastServiceDate";
-            this.lastServiceDate.Size = new System.Drawing.Size(166, 29);
-            this.lastServiceDate.TabIndex = 6;
+            this.LastServiceDate.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LastServiceDate.Location = new System.Drawing.Point(12, 164);
+            this.LastServiceDate.Name = "LastServiceDate";
+            this.LastServiceDate.Size = new System.Drawing.Size(166, 29);
+            this.LastServiceDate.TabIndex = 6;
             // 
-            // reload
+            // Reload
             // 
-            this.reload.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.reload.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.reload.FlatAppearance.BorderSize = 0;
-            this.reload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.reload.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.reload.Location = new System.Drawing.Point(0, 378);
-            this.reload.Name = "reload";
-            this.reload.Size = new System.Drawing.Size(384, 33);
-            this.reload.TabIndex = 32;
-            this.reload.Text = "Обновить";
-            this.reload.UseVisualStyleBackColor = false;
-            this.reload.Click += new System.EventHandler(this.reload_Click);
+            this.Reload.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.Reload.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.Reload.FlatAppearance.BorderSize = 0;
+            this.Reload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Reload.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Reload.Location = new System.Drawing.Point(0, 378);
+            this.Reload.Name = "Reload";
+            this.Reload.Size = new System.Drawing.Size(384, 33);
+            this.Reload.TabIndex = 32;
+            this.Reload.Text = "Обновить";
+            this.Reload.UseVisualStyleBackColor = false;
+            this.Reload.Click += new System.EventHandler(this.Reload_Click);
             // 
             // UpdateMaintenanceSchedule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 411);
-            this.Controls.Add(this.reload);
+            this.Controls.Add(this.Reload);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
@@ -226,19 +226,19 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ComboBox serviceType;
+        private System.Windows.Forms.ComboBox ServiceType;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox nextServiceDate;
-        private System.Windows.Forms.ComboBox car;
+        private System.Windows.Forms.TextBox NextServiceDate;
+        private System.Windows.Forms.ComboBox Car;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox notes;
-        private System.Windows.Forms.ComboBox schedule;
+        private System.Windows.Forms.TextBox Notes;
+        private System.Windows.Forms.ComboBox Schedule;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox lastServiceDate;
-        private System.Windows.Forms.Button reload;
+        private System.Windows.Forms.TextBox LastServiceDate;
+        private System.Windows.Forms.Button Reload;
     }
 }

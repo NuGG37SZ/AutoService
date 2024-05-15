@@ -1,17 +1,10 @@
 ﻿using AutoService.Classes;
 using AutoService.Entity;
 using AutoService.Interface;
-using AutoService.MainForms;
 using AutoService.RepositoryImpl;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SQLite;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AutoService.UpdateForms
@@ -30,7 +23,7 @@ namespace AutoService.UpdateForms
             LoadElemntsToCombobox();
         }
 
-        private void reload_Click(object sender, EventArgs e)
+        private void Reload_Click(object sender, EventArgs e)
         {
             clientsImpl.Update(InitializationClient());
         }
@@ -39,20 +32,21 @@ namespace AutoService.UpdateForms
         {
             Clients clients = new Clients
             {
-                Id = Convert.ToInt32(client.Text),
-                FullName = fullName.Text,
-                PhoneNumber = phoneNumber.Text,
-                Address = address.Text,
-                Email = email.Text,
-                Notes = notes.Text
+                Id = Convert.ToInt32(Client.Text),
+                FullName = FullName.Text,
+                PhoneNumber = PhoneNumber.Text,
+                Address = Address.Text,
+                Email = Email.Text,
+                Notes = Notes.Text
             };
             return clients;
         }
 
-        private void client_SelectedValueChanged(object sender, EventArgs e)
+        private void Client_SelectedValueChanged(object sender, EventArgs e)
         {
             DbConnect.Connect();
-            string query = $"SELECT * FROM Clients WHERE client_id = {Convert.ToInt32(client.Text)}";
+            string query = $"SELECT * FROM Clients " +
+                $"WHERE client_id = {Convert.ToInt32(Client.Text)}";
             SQLiteCommand command = new SQLiteCommand(query, DbConnect.connection);
             using (SQLiteDataReader reader = command.ExecuteReader())
             {
@@ -66,11 +60,11 @@ namespace AutoService.UpdateForms
                         string addressStr = reader["address"].ToString();
                         string notesStr = reader["notes"].ToString();
 
-                        fullName.Text = fullNames;
-                        phoneNumber.Text = phoneNumbers;
-                        email.Text = emails;
-                        address.Text = addressStr;
-                        notes.Text = notesStr;
+                        FullName.Text = fullNames;
+                        PhoneNumber.Text = phoneNumbers;
+                        Email.Text = emails;
+                        Address.Text = addressStr;
+                        Notes.Text = notesStr;
                     }
                 }
             }
@@ -89,7 +83,7 @@ namespace AutoService.UpdateForms
                     int clientId = reader.GetInt32(0);
                     clientsList.Add(clientId);
                 }
-                client.DataSource = clientsList;
+                Client.DataSource = clientsList;
             }
             DbConnect.Disconnect();
         }

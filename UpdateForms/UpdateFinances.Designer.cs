@@ -29,52 +29,52 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.transactionType = new System.Windows.Forms.ComboBox();
+            this.TransactionType = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.transaction = new System.Windows.Forms.ComboBox();
+            this.Transaction = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.transactionDate = new System.Windows.Forms.TextBox();
-            this.description = new System.Windows.Forms.TextBox();
-            this.amount = new System.Windows.Forms.TextBox();
-            this.reload = new System.Windows.Forms.Button();
+            this.TransactionDate = new System.Windows.Forms.TextBox();
+            this.Description = new System.Windows.Forms.TextBox();
+            this.Amount = new System.Windows.Forms.TextBox();
+            this.Reload = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel1.Controls.Add(this.transactionType);
+            this.panel1.Controls.Add(this.TransactionType);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.transaction);
+            this.panel1.Controls.Add(this.Transaction);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.transactionDate);
-            this.panel1.Controls.Add(this.description);
-            this.panel1.Controls.Add(this.amount);
+            this.panel1.Controls.Add(this.TransactionDate);
+            this.panel1.Controls.Add(this.Description);
+            this.panel1.Controls.Add(this.Amount);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(384, 382);
             this.panel1.TabIndex = 32;
             // 
-            // transactionType
+            // TransactionType
             // 
-            this.transactionType.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.transactionType.FormattingEnabled = true;
-            this.transactionType.Items.AddRange(new object[] {
+            this.TransactionType.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TransactionType.FormattingEnabled = true;
+            this.TransactionType.Items.AddRange(new object[] {
             "Income",
             "Expense"});
-            this.transactionType.Location = new System.Drawing.Point(12, 164);
-            this.transactionType.Name = "transactionType";
-            this.transactionType.Size = new System.Drawing.Size(166, 29);
-            this.transactionType.TabIndex = 33;
+            this.TransactionType.Location = new System.Drawing.Point(12, 164);
+            this.TransactionType.Name = "TransactionType";
+            this.TransactionType.Size = new System.Drawing.Size(166, 29);
+            this.TransactionType.TabIndex = 33;
             // 
             // label7
             // 
@@ -126,15 +126,15 @@
             this.label2.TabIndex = 25;
             this.label2.Text = "Айди транкзации для обновления";
             // 
-            // transaction
+            // Transaction
             // 
-            this.transaction.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.transaction.FormattingEnabled = true;
-            this.transaction.Location = new System.Drawing.Point(12, 64);
-            this.transaction.Name = "transaction";
-            this.transaction.Size = new System.Drawing.Size(166, 29);
-            this.transaction.TabIndex = 23;
-            this.transaction.SelectedValueChanged += new System.EventHandler(this.transaction_SelectedValueChanged);
+            this.Transaction.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Transaction.FormattingEnabled = true;
+            this.Transaction.Location = new System.Drawing.Point(12, 64);
+            this.Transaction.Name = "Transaction";
+            this.Transaction.Size = new System.Drawing.Size(166, 29);
+            this.Transaction.TabIndex = 23;
+            this.Transaction.SelectedValueChanged += new System.EventHandler(this.Transaction_SelectedValueChanged);
             // 
             // label1
             // 
@@ -146,51 +146,51 @@
             this.label1.TabIndex = 24;
             this.label1.Text = "Обновление Транкзации";
             // 
-            // transactionDate
+            // TransactionDate
             // 
-            this.transactionDate.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.transactionDate.Location = new System.Drawing.Point(12, 114);
-            this.transactionDate.Name = "transactionDate";
-            this.transactionDate.Size = new System.Drawing.Size(166, 29);
-            this.transactionDate.TabIndex = 15;
+            this.TransactionDate.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TransactionDate.Location = new System.Drawing.Point(12, 114);
+            this.TransactionDate.Name = "TransactionDate";
+            this.TransactionDate.Size = new System.Drawing.Size(166, 29);
+            this.TransactionDate.TabIndex = 15;
             // 
-            // description
+            // Description
             // 
-            this.description.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.description.Location = new System.Drawing.Point(206, 114);
-            this.description.Name = "description";
-            this.description.Size = new System.Drawing.Size(166, 29);
-            this.description.TabIndex = 14;
+            this.Description.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Description.Location = new System.Drawing.Point(206, 114);
+            this.Description.Name = "Description";
+            this.Description.Size = new System.Drawing.Size(166, 29);
+            this.Description.TabIndex = 14;
             // 
-            // amount
+            // Amount
             // 
-            this.amount.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.amount.Location = new System.Drawing.Point(206, 64);
-            this.amount.Name = "amount";
-            this.amount.Size = new System.Drawing.Size(166, 29);
-            this.amount.TabIndex = 6;
+            this.Amount.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Amount.Location = new System.Drawing.Point(206, 64);
+            this.Amount.Name = "Amount";
+            this.Amount.Size = new System.Drawing.Size(166, 29);
+            this.Amount.TabIndex = 6;
             // 
-            // reload
+            // Reload
             // 
-            this.reload.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.reload.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.reload.FlatAppearance.BorderSize = 0;
-            this.reload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.reload.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.reload.Location = new System.Drawing.Point(0, 378);
-            this.reload.Name = "reload";
-            this.reload.Size = new System.Drawing.Size(384, 33);
-            this.reload.TabIndex = 33;
-            this.reload.Text = "Обновить";
-            this.reload.UseVisualStyleBackColor = false;
-            this.reload.Click += new System.EventHandler(this.reload_Click);
+            this.Reload.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.Reload.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.Reload.FlatAppearance.BorderSize = 0;
+            this.Reload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Reload.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Reload.Location = new System.Drawing.Point(0, 378);
+            this.Reload.Name = "Reload";
+            this.Reload.Size = new System.Drawing.Size(384, 33);
+            this.Reload.TabIndex = 33;
+            this.Reload.Text = "Обновить";
+            this.Reload.UseVisualStyleBackColor = false;
+            this.Reload.Click += new System.EventHandler(this.Reload_Click);
             // 
             // UpdateFinances
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 411);
-            this.Controls.Add(this.reload);
+            this.Controls.Add(this.Reload);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
@@ -206,17 +206,17 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ComboBox transactionType;
+        private System.Windows.Forms.ComboBox TransactionType;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox transaction;
+        private System.Windows.Forms.ComboBox Transaction;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox transactionDate;
-        private System.Windows.Forms.TextBox description;
-        private System.Windows.Forms.TextBox amount;
-        private System.Windows.Forms.Button reload;
+        private System.Windows.Forms.TextBox TransactionDate;
+        private System.Windows.Forms.TextBox Description;
+        private System.Windows.Forms.TextBox Amount;
+        private System.Windows.Forms.Button Reload;
     }
 }

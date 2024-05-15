@@ -1,14 +1,8 @@
 ﻿using AutoService.Classes;
 using AutoService.Entity;
 using AutoService.Interface;
-using AutoService.MainForms;
-using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SQLite;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AutoService.RepositoryImpl
@@ -68,7 +62,8 @@ namespace AutoService.RepositoryImpl
 
             var command = DbConnect.connection.CreateCommand();
             command.CommandText = "UPDATE Clients SET full_name = @fullName, phone_number = @phoneNumber, email = @email, address = @address, " +
-                "notes = @notes WHERE client_id = @id";
+                "notes = @notes " +
+                "WHERE client_id = @id";
             command.Parameters.AddWithValue("@fullName", entity.FullName);
             command.Parameters.AddWithValue("@phoneNumber", entity.PhoneNumber);
             command.Parameters.AddWithValue("@email", entity.Email);

@@ -1,14 +1,9 @@
 ﻿using AutoService.Classes;
 using AutoService.Entity;
 using AutoService.Interface;
-using AutoService.MainForms;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SQLite;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AutoService.RepositoryImpl
@@ -84,12 +79,14 @@ namespace AutoService.RepositoryImpl
             DbConnect.Connect();
 
             var command = DbConnect.connection.CreateCommand();
-            command.CommandText = "DELETE FROM Inventory WHERE inventory_id = @id";
+            command.CommandText = "DELETE FROM Inventory " +
+                "WHERE inventory_id = @id";
             command.Parameters.AddWithValue("@id", id);
             int rowsAffected = command.ExecuteNonQuery();
 
             var commandDelete = DbConnect.connection.CreateCommand();
-            commandDelete.CommandText = $"DELETE FROM Finances WHERE description = 'New spare parts, number {id}'";
+            commandDelete.CommandText = $"DELETE FROM Finances " +
+                $"WHERE description = 'New spare parts, number {id}'";
             commandDelete.ExecuteNonQuery();
 
             if (rowsAffected > 0)
@@ -110,7 +107,8 @@ namespace AutoService.RepositoryImpl
 
             var command = DbConnect.connection.CreateCommand();
             command.CommandText = "UPDATE Inventory SET part_name = @part_name, part_number = @part_number, quantity = @quantity, " +
-                "price = @price, supplier = @supplier, notes = @notes  WHERE inventory_id = @id";
+                "price = @price, supplier = @supplier, notes = @notes  " +
+                "WHERE inventory_id = @id";
             command.Parameters.AddWithValue("@part_name", entity.PartName);
             command.Parameters.AddWithValue("@part_number", entity.PartNumber);
             command.Parameters.AddWithValue("@quantity", entity.Quantity);
@@ -129,7 +127,8 @@ namespace AutoService.RepositoryImpl
                 MessageBox.Show("Произошла ошибка, запчасть не изменена!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            string querySecond = $"SELECT price, quantity FROM Inventory WHERE inventory_id = {entity.Id}";
+            string querySecond = $"SELECT price, quantity FROM Inventory " +
+                $"WHERE inventory_id = {entity.Id}";
             SQLiteCommand commandSecond = new SQLiteCommand(querySecond, DbConnect.connection);
             using (SQLiteDataReader reader = commandSecond.ExecuteReader())
             {
@@ -213,7 +212,8 @@ namespace AutoService.RepositoryImpl
         {
             DbConnect.Connect();
             float oldValuePrice = 0;
-            string query = $"SELECT price FROM Inventory WHERE inventory_id = {inventoryId} ";
+            string query = $"SELECT price FROM Inventory " +
+                $"WHERE inventory_id = {inventoryId} ";
             SQLiteCommand command = new SQLiteCommand(query, DbConnect.connection);
             using (SQLiteDataReader reader = command.ExecuteReader())
             {
@@ -233,7 +233,8 @@ namespace AutoService.RepositoryImpl
         {
             DbConnect.Connect();
             int oldValueQuantity = 0;
-            string query = $"SELECT quantity FROM Inventory WHERE inventory_id = {inventoryId} ";
+            string query = $"SELECT quantity FROM Inventory " +
+                $"WHERE inventory_id = {inventoryId} ";
             SQLiteCommand command = new SQLiteCommand(query, DbConnect.connection);
             using (SQLiteDataReader reader = command.ExecuteReader())
             {

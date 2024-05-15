@@ -1,17 +1,11 @@
 ﻿using AutoService.Classes;
 using AutoService.Entity;
 using AutoService.Interface;
-using AutoService.MainForms;
 using AutoService.RepositoryImpl;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SQLite;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AutoService.AddForms
@@ -34,44 +28,44 @@ namespace AutoService.AddForms
         {
             Vehicles vehicles = new Vehicles
             {
-                ClientId = Convert.ToInt32(client.SelectedValue),
-                Make = make.Text,
-                Model = model.Text,
-                Year = Convert.ToInt32(year.Text),
-                Vin = vin.Text,
-                Notes = notes.Text
+                ClientId = Convert.ToInt32(Client.SelectedValue),
+                Make = Make.Text,
+                Model = Model.Text,
+                Year = Convert.ToInt32(Year.Text),
+                Vin = Vin.Text,
+                Notes = Notes.Text
             };
             return vehicles;
         }
 
-        private void save_Click(object sender, EventArgs e)
+        private void Save_Click(object sender, EventArgs e)
         {
             vehiclesImpl.Add(InitializationVehicles());
         }
 
-        private void make_DoubleClick(object sender, EventArgs e)
+        private void Make_DoubleClick(object sender, EventArgs e)
         {
-            TextHelper.ClearText(make);
+            TextHelper.ClearText(Make);
         }
 
-        private void model_DoubleClick(object sender, EventArgs e)
+        private void Model_DoubleClick(object sender, EventArgs e)
         {
-            TextHelper.ClearText(model);
+            TextHelper.ClearText(Model);
         }
 
-        private void year_DoubleClick(object sender, EventArgs e)
+        private void Year_DoubleClick(object sender, EventArgs e)
         {
-            TextHelper.ClearText(year);
+            TextHelper.ClearText(Year);
         }
 
-        private void vin_DoubleClick(object sender, EventArgs e)
+        private void Vin_DoubleClick(object sender, EventArgs e)
         {
-            TextHelper.ClearText(vin);
+            TextHelper.ClearText(Vin);
         }
 
-        private void notes_DoubleClick(object sender, EventArgs e)
+        private void Notes_DoubleClick(object sender, EventArgs e)
         {
-            TextHelper.ClearText(notes);
+            TextHelper.ClearText(Notes);
         }
 
         public void LoadElemntsToCombobox()
@@ -88,10 +82,10 @@ namespace AutoService.AddForms
                     string clientFullName = reader.GetString(1);
                     clientsDictionary.Add(clientId, clientFullName);
                 }
-                client.DataSource = new BindingSource(clientsDictionary.ToList(), null);
-                client.DisplayMember = "Value"; 
-                client.ValueMember = "Key";
-                client.Text = "Клинеты";
+                Client.DataSource = new BindingSource(clientsDictionary.ToList(), null);
+                Client.DisplayMember = "Value"; 
+                Client.ValueMember = "Key";
+                Client.Text = "Клинеты";
             }
 
             DbConnect.Disconnect();

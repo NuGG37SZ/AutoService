@@ -1,14 +1,7 @@
 ﻿using AutoService.Classes;
 using AutoService.Graph;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SQLite;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AutoService.MainForms
@@ -25,17 +18,17 @@ namespace AutoService.MainForms
             ReportCurrentMonth();
         }
 
-        private void firstDate_DoubleClick(object sender, EventArgs e)
+        private void FirstDate_DoubleClick(object sender, EventArgs e)
         {
-            TextHelper.ClearText(firstDate);
+            TextHelper.ClearText(FirstDate);
         }
 
-        private void secondDate_DoubleClick(object sender, EventArgs e)
+        private void SecondDate_DoubleClick(object sender, EventArgs e)
         {
-            TextHelper.ClearText(secondDate);
+            TextHelper.ClearText(SecondDate);
         }
 
-        private void applyFilter_Click(object sender, EventArgs e)
+        private void ApplyFilter_Click(object sender, EventArgs e)
         {
             ReportThePeriod();
         }
@@ -46,8 +39,8 @@ namespace AutoService.MainForms
             float amountParishes = 0;
             float balancePeriod;
 
-            DateTime firstDateReport = Convert.ToDateTime(firstDate.Text);
-            DateTime secondDateReport = Convert.ToDateTime(secondDate.Text);
+            DateTime firstDateReport = Convert.ToDateTime(FirstDate.Text);
+            DateTime secondDateReport = Convert.ToDateTime(SecondDate.Text);
 
             DbConnect.Connect();
 
@@ -127,24 +120,24 @@ namespace AutoService.MainForms
             DbConnect.Disconnect();
         }
 
-        private void reloadButton_Click(object sender, EventArgs e)
+        private void ReloadButton_Click(object sender, EventArgs e)
         {
             ReportCurrentMonth();
-            firstDate.Text = "Дата с";
-            secondDate.Text = "Дата по";
+            FirstDate.Text = "Дата с";
+            SecondDate.Text = "Дата по";
         }
 
-        private void buttonBalance_Click(object sender, EventArgs e)
+        private void ButtonBalance_Click(object sender, EventArgs e)
         {
             OpenForms.OpenFormInNewWindow(new GraphBalance());
         }
 
-        private void buttonExpenses_Click(object sender, EventArgs e)
+        private void ButtonExpenses_Click(object sender, EventArgs e)
         {
             OpenForms.OpenFormInNewWindow(new GraphExpenses());
         }
 
-        private void buttonParishes_Click(object sender, EventArgs e)
+        private void ButtonParishes_Click(object sender, EventArgs e)
         {
             OpenForms.OpenFormInNewWindow(new GraphParishes());
         }

@@ -3,13 +3,7 @@ using AutoService.Interface;
 using AutoService.RepositoryImpl;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SQLite;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AutoService.DeleteForms
@@ -33,7 +27,8 @@ namespace AutoService.DeleteForms
         {
             DbConnect.Connect();
 
-            string query = "SELECT Inventory.inventory_id, part_number FROM Inventory " +
+            string query = "SELECT Inventory.inventory_id, part_number " +
+                "FROM Inventory " +
                 "INNER JOIN OrderParts ON Inventory.inventory_id = OrderParts.inventory_id";
             SQLiteCommand command = new SQLiteCommand(query, DbConnect.connection);
             using (SQLiteDataReader reader = command.ExecuteReader())
@@ -44,11 +39,11 @@ namespace AutoService.DeleteForms
                     string partNumber = reader.GetString(1);
                     inventoryDictionary.Add(inventoryId, partNumber);
                 }
-                inventory.DataSource = new BindingSource(inventoryDictionary, null);
-                inventory.DisplayMember = "Value";
-                inventory.ValueMember = "Key";
+                Inventory.DataSource = new BindingSource(inventoryDictionary, null);
+                Inventory.DisplayMember = "Value";
+                Inventory.ValueMember = "Key";
 
-                inventory.Text = "Запчасть";
+                Inventory.Text = "Запчасть";
             }
 
             string querySecond = "SELECT DISTINCT order_id FROM OrderParts ";
@@ -60,18 +55,18 @@ namespace AutoService.DeleteForms
                     int ordersId = reader.GetInt32(0);
                     ordersList.Add(ordersId);
                 }
-                orders.DataSource = ordersList;
+                Orders.DataSource = ordersList;
 
-                orders.Text = "Номер заказа";
+                Orders.Text = "Номер заказа";
             }
 
             DbConnect.Disconnect();
         }
 
-        private void delete_Click(object sender, EventArgs e)
+        private void Delete_Click(object sender, EventArgs e)
         {
-            orderPartsImpl.Delete(Convert.ToInt32(orders.SelectedValue), 
-                Convert.ToInt32(inventory.SelectedValue));
+            orderPartsImpl.Delete(Convert.ToInt32(Orders.SelectedValue), 
+                Convert.ToInt32(Inventory.SelectedValue));
         }
     }
 }

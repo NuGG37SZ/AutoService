@@ -4,13 +4,7 @@ using AutoService.Interface;
 using AutoService.RepositoryImpl;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SQLite;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AutoService.UpdateForms
@@ -32,21 +26,22 @@ namespace AutoService.UpdateForms
         {
             Inventory inventorys = new Inventory
             {
-                Id = Convert.ToInt32(inventory.SelectedValue),
-                PartName = name.Text,
-                PartNumber = number.Text,
-                Quantity = Convert.ToInt32(quantity.Text),
-                Price = float.Parse(price.Text),
-                Supplier = supplier.Text,
-                Notes = notes.Text
+                Id = Convert.ToInt32(Inventory.SelectedValue),
+                PartName = Names.Text,
+                PartNumber = Number.Text,
+                Quantity = Convert.ToInt32(Quantity.Text),
+                Price = float.Parse(Price.Text),
+                Supplier = Supplier.Text,
+                Notes = Notes.Text
             };
             return inventorys;
         }
 
-        private void inventory_SelectedValueChanged(object sender, EventArgs e)
+        private void Inventory_SelectedValueChanged(object sender, EventArgs e)
         {
             DbConnect.Connect();
-            string query = $"SELECT * FROM Inventory WHERE inventory_id = {Convert.ToInt32(inventory.Text)}";
+            string query = $"SELECT * FROM Inventory " +
+                $"WHERE inventory_id = {Convert.ToInt32(Inventory.Text)}";
             SQLiteCommand command = new SQLiteCommand(query, DbConnect.connection);
             using (SQLiteDataReader reader = command.ExecuteReader())
             {
@@ -61,12 +56,12 @@ namespace AutoService.UpdateForms
                         string suppliers = reader["supplier"].ToString();
                         string notesStr = reader["notes"].ToString();
 
-                        name.Text = partName;
-                        number.Text = partNumber;
-                        quantity.Text = quantitys.ToString();
-                        price.Text = prices.ToString(); 
-                        supplier.Text = suppliers;
-                        notes.Text = notesStr;
+                        Names.Text = partName;
+                        Number.Text = partNumber;
+                        Quantity.Text = quantitys.ToString();
+                        Price.Text = prices.ToString(); 
+                        Supplier.Text = suppliers;
+                        Notes.Text = notesStr;
                     }
                 }
             }
@@ -85,12 +80,12 @@ namespace AutoService.UpdateForms
                     int inventoryId = reader.GetInt32(0);
                     inventoryList.Add(inventoryId);
                 }
-                inventory.DataSource = inventoryList;
+                Inventory.DataSource = inventoryList;
             }
             DbConnect.Disconnect();
         }
 
-        private void reload_Click(object sender, EventArgs e)
+        private void Reload_Click(object sender, EventArgs e)
         {
             inventoryImpl.Update(InitializationInventory());
         }

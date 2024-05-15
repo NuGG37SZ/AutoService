@@ -29,56 +29,56 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.skills = new System.Windows.Forms.TextBox();
+            this.Skills = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.schedule = new System.Windows.Forms.TextBox();
+            this.Schedule = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.email = new System.Windows.Forms.TextBox();
-            this.employee = new System.Windows.Forms.ComboBox();
+            this.Email = new System.Windows.Forms.TextBox();
+            this.Employee = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.phoneNumber = new System.Windows.Forms.TextBox();
-            this.position = new System.Windows.Forms.TextBox();
-            this.fullName = new System.Windows.Forms.TextBox();
-            this.reload = new System.Windows.Forms.Button();
+            this.PhoneNumber = new System.Windows.Forms.TextBox();
+            this.Position = new System.Windows.Forms.TextBox();
+            this.FullName = new System.Windows.Forms.TextBox();
+            this.Reload = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel1.Controls.Add(this.skills);
+            this.panel1.Controls.Add(this.Skills);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.schedule);
+            this.panel1.Controls.Add(this.Schedule);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.email);
-            this.panel1.Controls.Add(this.employee);
+            this.panel1.Controls.Add(this.Email);
+            this.panel1.Controls.Add(this.Employee);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.phoneNumber);
-            this.panel1.Controls.Add(this.position);
-            this.panel1.Controls.Add(this.fullName);
+            this.panel1.Controls.Add(this.PhoneNumber);
+            this.panel1.Controls.Add(this.Position);
+            this.panel1.Controls.Add(this.FullName);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(384, 380);
             this.panel1.TabIndex = 28;
             // 
-            // skills
+            // Skills
             // 
-            this.skills.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.skills.Location = new System.Drawing.Point(15, 214);
-            this.skills.Name = "skills";
-            this.skills.Size = new System.Drawing.Size(166, 29);
-            this.skills.TabIndex = 32;
+            this.Skills.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Skills.Location = new System.Drawing.Point(15, 214);
+            this.Skills.Name = "Skills";
+            this.Skills.Size = new System.Drawing.Size(166, 29);
+            this.Skills.TabIndex = 32;
             // 
             // label8
             // 
@@ -140,13 +140,13 @@
             this.label3.TabIndex = 26;
             this.label3.Text = "ФИО";
             // 
-            // schedule
+            // Schedule
             // 
-            this.schedule.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.schedule.Location = new System.Drawing.Point(206, 164);
-            this.schedule.Name = "schedule";
-            this.schedule.Size = new System.Drawing.Size(166, 29);
-            this.schedule.TabIndex = 17;
+            this.Schedule.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Schedule.Location = new System.Drawing.Point(206, 164);
+            this.Schedule.Name = "Schedule";
+            this.Schedule.Size = new System.Drawing.Size(166, 29);
+            this.Schedule.TabIndex = 17;
             // 
             // label2
             // 
@@ -158,23 +158,23 @@
             this.label2.TabIndex = 25;
             this.label2.Text = "Айди сотрудника для обновления";
             // 
-            // email
+            // Email
             // 
-            this.email.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.email.Location = new System.Drawing.Point(15, 164);
-            this.email.Name = "email";
-            this.email.Size = new System.Drawing.Size(166, 29);
-            this.email.TabIndex = 16;
+            this.Email.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Email.Location = new System.Drawing.Point(15, 164);
+            this.Email.Name = "Email";
+            this.Email.Size = new System.Drawing.Size(166, 29);
+            this.Email.TabIndex = 16;
             // 
-            // employee
+            // Employee
             // 
-            this.employee.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.employee.FormattingEnabled = true;
-            this.employee.Location = new System.Drawing.Point(15, 64);
-            this.employee.Name = "employee";
-            this.employee.Size = new System.Drawing.Size(166, 29);
-            this.employee.TabIndex = 23;
-            this.employee.SelectedValueChanged += new System.EventHandler(this.employee_SelectedValueChanged);
+            this.Employee.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Employee.FormattingEnabled = true;
+            this.Employee.Location = new System.Drawing.Point(15, 64);
+            this.Employee.Name = "Employee";
+            this.Employee.Size = new System.Drawing.Size(166, 29);
+            this.Employee.TabIndex = 23;
+            this.Employee.SelectedValueChanged += new System.EventHandler(this.Employee_SelectedValueChanged);
             // 
             // label1
             // 
@@ -186,51 +186,51 @@
             this.label1.TabIndex = 24;
             this.label1.Text = "Обновление Сотрудника";
             // 
-            // phoneNumber
+            // PhoneNumber
             // 
-            this.phoneNumber.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.phoneNumber.Location = new System.Drawing.Point(206, 114);
-            this.phoneNumber.Name = "phoneNumber";
-            this.phoneNumber.Size = new System.Drawing.Size(166, 29);
-            this.phoneNumber.TabIndex = 15;
+            this.PhoneNumber.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.PhoneNumber.Location = new System.Drawing.Point(206, 114);
+            this.PhoneNumber.Name = "PhoneNumber";
+            this.PhoneNumber.Size = new System.Drawing.Size(166, 29);
+            this.PhoneNumber.TabIndex = 15;
             // 
-            // position
+            // Position
             // 
-            this.position.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.position.Location = new System.Drawing.Point(15, 114);
-            this.position.Name = "position";
-            this.position.Size = new System.Drawing.Size(166, 29);
-            this.position.TabIndex = 14;
+            this.Position.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Position.Location = new System.Drawing.Point(15, 114);
+            this.Position.Name = "Position";
+            this.Position.Size = new System.Drawing.Size(166, 29);
+            this.Position.TabIndex = 14;
             // 
-            // fullName
+            // FullName
             // 
-            this.fullName.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.fullName.Location = new System.Drawing.Point(206, 64);
-            this.fullName.Name = "fullName";
-            this.fullName.Size = new System.Drawing.Size(166, 29);
-            this.fullName.TabIndex = 6;
+            this.FullName.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.FullName.Location = new System.Drawing.Point(206, 64);
+            this.FullName.Name = "FullName";
+            this.FullName.Size = new System.Drawing.Size(166, 29);
+            this.FullName.TabIndex = 6;
             // 
-            // reload
+            // Reload
             // 
-            this.reload.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.reload.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.reload.FlatAppearance.BorderSize = 0;
-            this.reload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.reload.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.reload.Location = new System.Drawing.Point(0, 378);
-            this.reload.Name = "reload";
-            this.reload.Size = new System.Drawing.Size(384, 33);
-            this.reload.TabIndex = 29;
-            this.reload.Text = "Обновить";
-            this.reload.UseVisualStyleBackColor = false;
-            this.reload.Click += new System.EventHandler(this.reload_Click);
+            this.Reload.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.Reload.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.Reload.FlatAppearance.BorderSize = 0;
+            this.Reload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Reload.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Reload.Location = new System.Drawing.Point(0, 378);
+            this.Reload.Name = "Reload";
+            this.Reload.Size = new System.Drawing.Size(384, 33);
+            this.Reload.TabIndex = 29;
+            this.Reload.Text = "Обновить";
+            this.Reload.UseVisualStyleBackColor = false;
+            this.Reload.Click += new System.EventHandler(this.Reload_Click);
             // 
             // UpdateEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 411);
-            this.Controls.Add(this.reload);
+            this.Controls.Add(this.Reload);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
@@ -246,21 +246,21 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox skills;
+        private System.Windows.Forms.TextBox Skills;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox schedule;
+        private System.Windows.Forms.TextBox Schedule;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox email;
-        private System.Windows.Forms.ComboBox employee;
+        private System.Windows.Forms.TextBox Email;
+        private System.Windows.Forms.ComboBox Employee;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox phoneNumber;
-        private System.Windows.Forms.TextBox position;
-        private System.Windows.Forms.TextBox fullName;
-        private System.Windows.Forms.Button reload;
+        private System.Windows.Forms.TextBox PhoneNumber;
+        private System.Windows.Forms.TextBox Position;
+        private System.Windows.Forms.TextBox FullName;
+        private System.Windows.Forms.Button Reload;
     }
 }

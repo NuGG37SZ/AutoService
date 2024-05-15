@@ -31,11 +31,11 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.registerButton = new System.Windows.Forms.Button();
-            this.enter = new System.Windows.Forms.Button();
+            this.RegisterButton = new System.Windows.Forms.Button();
+            this.Sign = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.passwordBox = new System.Windows.Forms.TextBox();
-            this.loginBox = new System.Windows.Forms.TextBox();
+            this.PasswordBox = new System.Windows.Forms.TextBox();
+            this.LoginBox = new System.Windows.Forms.TextBox();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,11 +44,11 @@
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.label4);
-            this.panel3.Controls.Add(this.registerButton);
-            this.panel3.Controls.Add(this.enter);
+            this.panel3.Controls.Add(this.RegisterButton);
+            this.panel3.Controls.Add(this.Sign);
             this.panel3.Controls.Add(this.label5);
-            this.panel3.Controls.Add(this.passwordBox);
-            this.panel3.Controls.Add(this.loginBox);
+            this.panel3.Controls.Add(this.PasswordBox);
+            this.panel3.Controls.Add(this.LoginBox);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
@@ -76,32 +76,34 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Логин";
             // 
-            // registerButton
+            // RegisterButton
             // 
-            this.registerButton.FlatAppearance.BorderSize = 0;
-            this.registerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.registerButton.Font = new System.Drawing.Font("Bookman Old Style", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.registerButton.Location = new System.Drawing.Point(53, 235);
-            this.registerButton.Name = "registerButton";
-            this.registerButton.Size = new System.Drawing.Size(286, 25);
-            this.registerButton.TabIndex = 6;
-            this.registerButton.Text = "Нет аккаунта? Создайте прямо сейчас";
-            this.registerButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.registerButton.UseVisualStyleBackColor = true;
+            this.RegisterButton.BackColor = System.Drawing.Color.Transparent;
+            this.RegisterButton.FlatAppearance.BorderSize = 0;
+            this.RegisterButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RegisterButton.Font = new System.Drawing.Font("Bookman Old Style", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.RegisterButton.Location = new System.Drawing.Point(53, 235);
+            this.RegisterButton.Name = "RegisterButton";
+            this.RegisterButton.Size = new System.Drawing.Size(286, 25);
+            this.RegisterButton.TabIndex = 6;
+            this.RegisterButton.Text = "Нет аккаунта? Создайте прямо сейчас";
+            this.RegisterButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.RegisterButton.UseVisualStyleBackColor = false;
+            this.RegisterButton.Click += new System.EventHandler(this.RegisterButton_Click);
             // 
-            // enter
+            // Sign
             // 
-            this.enter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.enter.FlatAppearance.BorderSize = 0;
-            this.enter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.enter.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.enter.Location = new System.Drawing.Point(88, 176);
-            this.enter.Name = "enter";
-            this.enter.Size = new System.Drawing.Size(212, 41);
-            this.enter.TabIndex = 3;
-            this.enter.Text = "Войти";
-            this.enter.UseVisualStyleBackColor = false;
-            this.enter.Click += new System.EventHandler(this.enter_Click);
+            this.Sign.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.Sign.FlatAppearance.BorderSize = 0;
+            this.Sign.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Sign.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Sign.Location = new System.Drawing.Point(88, 176);
+            this.Sign.Name = "Sign";
+            this.Sign.Size = new System.Drawing.Size(212, 41);
+            this.Sign.TabIndex = 3;
+            this.Sign.Text = "Войти";
+            this.Sign.UseVisualStyleBackColor = false;
+            this.Sign.Click += new System.EventHandler(this.Sign_Click);
             // 
             // label5
             // 
@@ -113,22 +115,22 @@
             this.label5.TabIndex = 2;
             this.label5.Text = "Войти";
             // 
-            // passwordBox
+            // PasswordBox
             // 
-            this.passwordBox.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.passwordBox.Location = new System.Drawing.Point(88, 133);
-            this.passwordBox.Name = "passwordBox";
-            this.passwordBox.PasswordChar = '*';
-            this.passwordBox.Size = new System.Drawing.Size(212, 26);
-            this.passwordBox.TabIndex = 1;
+            this.PasswordBox.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.PasswordBox.Location = new System.Drawing.Point(88, 133);
+            this.PasswordBox.Name = "PasswordBox";
+            this.PasswordBox.PasswordChar = '*';
+            this.PasswordBox.Size = new System.Drawing.Size(212, 26);
+            this.PasswordBox.TabIndex = 1;
             // 
-            // loginBox
+            // LoginBox
             // 
-            this.loginBox.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.loginBox.Location = new System.Drawing.Point(88, 83);
-            this.loginBox.Name = "loginBox";
-            this.loginBox.Size = new System.Drawing.Size(212, 26);
-            this.loginBox.TabIndex = 0;
+            this.LoginBox.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LoginBox.Location = new System.Drawing.Point(88, 83);
+            this.LoginBox.Name = "LoginBox";
+            this.LoginBox.Size = new System.Drawing.Size(212, 26);
+            this.LoginBox.TabIndex = 0;
             // 
             // SignUp
             // 
@@ -151,10 +153,10 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button registerButton;
-        private System.Windows.Forms.Button enter;
+        private System.Windows.Forms.Button RegisterButton;
+        private System.Windows.Forms.Button Sign;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox passwordBox;
-        private System.Windows.Forms.TextBox loginBox;
+        private System.Windows.Forms.TextBox PasswordBox;
+        private System.Windows.Forms.TextBox LoginBox;
     }
 }

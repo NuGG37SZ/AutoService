@@ -29,26 +29,26 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.price = new System.Windows.Forms.TextBox();
-            this.note = new System.Windows.Forms.TextBox();
-            this.supplier = new System.Windows.Forms.TextBox();
-            this.quantity = new System.Windows.Forms.TextBox();
-            this.partNumber = new System.Windows.Forms.TextBox();
-            this.partName = new System.Windows.Forms.TextBox();
+            this.Price = new System.Windows.Forms.TextBox();
+            this.Notes = new System.Windows.Forms.TextBox();
+            this.Supplier = new System.Windows.Forms.TextBox();
+            this.Quantity = new System.Windows.Forms.TextBox();
+            this.PartNumber = new System.Windows.Forms.TextBox();
+            this.PartName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.save = new System.Windows.Forms.Button();
+            this.Save = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel1.Controls.Add(this.price);
-            this.panel1.Controls.Add(this.note);
-            this.panel1.Controls.Add(this.supplier);
-            this.panel1.Controls.Add(this.quantity);
-            this.panel1.Controls.Add(this.partNumber);
-            this.panel1.Controls.Add(this.partName);
+            this.panel1.Controls.Add(this.Price);
+            this.panel1.Controls.Add(this.Notes);
+            this.panel1.Controls.Add(this.Supplier);
+            this.panel1.Controls.Add(this.Quantity);
+            this.panel1.Controls.Add(this.PartNumber);
+            this.panel1.Controls.Add(this.PartName);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -56,65 +56,65 @@
             this.panel1.Size = new System.Drawing.Size(384, 380);
             this.panel1.TabIndex = 19;
             // 
-            // price
+            // Price
             // 
-            this.price.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.price.Location = new System.Drawing.Point(103, 119);
-            this.price.Name = "price";
-            this.price.Size = new System.Drawing.Size(198, 29);
-            this.price.TabIndex = 23;
-            this.price.Text = "Стоимость";
-            this.price.DoubleClick += new System.EventHandler(this.price_DoubleClick);
+            this.Price.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Price.Location = new System.Drawing.Point(103, 119);
+            this.Price.Name = "Price";
+            this.Price.Size = new System.Drawing.Size(198, 29);
+            this.Price.TabIndex = 23;
+            this.Price.Text = "Стоимость";
+            this.Price.DoubleClick += new System.EventHandler(this.Price_DoubleClick);
             // 
-            // note
+            // Notes
             // 
-            this.note.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.note.Location = new System.Drawing.Point(103, 224);
-            this.note.Name = "note";
-            this.note.Size = new System.Drawing.Size(198, 29);
-            this.note.TabIndex = 22;
-            this.note.Text = "Примечание";
-            this.note.DoubleClick += new System.EventHandler(this.note_DoubleClick);
+            this.Notes.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Notes.Location = new System.Drawing.Point(103, 224);
+            this.Notes.Name = "Notes";
+            this.Notes.Size = new System.Drawing.Size(198, 29);
+            this.Notes.TabIndex = 22;
+            this.Notes.Text = "Примечание";
+            this.Notes.DoubleClick += new System.EventHandler(this.Notes_DoubleClick);
             // 
-            // supplier
+            // Supplier
             // 
-            this.supplier.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.supplier.Location = new System.Drawing.Point(103, 189);
-            this.supplier.Name = "supplier";
-            this.supplier.Size = new System.Drawing.Size(198, 29);
-            this.supplier.TabIndex = 20;
-            this.supplier.Text = "Поставщик";
-            this.supplier.DoubleClick += new System.EventHandler(this.supplier_DoubleClick);
+            this.Supplier.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Supplier.Location = new System.Drawing.Point(103, 189);
+            this.Supplier.Name = "Supplier";
+            this.Supplier.Size = new System.Drawing.Size(198, 29);
+            this.Supplier.TabIndex = 20;
+            this.Supplier.Text = "Поставщик";
+            this.Supplier.DoubleClick += new System.EventHandler(this.Supplier_DoubleClick);
             // 
-            // quantity
+            // Quantity
             // 
-            this.quantity.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.quantity.Location = new System.Drawing.Point(103, 154);
-            this.quantity.Name = "quantity";
-            this.quantity.Size = new System.Drawing.Size(198, 29);
-            this.quantity.TabIndex = 19;
-            this.quantity.Text = "Количество";
-            this.quantity.DoubleClick += new System.EventHandler(this.quantity_DoubleClick);
+            this.Quantity.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Quantity.Location = new System.Drawing.Point(103, 154);
+            this.Quantity.Name = "Quantity";
+            this.Quantity.Size = new System.Drawing.Size(198, 29);
+            this.Quantity.TabIndex = 19;
+            this.Quantity.Text = "Количество";
+            this.Quantity.DoubleClick += new System.EventHandler(this.Quantity_DoubleClick);
             // 
-            // partNumber
+            // PartNumber
             // 
-            this.partNumber.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.partNumber.Location = new System.Drawing.Point(103, 84);
-            this.partNumber.Name = "partNumber";
-            this.partNumber.Size = new System.Drawing.Size(198, 29);
-            this.partNumber.TabIndex = 17;
-            this.partNumber.Text = "Номер ";
-            this.partNumber.DoubleClick += new System.EventHandler(this.partNumber_DoubleClick);
+            this.PartNumber.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.PartNumber.Location = new System.Drawing.Point(103, 84);
+            this.PartNumber.Name = "PartNumber";
+            this.PartNumber.Size = new System.Drawing.Size(198, 29);
+            this.PartNumber.TabIndex = 17;
+            this.PartNumber.Text = "Номер ";
+            this.PartNumber.DoubleClick += new System.EventHandler(this.PartNumber_DoubleClick);
             // 
-            // partName
+            // PartName
             // 
-            this.partName.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.partName.Location = new System.Drawing.Point(103, 49);
-            this.partName.Name = "partName";
-            this.partName.Size = new System.Drawing.Size(198, 29);
-            this.partName.TabIndex = 16;
-            this.partName.Text = "Наименование";
-            this.partName.DoubleClick += new System.EventHandler(this.partName_DoubleClick);
+            this.PartName.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.PartName.Location = new System.Drawing.Point(103, 49);
+            this.PartName.Name = "PartName";
+            this.PartName.Size = new System.Drawing.Size(198, 29);
+            this.PartName.TabIndex = 16;
+            this.PartName.Text = "Наименование";
+            this.PartName.DoubleClick += new System.EventHandler(this.PartName_DoubleClick);
             // 
             // label2
             // 
@@ -126,27 +126,27 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Добавление Запчасти";
             // 
-            // save
+            // Save
             // 
-            this.save.BackColor = System.Drawing.Color.LimeGreen;
-            this.save.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.save.FlatAppearance.BorderSize = 0;
-            this.save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.save.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.save.Location = new System.Drawing.Point(0, 378);
-            this.save.Name = "save";
-            this.save.Size = new System.Drawing.Size(384, 33);
-            this.save.TabIndex = 21;
-            this.save.Text = "Сохранить";
-            this.save.UseVisualStyleBackColor = false;
-            this.save.Click += new System.EventHandler(this.save_Click);
+            this.Save.BackColor = System.Drawing.Color.LimeGreen;
+            this.Save.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.Save.FlatAppearance.BorderSize = 0;
+            this.Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Save.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Save.Location = new System.Drawing.Point(0, 378);
+            this.Save.Name = "Save";
+            this.Save.Size = new System.Drawing.Size(384, 33);
+            this.Save.TabIndex = 21;
+            this.Save.Text = "Сохранить";
+            this.Save.UseVisualStyleBackColor = false;
+            this.Save.Click += new System.EventHandler(this.Save_Click);
             // 
             // AddInventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 411);
-            this.Controls.Add(this.save);
+            this.Controls.Add(this.Save);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
@@ -161,13 +161,13 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox price;
-        private System.Windows.Forms.TextBox note;
-        private System.Windows.Forms.TextBox supplier;
-        private System.Windows.Forms.TextBox quantity;
-        private System.Windows.Forms.TextBox partNumber;
-        private System.Windows.Forms.TextBox partName;
+        private System.Windows.Forms.TextBox Price;
+        private System.Windows.Forms.TextBox Notes;
+        private System.Windows.Forms.TextBox Supplier;
+        private System.Windows.Forms.TextBox Quantity;
+        private System.Windows.Forms.TextBox PartNumber;
+        private System.Windows.Forms.TextBox PartName;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button save;
+        private System.Windows.Forms.Button Save;
     }
 }

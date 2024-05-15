@@ -1,18 +1,10 @@
 ﻿using AutoService.Classes;
 using AutoService.Entity;
 using AutoService.Interface;
-using AutoService.MainForms;
 using AutoService.RepositoryImpl;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SQLite;
-using System.Drawing;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AutoService.AddForms
@@ -21,7 +13,6 @@ namespace AutoService.AddForms
     {
         private ServiceOrdersImpl serviceOrdersImpl = new ServiceOrdersImpl();
         private Dictionary<int, string> clientsDictionary = new Dictionary<int, string>();
-        private Dictionary<int, string> vehicleDictionary = new Dictionary<int, string>();
         public AddServiceOrders()
         {
             InitializeComponent();
@@ -35,47 +26,47 @@ namespace AutoService.AddForms
         public ServiceOrders InitializationServiceOrders()
         {
 
-            DateTime dateOrders = Convert.ToDateTime(orderDate.Text);
+            DateTime dateOrders = Convert.ToDateTime(OrderDate.Text);
 
             ServiceOrders serviceOrders = new ServiceOrders
             {
-                ClientId = Convert.ToInt32(client.SelectedValue),
-                VehicleId = Convert.ToInt32(car.SelectedValue),
+                ClientId = Convert.ToInt32(Client.SelectedValue),
+                VehicleId = Convert.ToInt32(Car.SelectedValue),
                 OrderDate = dateOrders,
-                ServiceType = serviceType.Text,
-                Status = status.Text,
-                EstimatedCost = float.Parse(cost.Text),
-                Notes = note.Text
+                ServiceType = ServiceType.Text,
+                Status = Status.Text,
+                EstimatedCost = float.Parse(Cost.Text),
+                Notes = Notes.Text
             };
             return serviceOrders;
         }
 
-        private void orderDate_DoubleClick(object sender, EventArgs e)
+        private void OrderDate_DoubleClick(object sender, EventArgs e)
         {
-            TextHelper.ClearText(orderDate);
+            TextHelper.ClearText(OrderDate);
         }
 
-        private void serviceType_DoubleClick(object sender, EventArgs e)
+        private void ServiceType_DoubleClick(object sender, EventArgs e)
         {
-            TextHelper.ClearText(serviceType);
+            TextHelper.ClearText(ServiceType);
         }
 
-        private void status_DoubleClick(object sender, EventArgs e)
+        private void Status_DoubleClick(object sender, EventArgs e)
         {
-            TextHelper.ClearText(status);
+            TextHelper.ClearText(Status);
         }
 
-        private void cost_DoubleClick(object sender, EventArgs e)
+        private void Cost_DoubleClick(object sender, EventArgs e)
         {
-            TextHelper.ClearText(cost);
+            TextHelper.ClearText(Cost);
         }
 
-        private void note_DoubleClick(object sender, EventArgs e)
+        private void Notes_DoubleClick(object sender, EventArgs e)
         {
-            TextHelper.ClearText(note);
+            TextHelper.ClearText(Notes);
         }
 
-        private void save_Click(object sender, EventArgs e)
+        private void Save_Click(object sender, EventArgs e)
         {
             serviceOrdersImpl.Add(InitializationServiceOrders());
         }
@@ -94,32 +85,32 @@ namespace AutoService.AddForms
                     string clientFullName = reader.GetString(1);
                     clientsDictionary.Add(clientId, clientFullName);
                 }
-                client.DataSource = new BindingSource(clientsDictionary, null);
-                client.DisplayMember = "Value";
-                client.ValueMember = "Key";
+                Client.DataSource = new BindingSource(clientsDictionary, null);
+                Client.DisplayMember = "Value";
+                Client.ValueMember = "Key";
 
-                client.Text = "Клиент";
+                Client.Text = "Клиент";
             }
+            DbConnect.Disconnect();
+        }
 
-
-            string querySecond = "SELECT vehicle_id, vin FROM Vehicles ";
-
-            SQLiteCommand commandSecond = new SQLiteCommand(querySecond, DbConnect.connection);
-            using (SQLiteDataReader reader = commandSecond.ExecuteReader())
+        private void client_SelectedValueChanged(object sender, EventArgs e)
+        {
+            DbConnect.Connect();
+            string query = "SELECT vin FROM Vehicles WHERE client_id = @client_id";
+            SQLiteCommand command = new SQLiteCommand(query, DbConnect.connection);
+            string[] values = Client.SelectedValue.ToString().Split(',');
+            int clientId = Convert.ToInt32(values[0].Trim().Replace('[', ' '));
+            Car.Items.Clear();
+            command.Parameters.AddWithValue("@client_id", clientId);
+            using (SQLiteDataReader reader = command.ExecuteReader())
             {
                 while (reader.Read())
                 {
-                    int vehicleId = reader.GetInt32(0);
-                    string vehicleVin = reader.GetString(1);
-                    vehicleDictionary.Add(vehicleId, vehicleVin);
+                    string vin = reader["vin"].ToString();
+                    Car.Items.Add(vin);
                 }
-                car.DataSource = new BindingSource(vehicleDictionary, null);
-                car.DisplayMember = "Value";
-                car.ValueMember = "Key";
-
-                car.Text = "Автомобиль";
             }
-
             DbConnect.Disconnect();
         }
     }

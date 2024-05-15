@@ -1,14 +1,8 @@
 ﻿using AutoService.Classes;
 using AutoService.Entity;
 using AutoService.Interface;
-using AutoService.MainForms;
-using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SQLite;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AutoService.RepositoryImpl
@@ -47,7 +41,8 @@ namespace AutoService.RepositoryImpl
             DbConnect.Connect();
 
             var command = DbConnect.connection.CreateCommand();
-            command.CommandText = "DELETE FROM MaintenanceSchedule WHERE schedule_id = @id";
+            command.CommandText = "DELETE FROM MaintenanceSchedule " +
+                "WHERE schedule_id = @id";
             command.Parameters.AddWithValue("@id", id);
             int rowsAffected = command.ExecuteNonQuery();
 
@@ -69,7 +64,8 @@ namespace AutoService.RepositoryImpl
 
             var command = DbConnect.connection.CreateCommand();
             command.CommandText = "UPDATE MaintenanceSchedule SET vehicle_id = @vehicle_id, last_service_date = @last_service_date, " +
-                "next_service_date = @next_service_date, service_type = @service_type, notes = @notes WHERE schedule_id = @id";
+                "next_service_date = @next_service_date, service_type = @service_type, notes = @notes " +
+                "WHERE schedule_id = @id";
             command.Parameters.AddWithValue("@vehicle_id", entity.VehicleId);
             command.Parameters.AddWithValue("@last_service_date", entity.LastServiceDate);
             command.Parameters.AddWithValue("@next_service_date", entity.NextServiceDate);

@@ -1,15 +1,8 @@
 ﻿using AutoService.Classes;
 using AutoService.MainForms;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace AutoService
 {
@@ -28,146 +21,146 @@ namespace AutoService
             OpenForms.OpenFormInPanel(new Client(), panel2);
         }
 
-        private void clientButton_Click(object sender, EventArgs e)
+        private void ClientButton_Click(object sender, EventArgs e)
         {
-            clientButton.BackColor = buttonСolorPressed;
+            ClientButton.BackColor = buttonСolorPressed;
 
-            carButton.BackColor = defaultColorButton;
-            orderButton.BackColor = defaultColorButton;
-            staffButton.BackColor = defaultColorButton;
-            inventoryButton.BackColor = defaultColorButton;
-            moneyButton.BackColor = defaultColorButton; 
-            serviceButton.BackColor = defaultColorButton;
-            reportButton.BackColor = defaultColorButton;
-            orderPartsButton.BackColor = defaultColorButton;
+            CarButton.BackColor = defaultColorButton;
+            OrderButton.BackColor = defaultColorButton;
+            StaffButton.BackColor = defaultColorButton;
+            InventoryButton.BackColor = defaultColorButton;
+            MoneyButton.BackColor = defaultColorButton; 
+            ServiceButton.BackColor = defaultColorButton;
+            ReportButton.BackColor = defaultColorButton;
+            OrderPartsButton.BackColor = defaultColorButton;
 
             OpenForms.OpenFormInPanel(new Client(), panel2);
         }
 
-        private void carButton_Click(object sender, EventArgs e)
+        private void CarButton_Click(object sender, EventArgs e)
         {
-            carButton.BackColor = buttonСolorPressed;
+            CarButton.BackColor = buttonСolorPressed;
 
-            clientButton.BackColor = defaultColorButton;
-            orderButton.BackColor = defaultColorButton;
-            staffButton.BackColor = defaultColorButton;
-            inventoryButton.BackColor = defaultColorButton;
-            moneyButton.BackColor = defaultColorButton;
-            serviceButton.BackColor = defaultColorButton;
-            reportButton.BackColor = defaultColorButton;
-            orderPartsButton.BackColor = defaultColorButton;
+            ClientButton.BackColor = defaultColorButton;
+            OrderButton.BackColor = defaultColorButton;
+            StaffButton.BackColor = defaultColorButton;
+            InventoryButton.BackColor = defaultColorButton;
+            MoneyButton.BackColor = defaultColorButton;
+            ServiceButton.BackColor = defaultColorButton;
+            ReportButton.BackColor = defaultColorButton;
+            OrderPartsButton.BackColor = defaultColorButton;
 
             OpenForms.OpenFormInPanel(new Vehicle(), panel2);
         }
 
-        private void orderButton_Click(object sender, EventArgs e)
+        private void OrderButton_Click(object sender, EventArgs e)
         {
-            orderButton.BackColor = buttonСolorPressed;
+            OrderButton.BackColor = buttonСolorPressed;
 
-            clientButton.BackColor = defaultColorButton;
-            carButton.BackColor = defaultColorButton;
-            staffButton.BackColor = defaultColorButton;
-            inventoryButton.BackColor = defaultColorButton;
-            moneyButton.BackColor = defaultColorButton;
-            serviceButton.BackColor = defaultColorButton;
-            reportButton.BackColor = defaultColorButton;
-            orderPartsButton.BackColor = defaultColorButton;
+            ClientButton.BackColor = defaultColorButton;
+            CarButton.BackColor = defaultColorButton;
+            StaffButton.BackColor = defaultColorButton;
+            InventoryButton.BackColor = defaultColorButton;
+            MoneyButton.BackColor = defaultColorButton;
+            ServiceButton.BackColor = defaultColorButton;
+            ReportButton.BackColor = defaultColorButton;
+            OrderPartsButton.BackColor = defaultColorButton;
 
             OpenForms.OpenFormInPanel(new Orders(), panel2);
         }
 
-        private void staffButton_Click(object sender, EventArgs e)
+        private void StaffButton_Click(object sender, EventArgs e)
         {
-            staffButton.BackColor = buttonСolorPressed;
+            StaffButton.BackColor = buttonСolorPressed;
 
-            clientButton.BackColor = defaultColorButton;
-            carButton.BackColor = defaultColorButton;
-            orderButton.BackColor = defaultColorButton;
-            inventoryButton.BackColor = defaultColorButton;
-            moneyButton.BackColor = defaultColorButton;
-            serviceButton.BackColor = defaultColorButton;
-            reportButton.BackColor = defaultColorButton;
-            orderPartsButton.BackColor = defaultColorButton;
+            ClientButton.BackColor = defaultColorButton;
+            CarButton.BackColor = defaultColorButton;
+            OrderButton.BackColor = defaultColorButton;
+            InventoryButton.BackColor = defaultColorButton;
+            MoneyButton.BackColor = defaultColorButton;
+            ServiceButton.BackColor = defaultColorButton;
+            ReportButton.BackColor = defaultColorButton;
+            OrderPartsButton.BackColor = defaultColorButton;
 
             OpenForms.OpenFormInPanel(new Employee(), panel2);
         }
 
-        private void inventoryButton_Click(object sender, EventArgs e)
+        private void InventoryButton_Click(object sender, EventArgs e)
         {
-            inventoryButton.BackColor = buttonСolorPressed;
+            InventoryButton.BackColor = buttonСolorPressed;
 
-            clientButton.BackColor = defaultColorButton;
-            carButton.BackColor = defaultColorButton;
-            orderButton.BackColor = defaultColorButton;
-            staffButton.BackColor = defaultColorButton;
-            moneyButton.BackColor = defaultColorButton;
-            serviceButton.BackColor = defaultColorButton;
-            reportButton.BackColor = defaultColorButton;
-            orderPartsButton.BackColor = defaultColorButton;
+            ClientButton.BackColor = defaultColorButton;
+            CarButton.BackColor = defaultColorButton;
+            OrderButton.BackColor = defaultColorButton;
+            StaffButton.BackColor = defaultColorButton;
+            MoneyButton.BackColor = defaultColorButton;
+            ServiceButton.BackColor = defaultColorButton;
+            ReportButton.BackColor = defaultColorButton;
+            OrderPartsButton.BackColor = defaultColorButton;
 
             OpenForms.OpenFormInPanel(new Inventorys(), panel2);
         }
 
-        private void moneyButton_Click(object sender, EventArgs e)
+        private void MoneyButton_Click(object sender, EventArgs e)
         {
-            moneyButton.BackColor = buttonСolorPressed;
+            MoneyButton.BackColor = buttonСolorPressed;
 
-            clientButton.BackColor = defaultColorButton;
-            carButton.BackColor = defaultColorButton;
-            orderButton.BackColor = defaultColorButton;
-            staffButton.BackColor = defaultColorButton;
-            inventoryButton.BackColor = defaultColorButton;
-            serviceButton.BackColor = defaultColorButton;
-            reportButton.BackColor = defaultColorButton;
-            orderPartsButton.BackColor = defaultColorButton;
+            ClientButton.BackColor = defaultColorButton;
+            CarButton.BackColor = defaultColorButton;
+            OrderButton.BackColor = defaultColorButton;
+            StaffButton.BackColor = defaultColorButton;
+            InventoryButton.BackColor = defaultColorButton;
+            ServiceButton.BackColor = defaultColorButton;
+            ReportButton.BackColor = defaultColorButton;
+            OrderPartsButton.BackColor = defaultColorButton;
 
             OpenForms.OpenFormInPanel(new Finance(), panel2);
         }
 
-        private void serviceButton_Click(object sender, EventArgs e)
+        private void ServiceButton_Click(object sender, EventArgs e)
         {
-            serviceButton.BackColor = buttonСolorPressed;
+            ServiceButton.BackColor = buttonСolorPressed;
 
-            clientButton.BackColor = defaultColorButton;
-            carButton.BackColor = defaultColorButton;
-            orderButton.BackColor = defaultColorButton;
-            staffButton.BackColor = defaultColorButton;
-            inventoryButton.BackColor = defaultColorButton;
-            moneyButton.BackColor = defaultColorButton;
-            reportButton.BackColor = defaultColorButton;
-            orderPartsButton.BackColor = defaultColorButton;
+            ClientButton.BackColor = defaultColorButton;
+            CarButton.BackColor = defaultColorButton;
+            OrderButton.BackColor = defaultColorButton;
+            StaffButton.BackColor = defaultColorButton;
+            InventoryButton.BackColor = defaultColorButton;
+            MoneyButton.BackColor = defaultColorButton;
+            ReportButton.BackColor = defaultColorButton;
+            OrderPartsButton.BackColor = defaultColorButton;
 
             OpenForms.OpenFormInPanel(new MaintenanceSchedules(), panel2);
         }
 
-        private void reportButton_Click(object sender, EventArgs e)
+        private void ReportButton_Click(object sender, EventArgs e)
         {
-            reportButton.BackColor = buttonСolorPressed;
+            ReportButton.BackColor = buttonСolorPressed;
 
-            clientButton.BackColor = defaultColorButton;
-            carButton.BackColor = defaultColorButton;
-            orderButton.BackColor = defaultColorButton;
-            staffButton.BackColor = defaultColorButton;
-            inventoryButton.BackColor = defaultColorButton;
-            moneyButton.BackColor = defaultColorButton;
-            serviceButton.BackColor = defaultColorButton;
-            orderPartsButton.BackColor = defaultColorButton;
+            ClientButton.BackColor = defaultColorButton;
+            CarButton.BackColor = defaultColorButton;
+            OrderButton.BackColor = defaultColorButton;
+            StaffButton.BackColor = defaultColorButton;
+            InventoryButton.BackColor = defaultColorButton;
+            MoneyButton.BackColor = defaultColorButton;
+            ServiceButton.BackColor = defaultColorButton;
+            OrderPartsButton.BackColor = defaultColorButton;
 
             OpenForms.OpenFormInPanel(new Reports(), panel2);
         }
 
-        private void orderPartsButton_Click(object sender, EventArgs e)
+        private void OrderPartsButton_Click(object sender, EventArgs e)
         {
-            orderPartsButton.BackColor = buttonСolorPressed;
+            OrderPartsButton.BackColor = buttonСolorPressed;
 
-            clientButton.BackColor = defaultColorButton;
-            carButton.BackColor = defaultColorButton;
-            orderButton.BackColor = defaultColorButton;
-            staffButton.BackColor = defaultColorButton;
-            inventoryButton.BackColor = defaultColorButton;
-            moneyButton.BackColor = defaultColorButton;
-            serviceButton.BackColor = defaultColorButton;
-            reportButton.BackColor = defaultColorButton;
+            ClientButton.BackColor = defaultColorButton;
+            CarButton.BackColor = defaultColorButton;
+            OrderButton.BackColor = defaultColorButton;
+            StaffButton.BackColor = defaultColorButton;
+            InventoryButton.BackColor = defaultColorButton;
+            MoneyButton.BackColor = defaultColorButton;
+            ServiceButton.BackColor = defaultColorButton;
+            ReportButton.BackColor = defaultColorButton;
 
             OpenForms.OpenFormInPanel(new OrderParts(), panel2);
         }

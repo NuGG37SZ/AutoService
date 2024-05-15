@@ -31,12 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Vehicle));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel15 = new System.Windows.Forms.Panel();
-            this.excelImport = new Guna.UI2.WinForms.Guna2Button();
-            this.reloadValue = new Guna.UI2.WinForms.Guna2Button();
-            this.deleteValue = new Guna.UI2.WinForms.Guna2Button();
-            this.addValue = new Guna.UI2.WinForms.Guna2Button();
-            this.reloadGrid = new Guna.UI2.WinForms.Guna2Button();
-            this.search = new System.Windows.Forms.TextBox();
+            this.ExcelImport = new Guna.UI2.WinForms.Guna2Button();
+            this.ReloadValue = new Guna.UI2.WinForms.Guna2Button();
+            this.DeleteValue = new Guna.UI2.WinForms.Guna2Button();
+            this.AddValue = new Guna.UI2.WinForms.Guna2Button();
+            this.ReloadGrid = new Guna.UI2.WinForms.Guna2Button();
+            this.Search = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel15.SuspendLayout();
@@ -53,110 +53,110 @@
             // panel15
             // 
             this.panel15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel15.Controls.Add(this.excelImport);
-            this.panel15.Controls.Add(this.reloadValue);
-            this.panel15.Controls.Add(this.deleteValue);
-            this.panel15.Controls.Add(this.addValue);
-            this.panel15.Controls.Add(this.reloadGrid);
-            this.panel15.Controls.Add(this.search);
+            this.panel15.Controls.Add(this.ExcelImport);
+            this.panel15.Controls.Add(this.ReloadValue);
+            this.panel15.Controls.Add(this.DeleteValue);
+            this.panel15.Controls.Add(this.AddValue);
+            this.panel15.Controls.Add(this.ReloadGrid);
+            this.panel15.Controls.Add(this.Search);
             this.panel15.Location = new System.Drawing.Point(0, 99);
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(613, 77);
             this.panel15.TabIndex = 14;
             // 
-            // excelImport
+            // ExcelImport
             // 
-            this.excelImport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.excelImport.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.excelImport.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.excelImport.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.excelImport.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.excelImport.FillColor = System.Drawing.Color.Green;
-            this.excelImport.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.excelImport.ForeColor = System.Drawing.Color.White;
-            this.excelImport.Image = ((System.Drawing.Image)(resources.GetObject("excelImport.Image")));
-            this.excelImport.Location = new System.Drawing.Point(566, 24);
-            this.excelImport.Name = "excelImport";
-            this.excelImport.Size = new System.Drawing.Size(30, 26);
-            this.excelImport.TabIndex = 12;
-            this.excelImport.Click += new System.EventHandler(this.excelImport_Click);
+            this.ExcelImport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.ExcelImport.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.ExcelImport.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.ExcelImport.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.ExcelImport.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.ExcelImport.FillColor = System.Drawing.Color.Green;
+            this.ExcelImport.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ExcelImport.ForeColor = System.Drawing.Color.White;
+            this.ExcelImport.Image = ((System.Drawing.Image)(resources.GetObject("ExcelImport.Image")));
+            this.ExcelImport.Location = new System.Drawing.Point(566, 24);
+            this.ExcelImport.Name = "ExcelImport";
+            this.ExcelImport.Size = new System.Drawing.Size(30, 26);
+            this.ExcelImport.TabIndex = 12;
+            this.ExcelImport.Click += new System.EventHandler(this.ExcelImport_Click);
             // 
-            // reloadValue
+            // ReloadValue
             // 
-            this.reloadValue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.reloadValue.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.reloadValue.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.reloadValue.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.reloadValue.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.reloadValue.FillColor = System.Drawing.Color.DodgerBlue;
-            this.reloadValue.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.reloadValue.ForeColor = System.Drawing.Color.White;
-            this.reloadValue.Image = ((System.Drawing.Image)(resources.GetObject("reloadValue.Image")));
-            this.reloadValue.Location = new System.Drawing.Point(530, 24);
-            this.reloadValue.Name = "reloadValue";
-            this.reloadValue.Size = new System.Drawing.Size(30, 26);
-            this.reloadValue.TabIndex = 11;
-            this.reloadValue.Click += new System.EventHandler(this.reloadValue_Click);
+            this.ReloadValue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.ReloadValue.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.ReloadValue.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.ReloadValue.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.ReloadValue.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.ReloadValue.FillColor = System.Drawing.Color.DodgerBlue;
+            this.ReloadValue.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ReloadValue.ForeColor = System.Drawing.Color.White;
+            this.ReloadValue.Image = ((System.Drawing.Image)(resources.GetObject("ReloadValue.Image")));
+            this.ReloadValue.Location = new System.Drawing.Point(530, 24);
+            this.ReloadValue.Name = "ReloadValue";
+            this.ReloadValue.Size = new System.Drawing.Size(30, 26);
+            this.ReloadValue.TabIndex = 11;
+            this.ReloadValue.Click += new System.EventHandler(this.ReloadValue_Click);
             // 
-            // deleteValue
+            // DeleteValue
             // 
-            this.deleteValue.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.deleteValue.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.deleteValue.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.deleteValue.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.deleteValue.FillColor = System.Drawing.Color.Brown;
-            this.deleteValue.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.deleteValue.ForeColor = System.Drawing.Color.White;
-            this.deleteValue.Image = ((System.Drawing.Image)(resources.GetObject("deleteValue.Image")));
-            this.deleteValue.Location = new System.Drawing.Point(494, 24);
-            this.deleteValue.Name = "deleteValue";
-            this.deleteValue.Size = new System.Drawing.Size(30, 26);
-            this.deleteValue.TabIndex = 8;
-            this.deleteValue.Click += new System.EventHandler(this.deleteValue_Click);
+            this.DeleteValue.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.DeleteValue.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.DeleteValue.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.DeleteValue.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.DeleteValue.FillColor = System.Drawing.Color.Brown;
+            this.DeleteValue.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DeleteValue.ForeColor = System.Drawing.Color.White;
+            this.DeleteValue.Image = ((System.Drawing.Image)(resources.GetObject("DeleteValue.Image")));
+            this.DeleteValue.Location = new System.Drawing.Point(494, 24);
+            this.DeleteValue.Name = "DeleteValue";
+            this.DeleteValue.Size = new System.Drawing.Size(30, 26);
+            this.DeleteValue.TabIndex = 8;
+            this.DeleteValue.Click += new System.EventHandler(this.DeleteValue_Click);
             // 
-            // addValue
+            // AddValue
             // 
-            this.addValue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.addValue.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.addValue.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.addValue.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.addValue.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.addValue.FillColor = System.Drawing.Color.ForestGreen;
-            this.addValue.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.addValue.ForeColor = System.Drawing.Color.White;
-            this.addValue.Image = ((System.Drawing.Image)(resources.GetObject("addValue.Image")));
-            this.addValue.Location = new System.Drawing.Point(458, 24);
-            this.addValue.Name = "addValue";
-            this.addValue.Size = new System.Drawing.Size(30, 26);
-            this.addValue.TabIndex = 7;
-            this.addValue.Click += new System.EventHandler(this.addValue_Click);
+            this.AddValue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.AddValue.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.AddValue.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.AddValue.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.AddValue.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.AddValue.FillColor = System.Drawing.Color.ForestGreen;
+            this.AddValue.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AddValue.ForeColor = System.Drawing.Color.White;
+            this.AddValue.Image = ((System.Drawing.Image)(resources.GetObject("AddValue.Image")));
+            this.AddValue.Location = new System.Drawing.Point(458, 24);
+            this.AddValue.Name = "AddValue";
+            this.AddValue.Size = new System.Drawing.Size(30, 26);
+            this.AddValue.TabIndex = 7;
+            this.AddValue.Click += new System.EventHandler(this.AddValue_Click);
             // 
-            // reloadGrid
+            // ReloadGrid
             // 
-            this.reloadGrid.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.reloadGrid.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.reloadGrid.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.reloadGrid.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.reloadGrid.FillColor = System.Drawing.Color.RoyalBlue;
-            this.reloadGrid.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.reloadGrid.ForeColor = System.Drawing.Color.White;
-            this.reloadGrid.Image = ((System.Drawing.Image)(resources.GetObject("reloadGrid.Image")));
-            this.reloadGrid.Location = new System.Drawing.Point(216, 24);
-            this.reloadGrid.Name = "reloadGrid";
-            this.reloadGrid.Size = new System.Drawing.Size(30, 26);
-            this.reloadGrid.TabIndex = 6;
-            this.reloadGrid.Click += new System.EventHandler(this.reloadGrid_Click);
+            this.ReloadGrid.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.ReloadGrid.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.ReloadGrid.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.ReloadGrid.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.ReloadGrid.FillColor = System.Drawing.Color.RoyalBlue;
+            this.ReloadGrid.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ReloadGrid.ForeColor = System.Drawing.Color.White;
+            this.ReloadGrid.Image = ((System.Drawing.Image)(resources.GetObject("ReloadGrid.Image")));
+            this.ReloadGrid.Location = new System.Drawing.Point(216, 24);
+            this.ReloadGrid.Name = "ReloadGrid";
+            this.ReloadGrid.Size = new System.Drawing.Size(30, 26);
+            this.ReloadGrid.TabIndex = 6;
+            this.ReloadGrid.Click += new System.EventHandler(this.ReloadGrid_Click);
             // 
-            // search
+            // Search
             // 
-            this.search.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.search.Location = new System.Drawing.Point(20, 24);
-            this.search.Name = "search";
-            this.search.Size = new System.Drawing.Size(190, 26);
-            this.search.TabIndex = 0;
-            this.search.Text = "Поиск";
-            this.search.TextChanged += new System.EventHandler(this.search_TextChanged);
-            this.search.DoubleClick += new System.EventHandler(this.search_DoubleClick);
+            this.Search.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Search.Location = new System.Drawing.Point(20, 24);
+            this.Search.Name = "Search";
+            this.Search.Size = new System.Drawing.Size(190, 26);
+            this.Search.TabIndex = 0;
+            this.Search.Text = "Поиск";
+            this.Search.TextChanged += new System.EventHandler(this.Search_TextChanged);
+            this.Search.DoubleClick += new System.EventHandler(this.Search_DoubleClick);
             // 
             // label1
             // 
@@ -194,12 +194,12 @@
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel15;
-        private Guna.UI2.WinForms.Guna2Button excelImport;
-        private Guna.UI2.WinForms.Guna2Button reloadValue;
-        private Guna.UI2.WinForms.Guna2Button deleteValue;
-        private Guna.UI2.WinForms.Guna2Button addValue;
-        private Guna.UI2.WinForms.Guna2Button reloadGrid;
-        private System.Windows.Forms.TextBox search;
+        private Guna.UI2.WinForms.Guna2Button ExcelImport;
+        private Guna.UI2.WinForms.Guna2Button ReloadValue;
+        private Guna.UI2.WinForms.Guna2Button DeleteValue;
+        private Guna.UI2.WinForms.Guna2Button AddValue;
+        private Guna.UI2.WinForms.Guna2Button ReloadGrid;
+        private System.Windows.Forms.TextBox Search;
         private System.Windows.Forms.Label label1;
     }
 }

@@ -1,17 +1,11 @@
 ﻿using AutoService.Classes;
 using AutoService.Entity;
 using AutoService.Interface;
-using AutoService.MainForms;
 using AutoService.RepositoryImpl;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SQLite;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AutoService.AddForms
@@ -35,19 +29,19 @@ namespace AutoService.AddForms
         {
             OrderPart orderPart = new OrderPart
             {
-                OrderId = Convert.ToInt32(orders.SelectedValue),
-                InventoryId = Convert.ToInt32(inventory.SelectedValue),
-                Quantity = Convert.ToInt32(quantity.Text)
+                OrderId = Convert.ToInt32(Orders.SelectedValue),
+                InventoryId = Convert.ToInt32(Inventory.SelectedValue),
+                Quantity = Convert.ToInt32(Quantity.Text)
             };
             return orderPart;
         }
 
-        private void quantity_DoubleClick(object sender, EventArgs e)
+        private void Quantity_DoubleClick(object sender, EventArgs e)
         {
-            TextHelper.ClearText(quantity);
+            TextHelper.ClearText(Quantity);
         }
 
-        private void save_Click(object sender, EventArgs e)
+        private void Save_Click(object sender, EventArgs e)
         {
             orderPartsImpl.Add(InitializationOrderPart());
         }
@@ -56,7 +50,8 @@ namespace AutoService.AddForms
         {
             DbConnect.Connect();
 
-            string query = "SELECT inventory_id, part_number FROM Inventory ORDER BY inventory_id ";
+            string query = "SELECT inventory_id, part_number FROM Inventory " +
+                "ORDER BY inventory_id ";
             SQLiteCommand command = new SQLiteCommand(query, DbConnect.connection);
             using (SQLiteDataReader reader = command.ExecuteReader())
             {
@@ -66,10 +61,10 @@ namespace AutoService.AddForms
                     string partNumber = reader.GetString(1);
                     inventoryDictionary.Add(inventoryId, partNumber);
                 }
-                inventory.DataSource = new BindingSource(inventoryDictionary.ToList(), null);
-                inventory.DisplayMember = "Value";
-                inventory.ValueMember = "Key";
-                inventory.Text = "Запчасть";
+                Inventory.DataSource = new BindingSource(inventoryDictionary.ToList(), null);
+                Inventory.DisplayMember = "Value";
+                Inventory.ValueMember = "Key";
+                Inventory.Text = "Запчасть";
             }
 
             string querySecond = "SELECT order_id FROM ServiceOrders ";
@@ -81,9 +76,9 @@ namespace AutoService.AddForms
                     int ordersId = reader.GetInt32(0);
                     ordersList.Add(ordersId);
                 }
-                orders.DataSource = ordersList;
+                Orders.DataSource = ordersList;
 
-                orders.Text = "Номер заказа";
+                Orders.Text = "Номер заказа";
             }
 
             DbConnect.Disconnect();

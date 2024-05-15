@@ -1,15 +1,8 @@
 ﻿using AutoService.Classes;
 using AutoService.Entity;
-using AutoService.MainForms;
 using AutoService.RepositoryImpl;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AutoService.AddForms
@@ -22,32 +15,41 @@ namespace AutoService.AddForms
             InitializeComponent();
         }
 
-        private void fullName_DoubleClick(object sender, EventArgs e)
+        private void FullName_DoubleClick(object sender, EventArgs e)
         {
-            TextHelper.ClearText(fullName);
+            TextHelper.ClearText(FullName);
         }
 
-        private void phoneNumber_DoubleClick(object sender, EventArgs e)
+        private void PhoneNumber_DoubleClick(object sender, EventArgs e)
         {
-            TextHelper.ClearText(phoneNumber);
+            TextHelper.ClearText(PhoneNumber);
         }
 
-        private void email_DoubleClick(object sender, EventArgs e)
+        private void Email_DoubleClick(object sender, EventArgs e)
         {
-            TextHelper.ClearText(email);
+            TextHelper.ClearText(Email);
         }
 
-        private void address_DoubleClick(object sender, EventArgs e)
+        private void Address_DoubleClick(object sender, EventArgs e)
         {
-            TextHelper.ClearText(address);
+            TextHelper.ClearText(Address);
         }
 
-        private void notes_DoubleClick(object sender, EventArgs e)
+        private void Notes_DoubleClick(object sender, EventArgs e)
         {
-            TextHelper.ClearText(notes);
+            TextHelper.ClearText(Notes);
         }
 
-        private void save_Click(object sender, EventArgs e)
+        private void ClearTextBox(object sender, EventArgs e)
+        {
+            string name = (sender as TextBox).Name;
+
+
+            Controls[name].Text = "";
+            //TextHelper.ClearText(Controls[name] as TextBox);
+        }
+
+        private void Save_Click(object sender, EventArgs e)
         {
             clientImpl.Add(InitializationClient());
         }
@@ -56,11 +58,11 @@ namespace AutoService.AddForms
         {
             Clients clients = new Clients
             {
-                FullName = fullName.Text,
-                PhoneNumber = phoneNumber.Text,
-                Address = address.Text,
-                Email = email.Text,
-                Notes = notes.Text
+                FullName = FullName.Text,
+                PhoneNumber = PhoneNumber.Text,
+                Address = Address.Text,
+                Email = Email.Text,
+                Notes = Notes.Text
             };
             return clients;
         }

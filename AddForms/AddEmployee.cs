@@ -1,15 +1,7 @@
 ﻿using AutoService.Classes;
 using AutoService.Entity;
-using AutoService.MainForms;
 using AutoService.RepositoryImpl;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AutoService.AddForms
@@ -26,47 +18,47 @@ namespace AutoService.AddForms
         {
             Employees employees = new Employees
             {
-                FullName = fullName.Text,
-                Position = position.Text,
-                PhoneNumber = phoneNumber.Text,
-                Email = email.Text,
-                Schedule = schedule.Text,
-                Skills = skills.Text
+                FullName = FullName.Text,
+                Position = Position.Text,
+                PhoneNumber = PhoneNumber.Text,
+                Email = Email.Text,
+                Schedule = Schedule.Text,
+                Skills = Skills.Text
             };
             return employees;
         }
 
-        private void fullName_DoubleClick(object sender, EventArgs e)
+        private void FullName_DoubleClick(object sender, EventArgs e)
         {
-            TextHelper.ClearText(fullName);
+            TextHelper.ClearText(FullName);
         }
 
-        private void position_DoubleClick(object sender, EventArgs e)
+        private void Position_DoubleClick(object sender, EventArgs e)
         {
-            TextHelper.ClearText(position);
+            TextHelper.ClearText(Position);
         }
 
-        private void phoneNumber_DoubleClick(object sender, EventArgs e)
+        private void PhoneNumber_DoubleClick(object sender, EventArgs e)
         {
-            TextHelper.ClearText(phoneNumber);
+            TextHelper.ClearText(PhoneNumber);
         }
 
-        private void email_DoubleClick(object sender, EventArgs e)
+        private void Email_DoubleClick(object sender, EventArgs e)
         {
-            TextHelper.ClearText(email);
+            TextHelper.ClearText(Email);
         }
 
-        private void schedule_DoubleClick(object sender, EventArgs e)
+        private void Schedule_DoubleClick(object sender, EventArgs e)
         {
-            TextHelper.ClearText(schedule);
+            TextHelper.ClearText(Schedule);
         }
 
-        private void skills_DoubleClick(object sender, EventArgs e)
+        private void Skills_DoubleClick(object sender, EventArgs e)
         {
-            TextHelper.ClearText(skills);
+            TextHelper.ClearText(Skills);
         }
 
-        private void save_Click(object sender, EventArgs e)
+        private void Save_Click(object sender, EventArgs e)
         {
             employee.Add(InitializationEmployees());
         }

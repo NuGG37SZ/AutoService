@@ -1,20 +1,6 @@
 ﻿using AutoService.Classes;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.Common;
-using System.Data.SqlClient;
 using System.Data.SQLite;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Web.Security;
-using System.Web.UI.WebControls;
 using System.Windows.Forms;
 
 namespace AutoService
@@ -43,7 +29,7 @@ namespace AutoService
                         string roleDB = reader.GetString(3);
 
 
-                        if (loginDb.Equals(loginBox.Text) && passwordDb.Equals(Hashing.Hash(passwordBox.Text)) && roleDB.Equals("administrator"))
+                        if (loginDb.Equals(LoginBox.Text) && passwordDb.Equals(Hashing.Hash(PasswordBox.Text)) && roleDB.Equals("administrator"))
                         {
                             isUserValid = true;
                             break;
@@ -64,14 +50,16 @@ namespace AutoService
             DbConnect.Disconnect();
         }
 
-        private void registerButton_Click(object sender, EventArgs e)
-        {
-            OpenForms.OpenForm(this, new Register());
-        }
+        
 
-        private void enter_Click(object sender, EventArgs e)
+        private void Sign_Click(object sender, EventArgs e)
         {
             ValidateSignUp();
+        }
+
+        private void RegisterButton_Click(object sender, EventArgs e)
+        {
+            OpenForms.OpenForm(this, new Register());
         }
     }
 }

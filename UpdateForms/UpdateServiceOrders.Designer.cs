@@ -30,23 +30,23 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
-            this.notes = new System.Windows.Forms.TextBox();
+            this.Notes = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.cost = new System.Windows.Forms.TextBox();
-            this.car = new System.Windows.Forms.ComboBox();
-            this.client = new System.Windows.Forms.ComboBox();
+            this.Cost = new System.Windows.Forms.TextBox();
+            this.Car = new System.Windows.Forms.ComboBox();
+            this.Client = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.status = new System.Windows.Forms.TextBox();
-            this.order = new System.Windows.Forms.ComboBox();
+            this.Status = new System.Windows.Forms.TextBox();
+            this.Order = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.serviceType = new System.Windows.Forms.TextBox();
-            this.dateOrder = new System.Windows.Forms.TextBox();
-            this.reload = new System.Windows.Forms.Button();
+            this.ServiceType = new System.Windows.Forms.TextBox();
+            this.DateOrder = new System.Windows.Forms.TextBox();
+            this.Reload = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,22 +54,22 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.notes);
+            this.panel1.Controls.Add(this.Notes);
             this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.cost);
-            this.panel1.Controls.Add(this.car);
-            this.panel1.Controls.Add(this.client);
+            this.panel1.Controls.Add(this.Cost);
+            this.panel1.Controls.Add(this.Car);
+            this.panel1.Controls.Add(this.Client);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.status);
-            this.panel1.Controls.Add(this.order);
+            this.panel1.Controls.Add(this.Status);
+            this.panel1.Controls.Add(this.Order);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.serviceType);
-            this.panel1.Controls.Add(this.dateOrder);
+            this.panel1.Controls.Add(this.ServiceType);
+            this.panel1.Controls.Add(this.DateOrder);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -86,13 +86,13 @@
             this.label9.TabIndex = 36;
             this.label9.Text = "Примечание";
             // 
-            // notes
+            // Notes
             // 
-            this.notes.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.notes.Location = new System.Drawing.Point(12, 214);
-            this.notes.Name = "notes";
-            this.notes.Size = new System.Drawing.Size(166, 29);
-            this.notes.TabIndex = 35;
+            this.Notes.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Notes.Location = new System.Drawing.Point(12, 214);
+            this.Notes.Name = "Notes";
+            this.Notes.Size = new System.Drawing.Size(166, 29);
+            this.Notes.TabIndex = 35;
             // 
             // label8
             // 
@@ -104,31 +104,31 @@
             this.label8.TabIndex = 34;
             this.label8.Text = "Стоимость";
             // 
-            // cost
+            // Cost
             // 
-            this.cost.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.cost.Location = new System.Drawing.Point(206, 214);
-            this.cost.Name = "cost";
-            this.cost.Size = new System.Drawing.Size(166, 29);
-            this.cost.TabIndex = 33;
+            this.Cost.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Cost.Location = new System.Drawing.Point(206, 214);
+            this.Cost.Name = "Cost";
+            this.Cost.Size = new System.Drawing.Size(166, 29);
+            this.Cost.TabIndex = 33;
             // 
-            // car
+            // Car
             // 
-            this.car.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.car.FormattingEnabled = true;
-            this.car.Location = new System.Drawing.Point(12, 164);
-            this.car.Name = "car";
-            this.car.Size = new System.Drawing.Size(166, 29);
-            this.car.TabIndex = 32;
+            this.Car.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Car.FormattingEnabled = true;
+            this.Car.Location = new System.Drawing.Point(12, 164);
+            this.Car.Name = "Car";
+            this.Car.Size = new System.Drawing.Size(166, 29);
+            this.Car.TabIndex = 32;
             // 
-            // client
+            // Client
             // 
-            this.client.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.client.FormattingEnabled = true;
-            this.client.Location = new System.Drawing.Point(12, 114);
-            this.client.Name = "client";
-            this.client.Size = new System.Drawing.Size(166, 29);
-            this.client.TabIndex = 31;
+            this.Client.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Client.FormattingEnabled = true;
+            this.Client.Location = new System.Drawing.Point(12, 114);
+            this.Client.Name = "Client";
+            this.Client.Size = new System.Drawing.Size(166, 29);
+            this.Client.TabIndex = 31;
             // 
             // label7
             // 
@@ -190,23 +190,23 @@
             this.label2.TabIndex = 25;
             this.label2.Text = "Айди заказа для обновления";
             // 
-            // status
+            // Status
             // 
-            this.status.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.status.Location = new System.Drawing.Point(206, 164);
-            this.status.Name = "status";
-            this.status.Size = new System.Drawing.Size(166, 29);
-            this.status.TabIndex = 16;
+            this.Status.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Status.Location = new System.Drawing.Point(206, 164);
+            this.Status.Name = "Status";
+            this.Status.Size = new System.Drawing.Size(166, 29);
+            this.Status.TabIndex = 16;
             // 
-            // order
+            // Order
             // 
-            this.order.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.order.FormattingEnabled = true;
-            this.order.Location = new System.Drawing.Point(12, 64);
-            this.order.Name = "order";
-            this.order.Size = new System.Drawing.Size(166, 29);
-            this.order.TabIndex = 23;
-            this.order.SelectedValueChanged += new System.EventHandler(this.order_SelectedValueChanged);
+            this.Order.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Order.FormattingEnabled = true;
+            this.Order.Location = new System.Drawing.Point(12, 64);
+            this.Order.Name = "Order";
+            this.Order.Size = new System.Drawing.Size(166, 29);
+            this.Order.TabIndex = 23;
+            this.Order.SelectedValueChanged += new System.EventHandler(this.Order_SelectedValueChanged);
             // 
             // label1
             // 
@@ -218,43 +218,43 @@
             this.label1.TabIndex = 24;
             this.label1.Text = "Обновление заказа";
             // 
-            // serviceType
+            // ServiceType
             // 
-            this.serviceType.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.serviceType.Location = new System.Drawing.Point(206, 114);
-            this.serviceType.Name = "serviceType";
-            this.serviceType.Size = new System.Drawing.Size(166, 29);
-            this.serviceType.TabIndex = 14;
+            this.ServiceType.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ServiceType.Location = new System.Drawing.Point(206, 114);
+            this.ServiceType.Name = "ServiceType";
+            this.ServiceType.Size = new System.Drawing.Size(166, 29);
+            this.ServiceType.TabIndex = 14;
             // 
-            // dateOrder
+            // DateOrder
             // 
-            this.dateOrder.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dateOrder.Location = new System.Drawing.Point(206, 64);
-            this.dateOrder.Name = "dateOrder";
-            this.dateOrder.Size = new System.Drawing.Size(166, 29);
-            this.dateOrder.TabIndex = 6;
+            this.DateOrder.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DateOrder.Location = new System.Drawing.Point(206, 64);
+            this.DateOrder.Name = "DateOrder";
+            this.DateOrder.Size = new System.Drawing.Size(166, 29);
+            this.DateOrder.TabIndex = 6;
             // 
-            // reload
+            // Reload
             // 
-            this.reload.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.reload.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.reload.FlatAppearance.BorderSize = 0;
-            this.reload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.reload.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.reload.Location = new System.Drawing.Point(0, 378);
-            this.reload.Name = "reload";
-            this.reload.Size = new System.Drawing.Size(384, 33);
-            this.reload.TabIndex = 31;
-            this.reload.Text = "Обновить";
-            this.reload.UseVisualStyleBackColor = false;
-            this.reload.Click += new System.EventHandler(this.reload_Click);
+            this.Reload.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.Reload.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.Reload.FlatAppearance.BorderSize = 0;
+            this.Reload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Reload.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Reload.Location = new System.Drawing.Point(0, 378);
+            this.Reload.Name = "Reload";
+            this.Reload.Size = new System.Drawing.Size(384, 33);
+            this.Reload.TabIndex = 31;
+            this.Reload.Text = "Обновить";
+            this.Reload.UseVisualStyleBackColor = false;
+            this.Reload.Click += new System.EventHandler(this.Reload_Click);
             // 
             // UpdateServiceOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 411);
-            this.Controls.Add(this.reload);
+            this.Controls.Add(this.Reload);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
@@ -271,22 +271,22 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox notes;
+        private System.Windows.Forms.TextBox Notes;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox cost;
-        private System.Windows.Forms.ComboBox car;
-        private System.Windows.Forms.ComboBox client;
+        private System.Windows.Forms.TextBox Cost;
+        private System.Windows.Forms.ComboBox Car;
+        private System.Windows.Forms.ComboBox Client;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox status;
-        private System.Windows.Forms.ComboBox order;
+        private System.Windows.Forms.TextBox Status;
+        private System.Windows.Forms.ComboBox Order;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox serviceType;
-        private System.Windows.Forms.TextBox dateOrder;
-        private System.Windows.Forms.Button reload;
+        private System.Windows.Forms.TextBox ServiceType;
+        private System.Windows.Forms.TextBox DateOrder;
+        private System.Windows.Forms.Button Reload;
     }
 }

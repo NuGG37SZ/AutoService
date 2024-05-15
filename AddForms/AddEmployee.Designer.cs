@@ -29,26 +29,26 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.skills = new System.Windows.Forms.TextBox();
-            this.schedule = new System.Windows.Forms.TextBox();
-            this.email = new System.Windows.Forms.TextBox();
-            this.phoneNumber = new System.Windows.Forms.TextBox();
-            this.position = new System.Windows.Forms.TextBox();
-            this.fullName = new System.Windows.Forms.TextBox();
+            this.Skills = new System.Windows.Forms.TextBox();
+            this.Schedule = new System.Windows.Forms.TextBox();
+            this.Email = new System.Windows.Forms.TextBox();
+            this.PhoneNumber = new System.Windows.Forms.TextBox();
+            this.Position = new System.Windows.Forms.TextBox();
+            this.FullName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.save = new System.Windows.Forms.Button();
+            this.Save = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel1.Controls.Add(this.skills);
-            this.panel1.Controls.Add(this.schedule);
-            this.panel1.Controls.Add(this.email);
-            this.panel1.Controls.Add(this.phoneNumber);
-            this.panel1.Controls.Add(this.position);
-            this.panel1.Controls.Add(this.fullName);
+            this.panel1.Controls.Add(this.Skills);
+            this.panel1.Controls.Add(this.Schedule);
+            this.panel1.Controls.Add(this.Email);
+            this.panel1.Controls.Add(this.PhoneNumber);
+            this.panel1.Controls.Add(this.Position);
+            this.panel1.Controls.Add(this.FullName);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -56,65 +56,65 @@
             this.panel1.Size = new System.Drawing.Size(384, 381);
             this.panel1.TabIndex = 19;
             // 
-            // skills
+            // Skills
             // 
-            this.skills.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.skills.Location = new System.Drawing.Point(103, 224);
-            this.skills.Name = "skills";
-            this.skills.Size = new System.Drawing.Size(198, 29);
-            this.skills.TabIndex = 23;
-            this.skills.Text = "Навыки";
-            this.skills.DoubleClick += new System.EventHandler(this.skills_DoubleClick);
+            this.Skills.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Skills.Location = new System.Drawing.Point(103, 224);
+            this.Skills.Name = "Skills";
+            this.Skills.Size = new System.Drawing.Size(198, 29);
+            this.Skills.TabIndex = 23;
+            this.Skills.Text = "Навыки";
+            this.Skills.DoubleClick += new System.EventHandler(this.Skills_DoubleClick);
             // 
-            // schedule
+            // Schedule
             // 
-            this.schedule.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.schedule.Location = new System.Drawing.Point(103, 189);
-            this.schedule.Name = "schedule";
-            this.schedule.Size = new System.Drawing.Size(198, 29);
-            this.schedule.TabIndex = 22;
-            this.schedule.Text = "График работы";
-            this.schedule.DoubleClick += new System.EventHandler(this.schedule_DoubleClick);
+            this.Schedule.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Schedule.Location = new System.Drawing.Point(103, 189);
+            this.Schedule.Name = "Schedule";
+            this.Schedule.Size = new System.Drawing.Size(198, 29);
+            this.Schedule.TabIndex = 22;
+            this.Schedule.Text = "График работы";
+            this.Schedule.DoubleClick += new System.EventHandler(this.Schedule_DoubleClick);
             // 
-            // email
+            // Email
             // 
-            this.email.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.email.Location = new System.Drawing.Point(103, 154);
-            this.email.Name = "email";
-            this.email.Size = new System.Drawing.Size(198, 29);
-            this.email.TabIndex = 20;
-            this.email.Text = "Почта";
-            this.email.DoubleClick += new System.EventHandler(this.email_DoubleClick);
+            this.Email.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Email.Location = new System.Drawing.Point(103, 154);
+            this.Email.Name = "Email";
+            this.Email.Size = new System.Drawing.Size(198, 29);
+            this.Email.TabIndex = 20;
+            this.Email.Text = "Почта";
+            this.Email.DoubleClick += new System.EventHandler(this.Email_DoubleClick);
             // 
-            // phoneNumber
+            // PhoneNumber
             // 
-            this.phoneNumber.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.phoneNumber.Location = new System.Drawing.Point(103, 119);
-            this.phoneNumber.Name = "phoneNumber";
-            this.phoneNumber.Size = new System.Drawing.Size(198, 29);
-            this.phoneNumber.TabIndex = 19;
-            this.phoneNumber.Text = "Номер телефона";
-            this.phoneNumber.DoubleClick += new System.EventHandler(this.phoneNumber_DoubleClick);
+            this.PhoneNumber.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.PhoneNumber.Location = new System.Drawing.Point(103, 119);
+            this.PhoneNumber.Name = "PhoneNumber";
+            this.PhoneNumber.Size = new System.Drawing.Size(198, 29);
+            this.PhoneNumber.TabIndex = 19;
+            this.PhoneNumber.Text = "Номер телефона";
+            this.PhoneNumber.DoubleClick += new System.EventHandler(this.PhoneNumber_DoubleClick);
             // 
-            // position
+            // Position
             // 
-            this.position.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.position.Location = new System.Drawing.Point(103, 84);
-            this.position.Name = "position";
-            this.position.Size = new System.Drawing.Size(198, 29);
-            this.position.TabIndex = 17;
-            this.position.Text = "Должность";
-            this.position.DoubleClick += new System.EventHandler(this.position_DoubleClick);
+            this.Position.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Position.Location = new System.Drawing.Point(103, 84);
+            this.Position.Name = "Position";
+            this.Position.Size = new System.Drawing.Size(198, 29);
+            this.Position.TabIndex = 17;
+            this.Position.Text = "Должность";
+            this.Position.DoubleClick += new System.EventHandler(this.Position_DoubleClick);
             // 
-            // fullName
+            // FullName
             // 
-            this.fullName.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.fullName.Location = new System.Drawing.Point(103, 49);
-            this.fullName.Name = "fullName";
-            this.fullName.Size = new System.Drawing.Size(198, 29);
-            this.fullName.TabIndex = 16;
-            this.fullName.Text = "ФИО";
-            this.fullName.DoubleClick += new System.EventHandler(this.fullName_DoubleClick);
+            this.FullName.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.FullName.Location = new System.Drawing.Point(103, 49);
+            this.FullName.Name = "FullName";
+            this.FullName.Size = new System.Drawing.Size(198, 29);
+            this.FullName.TabIndex = 16;
+            this.FullName.Text = "ФИО";
+            this.FullName.DoubleClick += new System.EventHandler(this.FullName_DoubleClick);
             // 
             // label1
             // 
@@ -126,27 +126,27 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Добавление Сотрудника";
             // 
-            // save
+            // Save
             // 
-            this.save.BackColor = System.Drawing.Color.LimeGreen;
-            this.save.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.save.FlatAppearance.BorderSize = 0;
-            this.save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.save.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.save.Location = new System.Drawing.Point(0, 378);
-            this.save.Name = "save";
-            this.save.Size = new System.Drawing.Size(384, 33);
-            this.save.TabIndex = 21;
-            this.save.Text = "Сохранить";
-            this.save.UseVisualStyleBackColor = false;
-            this.save.Click += new System.EventHandler(this.save_Click);
+            this.Save.BackColor = System.Drawing.Color.LimeGreen;
+            this.Save.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.Save.FlatAppearance.BorderSize = 0;
+            this.Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Save.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Save.Location = new System.Drawing.Point(0, 378);
+            this.Save.Name = "Save";
+            this.Save.Size = new System.Drawing.Size(384, 33);
+            this.Save.TabIndex = 21;
+            this.Save.Text = "Сохранить";
+            this.Save.UseVisualStyleBackColor = false;
+            this.Save.Click += new System.EventHandler(this.Save_Click);
             // 
             // AddEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 411);
-            this.Controls.Add(this.save);
+            this.Controls.Add(this.Save);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
@@ -161,13 +161,13 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox skills;
-        private System.Windows.Forms.TextBox schedule;
-        private System.Windows.Forms.TextBox email;
-        private System.Windows.Forms.TextBox phoneNumber;
-        private System.Windows.Forms.TextBox position;
-        private System.Windows.Forms.TextBox fullName;
+        private System.Windows.Forms.TextBox Skills;
+        private System.Windows.Forms.TextBox Schedule;
+        private System.Windows.Forms.TextBox Email;
+        private System.Windows.Forms.TextBox PhoneNumber;
+        private System.Windows.Forms.TextBox Position;
+        private System.Windows.Forms.TextBox FullName;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button save;
+        private System.Windows.Forms.Button Save;
     }
 }

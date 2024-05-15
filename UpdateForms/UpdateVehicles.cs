@@ -4,13 +4,7 @@ using AutoService.Interface;
 using AutoService.RepositoryImpl;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SQLite;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AutoService.UpdateForms
@@ -34,22 +28,23 @@ namespace AutoService.UpdateForms
         {
             Vehicles vehicles = new Vehicles
             {
-                Id = Convert.ToInt32(vehicle.SelectedValue),
-                ClientId = Convert.ToInt32(client.SelectedValue),
-                Make = make.Text,
-                Model = model.Text,
-                Year = Convert.ToInt32(year.Text),
-                Vin = vin.Text,
-                Notes = notes.Text
+                Id = Convert.ToInt32(Vehicle.SelectedValue),
+                ClientId = Convert.ToInt32(Client.SelectedValue),
+                Make = Make.Text,
+                Model = Model.Text,
+                Year = Convert.ToInt32(Year.Text),
+                Vin = Vin.Text,
+                Notes = Notes.Text
             };
             return vehicles;
         }
 
-        private void vehicle_SelectedValueChanged(object sender, EventArgs e)
+        private void Vehicle_SelectedValueChanged(object sender, EventArgs e)
         {
             LoadElemntsToCombobox();
             DbConnect.Connect();
-            string query = $"SELECT * FROM Vehicles WHERE vehicle_id = {Convert.ToInt32(vehicle.Text)}";
+            string query = $"SELECT * FROM Vehicles " +
+                $"WHERE vehicle_id = {Convert.ToInt32(Vehicle.Text)}";
             SQLiteCommand command = new SQLiteCommand(query, DbConnect.connection);
             using (SQLiteDataReader reader = command.ExecuteReader())
             {
@@ -64,19 +59,19 @@ namespace AutoService.UpdateForms
                         string vins = reader["vin"].ToString();
                         string notesStr = reader["notes"].ToString();
 
-                        client.SelectedValue = clientId;
-                        make.Text = makes;
-                        model.Text = models;
-                        year.Text = years;
-                        vin.Text = vins;
-                        notes.Text = notesStr;
+                        Client.SelectedValue = clientId;
+                        Make.Text = makes;
+                        Model.Text = models;
+                        Year.Text = years;
+                        Vin.Text = vins;
+                        Notes.Text = notesStr;
                     }
                 }
             }
             DbConnect.Disconnect();
         }
 
-        private void reload_Click(object sender, EventArgs e)
+        private void Reload_Click(object sender, EventArgs e)
         {
             vehiclesImpl.Update(InitializationVehicles());
         }
@@ -93,7 +88,7 @@ namespace AutoService.UpdateForms
                     int vehicleId = reader.GetInt32(0);
                     vehiclesList.Add(vehicleId);
                 }
-                vehicle.DataSource = vehiclesList;
+                Vehicle.DataSource = vehiclesList;
             }
             DbConnect.Disconnect();
 
@@ -109,9 +104,9 @@ namespace AutoService.UpdateForms
                     string clientFullName = reader.GetString(1);
                     clientsDictionary.Add(clientId, clientFullName);
                 }
-                client.DataSource = new BindingSource(clientsDictionary, null);
-                client.DisplayMember = "Value";
-                client.ValueMember = "Key";
+                Client.DataSource = new BindingSource(clientsDictionary, null);
+                Client.DisplayMember = "Value";
+                Client.ValueMember = "Key";
             }
             DbConnect.Disconnect();
         }

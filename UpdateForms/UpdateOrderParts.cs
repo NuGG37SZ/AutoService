@@ -4,13 +4,7 @@ using AutoService.Interface;
 using AutoService.RepositoryImpl;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SQLite;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AutoService.UpdateForms
@@ -33,18 +27,19 @@ namespace AutoService.UpdateForms
         {
             OrderPart orderPart = new OrderPart
             {
-                OrderId = Convert.ToInt32(orders.SelectedValue),
-                InventoryId = Convert.ToInt32(inventory.SelectedValue),
-                Quantity = Convert.ToInt32(quantity.Text)
+                OrderId = Convert.ToInt32(Orders.SelectedValue),
+                InventoryId = Convert.ToInt32(Inventory.SelectedValue),
+                Quantity = Convert.ToInt32(Quantity.Text)
             };
             return orderPart;
         }
 
-        private void orders_SelectedValueChanged(object sender, EventArgs e)
+        private void Orders_SelectedValueChanged(object sender, EventArgs e)
         {
             DbConnect.Connect();
-            string query = $"SELECT * FROM OrderParts WHERE inventory_id = {Convert.ToInt32(inventory.SelectedValue)} " +
-                $"AND order_id = {Convert.ToInt32(orders.Text)}";
+            string query = $"SELECT * FROM OrderParts " +
+                $"WHERE inventory_id = {Convert.ToInt32(Inventory.SelectedValue)} " +
+                $"AND order_id = {Convert.ToInt32(Orders.Text)}";
             SQLiteCommand command = new SQLiteCommand(query, DbConnect.connection);
             using (SQLiteDataReader reader = command.ExecuteReader())
             {
@@ -56,16 +51,16 @@ namespace AutoService.UpdateForms
                         int inventoryId = Convert.ToInt32(reader["inventory_id"]);
                         int quantitys = Convert.ToInt32(reader["quantity"]);
 
-                        orders.Text = orderId.ToString();
-                        inventory.SelectedValue = inventoryId;
-                        quantity.Text = quantitys.ToString();
+                        Orders.Text = orderId.ToString();
+                        Inventory.SelectedValue = inventoryId;
+                        Quantity.Text = quantitys.ToString();
                     }
                 }
             }
             DbConnect.Disconnect();
         }
 
-        private void reload_Click(object sender, EventArgs e)
+        private void Reload_Click(object sender, EventArgs e)
         {
             orderPartsImpl.Update(InitializationOrderPart());
         }
@@ -85,9 +80,9 @@ namespace AutoService.UpdateForms
                     string partNumber = reader.GetString(1);
                     inventoryDictionary.Add(inventoryId, partNumber);
                 }
-                inventory.DataSource = new BindingSource(inventoryDictionary, null);
-                inventory.DisplayMember = "Value";
-                inventory.ValueMember = "Key";
+                Inventory.DataSource = new BindingSource(inventoryDictionary, null);
+                Inventory.DisplayMember = "Value";
+                Inventory.ValueMember = "Key";
             }
 
             string querySecond = "SELECT DISTINCT order_id FROM OrderParts ";
@@ -99,7 +94,7 @@ namespace AutoService.UpdateForms
                     int ordersId = reader.GetInt32(0);
                     ordersList.Add(ordersId);
                 }
-                orders.DataSource = ordersList;
+                Orders.DataSource = ordersList;
             }
 
             DbConnect.Disconnect();

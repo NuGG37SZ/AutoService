@@ -1,15 +1,7 @@
 ﻿using AutoService.Classes;
 using AutoService.Entity;
-using AutoService.MainForms;
 using AutoService.RepositoryImpl;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AutoService.AddForms
@@ -26,47 +18,47 @@ namespace AutoService.AddForms
         {
             Inventory inventory = new Inventory
             {
-                PartName = partName.Text,
-                PartNumber = partNumber.Text,
-                Quantity = Convert.ToInt32(quantity.Text),
-                Price = float.Parse(price.Text),
-                Supplier = supplier.Text,
-                Notes = note.Text
+                PartName = PartName.Text,
+                PartNumber = PartNumber.Text,
+                Quantity = Convert.ToInt32(Quantity.Text),
+                Price = float.Parse(Price.Text),
+                Supplier = Supplier.Text,
+                Notes = Notes.Text
             };
             return inventory;
         }
 
-        private void partName_DoubleClick(object sender, EventArgs e)
+        private void PartName_DoubleClick(object sender, EventArgs e)
         {
-            TextHelper.ClearText(partName);
+            TextHelper.ClearText(PartName);
         }
 
-        private void partNumber_DoubleClick(object sender, EventArgs e)
+        private void PartNumber_DoubleClick(object sender, EventArgs e)
         {
-            TextHelper.ClearText(partNumber);
+            TextHelper.ClearText(PartNumber);
         }
 
-        private void price_DoubleClick(object sender, EventArgs e)
+        private void Price_DoubleClick(object sender, EventArgs e)
         {
-            TextHelper.ClearText(price);
+            TextHelper.ClearText(Price);
         }
 
-        private void quantity_DoubleClick(object sender, EventArgs e)
+        private void Quantity_DoubleClick(object sender, EventArgs e)
         {
-            TextHelper.ClearText(quantity);
+            TextHelper.ClearText(Quantity);
         }
 
-        private void supplier_DoubleClick(object sender, EventArgs e)
+        private void Supplier_DoubleClick(object sender, EventArgs e)
         {
-            TextHelper.ClearText(supplier);
+            TextHelper.ClearText(Supplier);
         }
 
-        private void note_DoubleClick(object sender, EventArgs e)
+        private void Notes_DoubleClick(object sender, EventArgs e)
         {
-            TextHelper.ClearText(note);
+            TextHelper.ClearText(Notes);
         }
 
-        private void save_Click(object sender, EventArgs e)
+        private void Save_Click(object sender, EventArgs e)
         {
             inventoryImpl.Add(InitializationInventory());
         }

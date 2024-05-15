@@ -30,21 +30,21 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
-            this.notes = new System.Windows.Forms.TextBox();
+            this.Notes = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.number = new System.Windows.Forms.TextBox();
+            this.Number = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.supplier = new System.Windows.Forms.TextBox();
-            this.inventory = new System.Windows.Forms.ComboBox();
+            this.Supplier = new System.Windows.Forms.TextBox();
+            this.Inventory = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.name = new System.Windows.Forms.TextBox();
-            this.price = new System.Windows.Forms.TextBox();
-            this.quantity = new System.Windows.Forms.TextBox();
-            this.reload = new System.Windows.Forms.Button();
+            this.Names = new System.Windows.Forms.TextBox();
+            this.Price = new System.Windows.Forms.TextBox();
+            this.Quantity = new System.Windows.Forms.TextBox();
+            this.Reload = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,20 +52,20 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.notes);
+            this.panel1.Controls.Add(this.Notes);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.number);
+            this.panel1.Controls.Add(this.Number);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.supplier);
-            this.panel1.Controls.Add(this.inventory);
+            this.panel1.Controls.Add(this.Supplier);
+            this.panel1.Controls.Add(this.Inventory);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.name);
-            this.panel1.Controls.Add(this.price);
-            this.panel1.Controls.Add(this.quantity);
+            this.panel1.Controls.Add(this.Names);
+            this.panel1.Controls.Add(this.Price);
+            this.panel1.Controls.Add(this.Quantity);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -82,13 +82,13 @@
             this.label8.TabIndex = 32;
             this.label8.Text = "Описание";
             // 
-            // notes
+            // Notes
             // 
-            this.notes.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.notes.Location = new System.Drawing.Point(206, 214);
-            this.notes.Name = "notes";
-            this.notes.Size = new System.Drawing.Size(166, 29);
-            this.notes.TabIndex = 31;
+            this.Notes.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Notes.Location = new System.Drawing.Point(206, 214);
+            this.Notes.Name = "Notes";
+            this.Notes.Size = new System.Drawing.Size(166, 29);
+            this.Notes.TabIndex = 31;
             // 
             // label7
             // 
@@ -140,13 +140,13 @@
             this.label3.TabIndex = 26;
             this.label3.Text = "Количество";
             // 
-            // number
+            // Number
             // 
-            this.number.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.number.Location = new System.Drawing.Point(12, 164);
-            this.number.Name = "number";
-            this.number.Size = new System.Drawing.Size(166, 29);
-            this.number.TabIndex = 17;
+            this.Number.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Number.Location = new System.Drawing.Point(12, 164);
+            this.Number.Name = "Number";
+            this.Number.Size = new System.Drawing.Size(166, 29);
+            this.Number.TabIndex = 17;
             // 
             // label2
             // 
@@ -158,23 +158,23 @@
             this.label2.TabIndex = 25;
             this.label2.Text = "Айди запчасти для обновления";
             // 
-            // supplier
+            // Supplier
             // 
-            this.supplier.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.supplier.Location = new System.Drawing.Point(206, 164);
-            this.supplier.Name = "supplier";
-            this.supplier.Size = new System.Drawing.Size(166, 29);
-            this.supplier.TabIndex = 16;
+            this.Supplier.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Supplier.Location = new System.Drawing.Point(206, 164);
+            this.Supplier.Name = "Supplier";
+            this.Supplier.Size = new System.Drawing.Size(166, 29);
+            this.Supplier.TabIndex = 16;
             // 
-            // inventory
+            // Inventory
             // 
-            this.inventory.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.inventory.FormattingEnabled = true;
-            this.inventory.Location = new System.Drawing.Point(12, 64);
-            this.inventory.Name = "inventory";
-            this.inventory.Size = new System.Drawing.Size(166, 29);
-            this.inventory.TabIndex = 23;
-            this.inventory.SelectedValueChanged += new System.EventHandler(this.inventory_SelectedValueChanged);
+            this.Inventory.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Inventory.FormattingEnabled = true;
+            this.Inventory.Location = new System.Drawing.Point(12, 64);
+            this.Inventory.Name = "Inventory";
+            this.Inventory.Size = new System.Drawing.Size(166, 29);
+            this.Inventory.TabIndex = 23;
+            this.Inventory.SelectedValueChanged += new System.EventHandler(this.Inventory_SelectedValueChanged);
             // 
             // label1
             // 
@@ -186,51 +186,51 @@
             this.label1.TabIndex = 24;
             this.label1.Text = "Обновление Запчасти";
             // 
-            // name
+            // Names
             // 
-            this.name.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.name.Location = new System.Drawing.Point(12, 114);
-            this.name.Name = "name";
-            this.name.Size = new System.Drawing.Size(166, 29);
-            this.name.TabIndex = 15;
+            this.Names.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Names.Location = new System.Drawing.Point(12, 114);
+            this.Names.Name = "Names";
+            this.Names.Size = new System.Drawing.Size(166, 29);
+            this.Names.TabIndex = 15;
             // 
-            // price
+            // Price
             // 
-            this.price.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.price.Location = new System.Drawing.Point(206, 114);
-            this.price.Name = "price";
-            this.price.Size = new System.Drawing.Size(166, 29);
-            this.price.TabIndex = 14;
+            this.Price.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Price.Location = new System.Drawing.Point(206, 114);
+            this.Price.Name = "Price";
+            this.Price.Size = new System.Drawing.Size(166, 29);
+            this.Price.TabIndex = 14;
             // 
-            // quantity
+            // Quantity
             // 
-            this.quantity.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.quantity.Location = new System.Drawing.Point(206, 64);
-            this.quantity.Name = "quantity";
-            this.quantity.Size = new System.Drawing.Size(166, 29);
-            this.quantity.TabIndex = 6;
+            this.Quantity.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Quantity.Location = new System.Drawing.Point(206, 64);
+            this.Quantity.Name = "Quantity";
+            this.Quantity.Size = new System.Drawing.Size(166, 29);
+            this.Quantity.TabIndex = 6;
             // 
-            // reload
+            // Reload
             // 
-            this.reload.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.reload.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.reload.FlatAppearance.BorderSize = 0;
-            this.reload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.reload.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.reload.Location = new System.Drawing.Point(0, 378);
-            this.reload.Name = "reload";
-            this.reload.Size = new System.Drawing.Size(384, 33);
-            this.reload.TabIndex = 32;
-            this.reload.Text = "Обновить";
-            this.reload.UseVisualStyleBackColor = false;
-            this.reload.Click += new System.EventHandler(this.reload_Click);
+            this.Reload.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.Reload.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.Reload.FlatAppearance.BorderSize = 0;
+            this.Reload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Reload.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Reload.Location = new System.Drawing.Point(0, 378);
+            this.Reload.Name = "Reload";
+            this.Reload.Size = new System.Drawing.Size(384, 33);
+            this.Reload.TabIndex = 32;
+            this.Reload.Text = "Обновить";
+            this.Reload.UseVisualStyleBackColor = false;
+            this.Reload.Click += new System.EventHandler(this.Reload_Click);
             // 
             // UpdateInventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 411);
-            this.Controls.Add(this.reload);
+            this.Controls.Add(this.Reload);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
@@ -247,20 +247,20 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox notes;
+        private System.Windows.Forms.TextBox Notes;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox number;
+        private System.Windows.Forms.TextBox Number;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox supplier;
-        private System.Windows.Forms.ComboBox inventory;
+        private System.Windows.Forms.TextBox Supplier;
+        private System.Windows.Forms.ComboBox Inventory;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox name;
-        private System.Windows.Forms.TextBox price;
-        private System.Windows.Forms.TextBox quantity;
-        private System.Windows.Forms.Button reload;
+        private System.Windows.Forms.TextBox Names;
+        private System.Windows.Forms.TextBox Price;
+        private System.Windows.Forms.TextBox Quantity;
+        private System.Windows.Forms.Button Reload;
     }
 }

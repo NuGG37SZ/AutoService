@@ -1,13 +1,6 @@
 ﻿using AutoService.Classes;
 using AutoService.RepositoryImpl;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AutoService.DeleteForms
@@ -20,14 +13,14 @@ namespace AutoService.DeleteForms
             InitializeComponent();
         }
 
-        private void delete_Click(object sender, EventArgs e)
+        private void Delete_Click(object sender, EventArgs e)
         {
-            employeeImpl.Delete(Convert.ToInt32(idEmployees.Text));
+            employeeImpl.Delete(Convert.ToInt32(IdEmployees.Text));
         }
 
-        private void idEmployees_DoubleClick(object sender, EventArgs e)
+        private void IdEmployees_DoubleClick(object sender, EventArgs e)
         {
-            TextHelper.ClearText(idEmployees);
+            TextHelper.ClearText(IdEmployees);
         }
     }
 }

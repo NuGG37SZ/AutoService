@@ -1,12 +1,8 @@
 ﻿using AutoService.Classes;
 using AutoService.Entity;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SQLite;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AutoService.RepositoryImpl
@@ -35,7 +31,8 @@ namespace AutoService.RepositoryImpl
                     MessageBox.Show("Произошла ошибка запчасть не добавлена в заказ!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
-                string findQuery = $"SELECT * FROM OrderParts WHERE inventory_id = {entity.InventoryId}";
+                string findQuery = $"SELECT * FROM OrderParts " +
+                    $"WHERE inventory_id = {entity.InventoryId}";
                 SQLiteCommand commandFind = new SQLiteCommand(findQuery, DbConnect.connection);
                 using (SQLiteDataReader reader = commandFind.ExecuteReader())
                 {
@@ -45,7 +42,8 @@ namespace AutoService.RepositoryImpl
                         {
                             int inventoryId = Convert.ToInt32(reader["inventory_id"]);
 
-                            string updateQuery = $"UPDATE Inventory SET quantity = quantity - {entity.Quantity} " +
+                            string updateQuery = $"UPDATE Inventory " +
+                                $"SET quantity = quantity - {entity.Quantity} " +
                                 $"WHERE inventory_id = {inventoryId}";
                             SQLiteCommand commandUpdate = new SQLiteCommand(updateQuery, DbConnect.connection);
                             commandUpdate.ExecuteNonQuery();
@@ -70,7 +68,8 @@ namespace AutoService.RepositoryImpl
         public void Delete(int idOrders, int idInventory)
         {
             DbConnect.Connect();
-            string findQuery = $"SELECT * FROM OrderParts WHERE inventory_id = {idInventory}";
+            string findQuery = $"SELECT * FROM OrderParts " +
+                $"WHERE inventory_id = {idInventory}";
             SQLiteCommand commandFind = new SQLiteCommand(findQuery, DbConnect.connection);
             using (SQLiteDataReader reader = commandFind.ExecuteReader())
             {
@@ -90,7 +89,9 @@ namespace AutoService.RepositoryImpl
             }
 
             var command = DbConnect.connection.CreateCommand();
-            command.CommandText = "DELETE FROM OrderParts WHERE order_id = @idOrders AND inventory_id = @idInventory";
+            command.CommandText = "DELETE FROM OrderParts " +
+                "WHERE order_id = @idOrders " +
+                "AND inventory_id = @idInventory";
             command.Parameters.AddWithValue("@idOrders", idOrders);
             command.Parameters.AddWithValue("@idInventory", idInventory);
             int rowsAffected = command.ExecuteNonQuery();
@@ -121,7 +122,8 @@ namespace AutoService.RepositoryImpl
             command.Parameters.AddWithValue("@quantity", entity.Quantity);
             int rowsAffected = command.ExecuteNonQuery();
 
-            string querySecond = $"SELECT quantity FROM Inventory WHERE inventory_id = {entity.InventoryId}";
+            string querySecond = $"SELECT quantity FROM Inventory " +
+                $"WHERE inventory_id = {entity.InventoryId}";
             SQLiteCommand commandSecond = new SQLiteCommand(querySecond, DbConnect.connection);
             using (SQLiteDataReader reader = commandSecond.ExecuteReader())
             {
@@ -134,7 +136,8 @@ namespace AutoService.RepositoryImpl
                         if (oldValueQuantity < newValueQuantity)
                         {
                             quantity -= newValueQuantity - oldValueQuantity;
-                            string updateQuery = $"UPDATE Inventory SET quantity = {quantity} " +
+                            string updateQuery = $"UPDATE Inventory " +
+                                    $"SET quantity = {quantity} " +
                                     $"WHERE inventory_id = {entity.InventoryId}";
                             SQLiteCommand commandUpdate = new SQLiteCommand(updateQuery, DbConnect.connection);
                             commandUpdate.ExecuteNonQuery();
@@ -142,7 +145,8 @@ namespace AutoService.RepositoryImpl
                         else
                         {
                             quantity += oldValueQuantity - newValueQuantity;
-                            string updateQuery = $"UPDATE Inventory SET quantity = {quantity} " +
+                            string updateQuery = $"UPDATE Inventory " +
+                                    $"SET quantity = {quantity} " +
                                     $"WHERE inventory_id = {entity.InventoryId}";
                             SQLiteCommand commandUpdate = new SQLiteCommand(updateQuery, DbConnect.connection);
                             commandUpdate.ExecuteNonQuery();
@@ -219,7 +223,8 @@ namespace AutoService.RepositoryImpl
         public int getOldValueQuantity(int inventoryId, int orderId)
         {
             int oldValueQuantity = 0;
-            string queryThird = $"SELECT quantity FROM OrderParts WHERE inventory_id = {inventoryId} " +
+            string queryThird = $"SELECT quantity FROM OrderParts " +
+                $"WHERE inventory_id = {inventoryId} " +
                 $"AND order_id = {orderId}";
             SQLiteCommand commandThird = new SQLiteCommand(queryThird, DbConnect.connection);
             using (SQLiteDataReader reader = commandThird.ExecuteReader())

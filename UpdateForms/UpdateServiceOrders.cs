@@ -4,13 +4,7 @@ using AutoService.Interface;
 using AutoService.RepositoryImpl;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SQLite;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AutoService.UpdateForms
@@ -33,28 +27,29 @@ namespace AutoService.UpdateForms
 
         public ServiceOrders InitializationServiceOrders()
         {
-            DateTime dateOrders = Convert.ToDateTime(dateOrder.Text);
+            DateTime dateOrders = Convert.ToDateTime(DateOrder.Text);
 
             ServiceOrders serviceOrders = new ServiceOrders
             {
-                Id = Convert.ToInt32(order.SelectedValue),
-                ClientId = Convert.ToInt32(client.SelectedValue),
-                VehicleId = Convert.ToInt32(car.SelectedValue),
+                Id = Convert.ToInt32(Order.SelectedValue),
+                ClientId = Convert.ToInt32(Client.SelectedValue),
+                VehicleId = Convert.ToInt32(Car.SelectedValue),
                 OrderDate = dateOrders,
-                ServiceType = serviceType.Text,
-                Status = status.Text,
-                EstimatedCost = float.Parse(cost.Text),
-                Notes = notes.Text
+                ServiceType = ServiceType.Text,
+                Status = Status.Text,
+                EstimatedCost = float.Parse(Cost.Text),
+                Notes = Notes.Text
             };
 
             return serviceOrders;
         }
 
-        private void order_SelectedValueChanged(object sender, EventArgs e)
+        private void Order_SelectedValueChanged(object sender, EventArgs e)
         {
             LoadElemntsToCombobox();
             DbConnect.Connect();
-            string query = $"SELECT * FROM ServiceOrders WHERE order_id = {Convert.ToInt32(order.Text)}";
+            string query = $"SELECT * FROM ServiceOrders " +
+                $"WHERE order_id = {Convert.ToInt32(Order.Text)}";
             SQLiteCommand command = new SQLiteCommand(query, DbConnect.connection);
             using (SQLiteDataReader reader = command.ExecuteReader())
             {
@@ -70,20 +65,20 @@ namespace AutoService.UpdateForms
                         string estimatedCost = reader["estimated_cost"].ToString();
                         string notesStr = reader["notes"].ToString();
 
-                        client.SelectedValue = clientId;
-                        car.SelectedValue = vehicleId;
-                        dateOrder.Text = orderDate;
-                        serviceType.Text = serviceTypes;
-                        status.Text = statusStr;
-                        cost.Text = estimatedCost;
-                        notes.Text = notesStr;
+                        Client.SelectedValue = clientId;
+                        Car.SelectedValue = vehicleId;
+                        DateOrder.Text = orderDate;
+                        ServiceType.Text = serviceTypes;
+                        Status.Text = statusStr;
+                        Cost.Text = estimatedCost;
+                        Notes.Text = notesStr;
                     }
                 }
             }
             DbConnect.Disconnect();
         }
 
-        private void reload_Click(object sender, EventArgs e)
+        private void Reload_Click(object sender, EventArgs e)
         {
             serviceOrdersImpl.Update(InitializationServiceOrders());
         }
@@ -100,7 +95,7 @@ namespace AutoService.UpdateForms
                     int orderId = reader.GetInt32(0);
                     orderList.Add(orderId);
                 }
-                order.DataSource = orderList;
+                Order.DataSource = orderList;
             }
             DbConnect.Disconnect();
 
@@ -116,9 +111,9 @@ namespace AutoService.UpdateForms
                     string clientFullName = reader.GetString(1);
                     clientsDictionary.Add(clientId, clientFullName);
                 }
-                client.DataSource = new BindingSource(clientsDictionary, null);
-                client.DisplayMember = "Value";
-                client.ValueMember = "Key";
+                Client.DataSource = new BindingSource(clientsDictionary, null);
+                Client.DisplayMember = "Value";
+                Client.ValueMember = "Key";
             }
             DbConnect.Disconnect();
 
@@ -134,9 +129,9 @@ namespace AutoService.UpdateForms
                     string vehicleVin = reader.GetString(5);
                     vehicleDictionary.Add(vehicleId, vehicleVin);
                 }
-                car.DataSource = new BindingSource(vehicleDictionary, null);
-                car.DisplayMember = "Value";
-                car.ValueMember = "Key";
+                Car.DataSource = new BindingSource(vehicleDictionary, null);
+                Car.DisplayMember = "Value";
+                Car.ValueMember = "Key";
             }
             DbConnect.Disconnect();
         }
