@@ -64,7 +64,7 @@
             this.Skills.Size = new System.Drawing.Size(198, 29);
             this.Skills.TabIndex = 23;
             this.Skills.Text = "Навыки";
-            this.Skills.DoubleClick += new System.EventHandler(this.Skills_DoubleClick);
+            this.Skills.DoubleClick += new System.EventHandler(this.ClearTextBox);
             // 
             // Schedule
             // 
@@ -74,7 +74,7 @@
             this.Schedule.Size = new System.Drawing.Size(198, 29);
             this.Schedule.TabIndex = 22;
             this.Schedule.Text = "График работы";
-            this.Schedule.DoubleClick += new System.EventHandler(this.Schedule_DoubleClick);
+            this.Schedule.DoubleClick += new System.EventHandler(this.ClearTextBox);
             // 
             // Email
             // 
@@ -84,7 +84,7 @@
             this.Email.Size = new System.Drawing.Size(198, 29);
             this.Email.TabIndex = 20;
             this.Email.Text = "Почта";
-            this.Email.DoubleClick += new System.EventHandler(this.Email_DoubleClick);
+            this.Email.DoubleClick += new System.EventHandler(this.ClearTextBox);
             // 
             // PhoneNumber
             // 
@@ -94,7 +94,7 @@
             this.PhoneNumber.Size = new System.Drawing.Size(198, 29);
             this.PhoneNumber.TabIndex = 19;
             this.PhoneNumber.Text = "Номер телефона";
-            this.PhoneNumber.DoubleClick += new System.EventHandler(this.PhoneNumber_DoubleClick);
+            this.PhoneNumber.DoubleClick += new System.EventHandler(this.ClearTextBox);
             // 
             // Position
             // 
@@ -104,7 +104,7 @@
             this.Position.Size = new System.Drawing.Size(198, 29);
             this.Position.TabIndex = 17;
             this.Position.Text = "Должность";
-            this.Position.DoubleClick += new System.EventHandler(this.Position_DoubleClick);
+            this.Position.DoubleClick += new System.EventHandler(this.ClearTextBox);
             // 
             // FullName
             // 
@@ -114,7 +114,7 @@
             this.FullName.Size = new System.Drawing.Size(198, 29);
             this.FullName.TabIndex = 16;
             this.FullName.Text = "ФИО";
-            this.FullName.DoubleClick += new System.EventHandler(this.FullName_DoubleClick);
+            this.FullName.DoubleClick += new System.EventHandler(this.ClearTextBox);
             // 
             // label1
             // 

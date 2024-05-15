@@ -64,7 +64,7 @@
             this.Notes.Size = new System.Drawing.Size(198, 29);
             this.Notes.TabIndex = 20;
             this.Notes.Text = "Примечание";
-            this.Notes.DoubleClick += new System.EventHandler(this.Notes_DoubleClick);
+            this.Notes.DoubleClick += new System.EventHandler(this.ClearTextBox);
             // 
             // Vin
             // 
@@ -74,7 +74,7 @@
             this.Vin.Size = new System.Drawing.Size(198, 29);
             this.Vin.TabIndex = 19;
             this.Vin.Text = "VIN";
-            this.Vin.DoubleClick += new System.EventHandler(this.Vin_DoubleClick);
+            this.Vin.DoubleClick += new System.EventHandler(this.ClearTextBox);
             // 
             // Client
             // 
@@ -94,7 +94,7 @@
             this.Year.Size = new System.Drawing.Size(198, 29);
             this.Year.TabIndex = 17;
             this.Year.Text = "Год выпуска";
-            this.Year.DoubleClick += new System.EventHandler(this.Year_DoubleClick);
+            this.Year.DoubleClick += new System.EventHandler(this.ClearTextBox);
             // 
             // Model
             // 
@@ -104,7 +104,7 @@
             this.Model.Size = new System.Drawing.Size(198, 29);
             this.Model.TabIndex = 16;
             this.Model.Text = "Модель";
-            this.Model.DoubleClick += new System.EventHandler(this.Model_DoubleClick);
+            this.Model.DoubleClick += new System.EventHandler(this.ClearTextBox);
             // 
             // Make
             // 
@@ -114,7 +114,7 @@
             this.Make.Size = new System.Drawing.Size(198, 29);
             this.Make.TabIndex = 15;
             this.Make.Text = "Производитель";
-            this.Make.DoubleClick += new System.EventHandler(this.Make_DoubleClick);
+            this.Make.DoubleClick += new System.EventHandler(this.ClearTextBox);
             // 
             // label1
             // 

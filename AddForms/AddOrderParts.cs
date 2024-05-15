@@ -36,9 +36,11 @@ namespace AutoService.AddForms
             return orderPart;
         }
 
-        private void Quantity_DoubleClick(object sender, EventArgs e)
+        private void ClearTextBox(object sender, EventArgs e)
         {
-            TextHelper.ClearText(Quantity);
+            string name = (sender as Control).Name;
+            Control control = this.Controls.Find(name, true).FirstOrDefault();
+            control.Text = "";
         }
 
         private void Save_Click(object sender, EventArgs e)

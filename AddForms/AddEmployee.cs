@@ -2,6 +2,7 @@
 using AutoService.Entity;
 using AutoService.RepositoryImpl;
 using System;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace AutoService.AddForms
@@ -27,35 +28,11 @@ namespace AutoService.AddForms
             };
             return employees;
         }
-
-        private void FullName_DoubleClick(object sender, EventArgs e)
+        private void ClearTextBox(object sender, EventArgs e)
         {
-            TextHelper.ClearText(FullName);
-        }
-
-        private void Position_DoubleClick(object sender, EventArgs e)
-        {
-            TextHelper.ClearText(Position);
-        }
-
-        private void PhoneNumber_DoubleClick(object sender, EventArgs e)
-        {
-            TextHelper.ClearText(PhoneNumber);
-        }
-
-        private void Email_DoubleClick(object sender, EventArgs e)
-        {
-            TextHelper.ClearText(Email);
-        }
-
-        private void Schedule_DoubleClick(object sender, EventArgs e)
-        {
-            TextHelper.ClearText(Schedule);
-        }
-
-        private void Skills_DoubleClick(object sender, EventArgs e)
-        {
-            TextHelper.ClearText(Skills);
+            string name = (sender as Control).Name;
+            Control control = this.Controls.Find(name, true).FirstOrDefault();
+            control.Text = "";
         }
 
         private void Save_Click(object sender, EventArgs e)

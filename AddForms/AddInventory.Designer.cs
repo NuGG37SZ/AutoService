@@ -64,7 +64,7 @@
             this.Price.Size = new System.Drawing.Size(198, 29);
             this.Price.TabIndex = 23;
             this.Price.Text = "Стоимость";
-            this.Price.DoubleClick += new System.EventHandler(this.Price_DoubleClick);
+            this.Price.DoubleClick += new System.EventHandler(this.ClearTextBox);
             // 
             // Notes
             // 
@@ -74,7 +74,7 @@
             this.Notes.Size = new System.Drawing.Size(198, 29);
             this.Notes.TabIndex = 22;
             this.Notes.Text = "Примечание";
-            this.Notes.DoubleClick += new System.EventHandler(this.Notes_DoubleClick);
+            this.Notes.DoubleClick += new System.EventHandler(this.ClearTextBox);
             // 
             // Supplier
             // 
@@ -84,7 +84,7 @@
             this.Supplier.Size = new System.Drawing.Size(198, 29);
             this.Supplier.TabIndex = 20;
             this.Supplier.Text = "Поставщик";
-            this.Supplier.DoubleClick += new System.EventHandler(this.Supplier_DoubleClick);
+            this.Supplier.DoubleClick += new System.EventHandler(this.ClearTextBox);
             // 
             // Quantity
             // 
@@ -94,7 +94,7 @@
             this.Quantity.Size = new System.Drawing.Size(198, 29);
             this.Quantity.TabIndex = 19;
             this.Quantity.Text = "Количество";
-            this.Quantity.DoubleClick += new System.EventHandler(this.Quantity_DoubleClick);
+            this.Quantity.DoubleClick += new System.EventHandler(this.ClearTextBox);
             // 
             // PartNumber
             // 
@@ -104,7 +104,7 @@
             this.PartNumber.Size = new System.Drawing.Size(198, 29);
             this.PartNumber.TabIndex = 17;
             this.PartNumber.Text = "Номер ";
-            this.PartNumber.DoubleClick += new System.EventHandler(this.PartNumber_DoubleClick);
+            this.PartNumber.DoubleClick += new System.EventHandler(this.ClearTextBox);
             // 
             // PartName
             // 
@@ -114,7 +114,7 @@
             this.PartName.Size = new System.Drawing.Size(198, 29);
             this.PartName.TabIndex = 16;
             this.PartName.Text = "Наименование";
-            this.PartName.DoubleClick += new System.EventHandler(this.PartName_DoubleClick);
+            this.PartName.DoubleClick += new System.EventHandler(this.ClearTextBox);
             // 
             // label2
             // 

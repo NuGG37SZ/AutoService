@@ -72,7 +72,7 @@
             this.Notes.Size = new System.Drawing.Size(198, 29);
             this.Notes.TabIndex = 22;
             this.Notes.Text = "Примечание";
-            this.Notes.DoubleClick += new System.EventHandler(this.Notes_DoubleClick);
+            this.Notes.DoubleClick += new System.EventHandler(this.ClearTextBox);
             // 
             // Car
             // 
@@ -92,7 +92,7 @@
             this.NextServiceDate.Size = new System.Drawing.Size(198, 29);
             this.NextServiceDate.TabIndex = 17;
             this.NextServiceDate.Text = "Следующее посещение";
-            this.NextServiceDate.DoubleClick += new System.EventHandler(this.NextServiceDate_DoubleClick);
+            this.NextServiceDate.DoubleClick += new System.EventHandler(this.ClearTextBox);
             // 
             // LastServiceDate
             // 
@@ -102,7 +102,7 @@
             this.LastServiceDate.Size = new System.Drawing.Size(198, 29);
             this.LastServiceDate.TabIndex = 16;
             this.LastServiceDate.Text = "Последнее посещения";
-            this.LastServiceDate.DoubleClick += new System.EventHandler(this.LastServiceDate_DoubleClick);
+            this.LastServiceDate.DoubleClick += new System.EventHandler(this.ClearTextBox);
             // 
             // label1
             // 

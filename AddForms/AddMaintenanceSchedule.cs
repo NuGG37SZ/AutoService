@@ -5,6 +5,7 @@ using AutoService.RepositoryImpl;
 using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace AutoService.AddForms
@@ -46,19 +47,11 @@ namespace AutoService.AddForms
             maintenanceScheduleImpl.Add(InitializationMaintenanceSchedules());
         }
 
-        private void LastServiceDate_DoubleClick(object sender, EventArgs e)
+        private void ClearTextBox(object sender, EventArgs e)
         {
-            TextHelper.ClearText(LastServiceDate);
-        }
-
-        private void NextServiceDate_DoubleClick(object sender, EventArgs e)
-        {
-            TextHelper.ClearText(NextServiceDate);
-        }
-
-        private void Notes_DoubleClick(object sender, EventArgs e)
-        {
-            TextHelper.ClearText(Notes);
+            string name = (sender as Control).Name;
+            Control control = this.Controls.Find(name, true).FirstOrDefault();
+            control.Text = "";
         }
 
         public void LoadElemntsToCombobox()
@@ -79,7 +72,6 @@ namespace AutoService.AddForms
                 Car.DataSource = new BindingSource(vehicleDictionary, null);
                 Car.DisplayMember = "Value";
                 Car.ValueMember = "Key";
-
                 Car.Text = "Автомобиль";
             }
 
@@ -96,7 +88,6 @@ namespace AutoService.AddForms
 
                 ServiceType.Text = "Тип услуги";
             }
-
             DbConnect.Disconnect();
         }
     }

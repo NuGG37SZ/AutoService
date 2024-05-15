@@ -1,5 +1,4 @@
-﻿using AutoService.Classes;
-using AutoService.Entity;
+﻿using AutoService.Entity;
 using AutoService.RepositoryImpl;
 using System;
 using System.Linq;
@@ -15,38 +14,11 @@ namespace AutoService.AddForms
             InitializeComponent();
         }
 
-        private void FullName_DoubleClick(object sender, EventArgs e)
-        {
-            TextHelper.ClearText(FullName);
-        }
-
-        private void PhoneNumber_DoubleClick(object sender, EventArgs e)
-        {
-            TextHelper.ClearText(PhoneNumber);
-        }
-
-        private void Email_DoubleClick(object sender, EventArgs e)
-        {
-            TextHelper.ClearText(Email);
-        }
-
-        private void Address_DoubleClick(object sender, EventArgs e)
-        {
-            TextHelper.ClearText(Address);
-        }
-
-        private void Notes_DoubleClick(object sender, EventArgs e)
-        {
-            TextHelper.ClearText(Notes);
-        }
-
         private void ClearTextBox(object sender, EventArgs e)
         {
-            string name = (sender as TextBox).Name;
-
-
-            Controls[name].Text = "";
-            //TextHelper.ClearText(Controls[name] as TextBox);
+            string name = (sender as Control).Name;
+            Control control = this.Controls.Find(name, true).FirstOrDefault();
+            control.Text = "";
         }
 
         private void Save_Click(object sender, EventArgs e)

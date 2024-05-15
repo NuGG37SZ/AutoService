@@ -2,6 +2,7 @@
 using AutoService.Entity;
 using AutoService.RepositoryImpl;
 using System;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace AutoService.AddForms
@@ -32,25 +33,11 @@ namespace AutoService.AddForms
         {
             financesImpl.Add(InitializationEmployees());
         }
-
-        private void TransactionDate_DoubleClick(object sender, EventArgs e)
+        private void ClearTextBox(object sender, EventArgs e)
         {
-            TextHelper.ClearText(TransactionDate);
-        }
-
-        private void TransactionType_DoubleClick(object sender, EventArgs e)
-        {
-            TextHelper.ClearText(TransactionType);
-        }
-
-        private void Amount_DoubleClick(object sender, EventArgs e)
-        {
-            TextHelper.ClearText(Amount);
-        }
-
-        private void Description_DoubleClick(object sender, EventArgs e)
-        {
-            TextHelper.ClearText(Description);
+            string name = (sender as Control).Name;
+            Control control = this.Controls.Find(name, true).FirstOrDefault();
+            control.Text = "";
         }
     }
 }

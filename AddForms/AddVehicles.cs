@@ -42,32 +42,12 @@ namespace AutoService.AddForms
         {
             vehiclesImpl.Add(InitializationVehicles());
         }
-
-        private void Make_DoubleClick(object sender, EventArgs e)
+        private void ClearTextBox(object sender, EventArgs e)
         {
-            TextHelper.ClearText(Make);
+            string name = (sender as Control).Name;
+            Control control = this.Controls.Find(name, true).FirstOrDefault();
+            control.Text = "";
         }
-
-        private void Model_DoubleClick(object sender, EventArgs e)
-        {
-            TextHelper.ClearText(Model);
-        }
-
-        private void Year_DoubleClick(object sender, EventArgs e)
-        {
-            TextHelper.ClearText(Year);
-        }
-
-        private void Vin_DoubleClick(object sender, EventArgs e)
-        {
-            TextHelper.ClearText(Vin);
-        }
-
-        private void Notes_DoubleClick(object sender, EventArgs e)
-        {
-            TextHelper.ClearText(Notes);
-        }
-
         public void LoadElemntsToCombobox()
         {
             DbConnect.Connect();

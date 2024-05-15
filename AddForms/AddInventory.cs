@@ -2,6 +2,7 @@
 using AutoService.Entity;
 using AutoService.RepositoryImpl;
 using System;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace AutoService.AddForms
@@ -27,35 +28,11 @@ namespace AutoService.AddForms
             };
             return inventory;
         }
-
-        private void PartName_DoubleClick(object sender, EventArgs e)
+        private void ClearTextBox(object sender, EventArgs e)
         {
-            TextHelper.ClearText(PartName);
-        }
-
-        private void PartNumber_DoubleClick(object sender, EventArgs e)
-        {
-            TextHelper.ClearText(PartNumber);
-        }
-
-        private void Price_DoubleClick(object sender, EventArgs e)
-        {
-            TextHelper.ClearText(Price);
-        }
-
-        private void Quantity_DoubleClick(object sender, EventArgs e)
-        {
-            TextHelper.ClearText(Quantity);
-        }
-
-        private void Supplier_DoubleClick(object sender, EventArgs e)
-        {
-            TextHelper.ClearText(Supplier);
-        }
-
-        private void Notes_DoubleClick(object sender, EventArgs e)
-        {
-            TextHelper.ClearText(Notes);
+            string name = (sender as Control).Name;
+            Control control = this.Controls.Find(name, true).FirstOrDefault();
+            control.Text = "";
         }
 
         private void Save_Click(object sender, EventArgs e)

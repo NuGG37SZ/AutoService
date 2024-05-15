@@ -5,6 +5,7 @@ using AutoService.RepositoryImpl;
 using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace AutoService.AddForms
@@ -41,29 +42,11 @@ namespace AutoService.AddForms
             return serviceOrders;
         }
 
-        private void OrderDate_DoubleClick(object sender, EventArgs e)
+        private void ClearTextBox(object sender, EventArgs e)
         {
-            TextHelper.ClearText(OrderDate);
-        }
-
-        private void ServiceType_DoubleClick(object sender, EventArgs e)
-        {
-            TextHelper.ClearText(ServiceType);
-        }
-
-        private void Status_DoubleClick(object sender, EventArgs e)
-        {
-            TextHelper.ClearText(Status);
-        }
-
-        private void Cost_DoubleClick(object sender, EventArgs e)
-        {
-            TextHelper.ClearText(Cost);
-        }
-
-        private void Notes_DoubleClick(object sender, EventArgs e)
-        {
-            TextHelper.ClearText(Notes);
+            string name = (sender as Control).Name;
+            Control control = this.Controls.Find(name, true).FirstOrDefault();
+            control.Text = "";
         }
 
         private void Save_Click(object sender, EventArgs e)

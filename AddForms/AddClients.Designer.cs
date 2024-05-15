@@ -62,7 +62,7 @@
             this.Notes.Size = new System.Drawing.Size(198, 29);
             this.Notes.TabIndex = 17;
             this.Notes.Text = "Примечание";
-            this.Notes.DoubleClick += new System.EventHandler(this.Notes_DoubleClick);
+            this.Notes.DoubleClick += new System.EventHandler(this.ClearTextBox);
             // 
             // Address
             // 
@@ -72,7 +72,7 @@
             this.Address.Size = new System.Drawing.Size(198, 29);
             this.Address.TabIndex = 16;
             this.Address.Text = "Адрес";
-            this.Address.DoubleClick += new System.EventHandler(this.Address_DoubleClick);
+            this.Address.DoubleClick += new System.EventHandler(this.ClearTextBox);
             // 
             // Email
             // 
@@ -82,7 +82,7 @@
             this.Email.Size = new System.Drawing.Size(198, 29);
             this.Email.TabIndex = 15;
             this.Email.Text = "Почта";
-            this.Email.DoubleClick += new System.EventHandler(this.Email_DoubleClick);
+            this.Email.DoubleClick += new System.EventHandler(this.ClearTextBox);
             // 
             // PhoneNumber
             // 
@@ -92,7 +92,7 @@
             this.PhoneNumber.Size = new System.Drawing.Size(198, 29);
             this.PhoneNumber.TabIndex = 14;
             this.PhoneNumber.Text = "Номер телефона";
-            this.PhoneNumber.DoubleClick += new System.EventHandler(this.PhoneNumber_DoubleClick);
+            this.PhoneNumber.DoubleClick += new System.EventHandler(this.ClearTextBox);
             // 
             // FullName
             // 
@@ -102,7 +102,7 @@
             this.FullName.Size = new System.Drawing.Size(198, 29);
             this.FullName.TabIndex = 6;
             this.FullName.Text = "ФИО";
-            this.FullName.DoubleClick += new System.EventHandler(this.FullName_DoubleClick);
+            this.FullName.DoubleClick += new System.EventHandler(this.ClearTextBox);
             // 
             // label1
             // 

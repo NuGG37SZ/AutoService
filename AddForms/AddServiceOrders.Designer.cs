@@ -66,7 +66,7 @@
             this.Notes.Size = new System.Drawing.Size(198, 29);
             this.Notes.TabIndex = 22;
             this.Notes.Text = "Примечание";
-            this.Notes.DoubleClick += new System.EventHandler(this.Notes_DoubleClick);
+            this.Notes.DoubleClick += new System.EventHandler(this.ClearTextBox);
             // 
             // Car
             // 
@@ -86,7 +86,7 @@
             this.Cost.Size = new System.Drawing.Size(198, 29);
             this.Cost.TabIndex = 20;
             this.Cost.Text = "Стоимость";
-            this.Cost.DoubleClick += new System.EventHandler(this.Cost_DoubleClick);
+            this.Cost.DoubleClick += new System.EventHandler(this.ClearTextBox);
             // 
             // Status
             // 
@@ -96,7 +96,7 @@
             this.Status.Size = new System.Drawing.Size(198, 29);
             this.Status.TabIndex = 19;
             this.Status.Text = "Статус";
-            this.Status.DoubleClick += new System.EventHandler(this.Status_DoubleClick);
+            this.Status.DoubleClick += new System.EventHandler(this.ClearTextBox);
             // 
             // Client
             // 
@@ -117,7 +117,7 @@
             this.ServiceType.Size = new System.Drawing.Size(198, 29);
             this.ServiceType.TabIndex = 17;
             this.ServiceType.Text = "Тип услуги";
-            this.ServiceType.DoubleClick += new System.EventHandler(this.ServiceType_DoubleClick);
+            this.ServiceType.DoubleClick += new System.EventHandler(this.ClearTextBox);
             // 
             // OrderDate
             // 
@@ -127,7 +127,7 @@
             this.OrderDate.Size = new System.Drawing.Size(198, 29);
             this.OrderDate.TabIndex = 16;
             this.OrderDate.Text = "Дата заказа";
-            this.OrderDate.DoubleClick += new System.EventHandler(this.OrderDate_DoubleClick);
+            this.OrderDate.DoubleClick += new System.EventHandler(this.ClearTextBox);
             // 
             // label1
             // 

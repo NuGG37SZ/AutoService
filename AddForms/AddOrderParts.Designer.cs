@@ -78,7 +78,7 @@
             this.Quantity.Size = new System.Drawing.Size(198, 29);
             this.Quantity.TabIndex = 15;
             this.Quantity.Text = "Количество";
-            this.Quantity.DoubleClick += new System.EventHandler(this.Quantity_DoubleClick);
+            this.Quantity.DoubleClick += new System.EventHandler(this.ClearTextBox);
             // 
             // label1
             // 

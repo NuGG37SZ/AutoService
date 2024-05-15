@@ -73,7 +73,7 @@
             this.Description.Size = new System.Drawing.Size(198, 29);
             this.Description.TabIndex = 20;
             this.Description.Text = "Описание";
-            this.Description.DoubleClick += new System.EventHandler(this.Description_DoubleClick);
+            this.Description.DoubleClick += new System.EventHandler(this.ClearTextBox);
             // 
             // Amount
             // 
@@ -83,7 +83,7 @@
             this.Amount.Size = new System.Drawing.Size(198, 29);
             this.Amount.TabIndex = 19;
             this.Amount.Text = "Сумма";
-            this.Amount.DoubleClick += new System.EventHandler(this.Amount_DoubleClick);
+            this.Amount.DoubleClick += new System.EventHandler(this.ClearTextBox);
             // 
             // TransactionDate
             // 
@@ -93,7 +93,7 @@
             this.TransactionDate.Size = new System.Drawing.Size(198, 29);
             this.TransactionDate.TabIndex = 16;
             this.TransactionDate.Text = "Дата операции";
-            this.TransactionDate.DoubleClick += new System.EventHandler(this.TransactionDate_DoubleClick);
+            this.TransactionDate.DoubleClick += new System.EventHandler(this.ClearTextBox);
             // 
             // label2
             // 
