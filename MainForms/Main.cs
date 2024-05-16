@@ -8,9 +8,8 @@ namespace AutoService
 {
     public partial class Main : Form
     {
-        private Color defaultColorButton = Color.Transparent;
-        private Color buttonСolorPressed = Color.DimGray;
-
+        private Color defaultColorButton = Color.Transparent; // дефолтный цвет кнопки
+        private Color buttonСolorPressed = Color.DimGray; // цвет который меняется при нажатии на кнопку
         public Main()
         {
             InitializeComponent();
@@ -86,6 +85,7 @@ namespace AutoService
             OpenForms.OpenFormInPanel(new OrderParts(), panel2);
         }
 
+        //Метод для сбрасывания цвета кнопок
         private void ResetButtonColors()
         {
             ClientButton.BackColor = defaultColorButton;
@@ -98,7 +98,5 @@ namespace AutoService
             ReportButton.BackColor = defaultColorButton;
             OrderPartsButton.BackColor = defaultColorButton;
         }
-
-
     }
 }

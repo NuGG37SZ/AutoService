@@ -14,6 +14,7 @@ namespace AutoService.AddForms
     {
         private ServiceOrdersImpl serviceOrdersImpl = new ServiceOrdersImpl();
         private Dictionary<int, string> clientsDictionary = new Dictionary<int, string>();
+        private Dictionary<int, string> vehiclesDictionary = new Dictionary<int, string>();
         public AddServiceOrders()
         {
             InitializeComponent();
@@ -26,17 +27,23 @@ namespace AutoService.AddForms
 
         public ServiceOrders InitializationServiceOrders()
         {
-
-            DateTime dateOrders = Convert.ToDateTime(OrderDate.Text);
+            if (!int.TryParse(Client.SelectedValue.ToString(), out int clientId) ||
+                !int.TryParse(Car.SelectedValue.ToString(), out int vehicleId) ||
+                 !float.TryParse(Cost.Text, out float cost) ||
+                 DateTime.TryParse(OrderDate.Text, out DateTime dateOrders))
+            {
+                MessageBox.Show("Некорректные входные данные");
+                return new ServiceOrders();
+            }
 
             ServiceOrders serviceOrders = new ServiceOrders
             {
-                ClientId = Convert.ToInt32(Client.SelectedValue),
-                VehicleId = Convert.ToInt32(Car.SelectedValue),
+                ClientId = clientId,
+                VehicleId = vehicleId,
                 OrderDate = dateOrders,
                 ServiceType = ServiceType.Text,
                 Status = Status.Text,
-                EstimatedCost = float.Parse(Cost.Text),
+                EstimatedCost = cost,
                 Notes = Notes.Text
             };
             return serviceOrders;
@@ -71,28 +78,40 @@ namespace AutoService.AddForms
                 Client.DataSource = new BindingSource(clientsDictionary, null);
                 Client.DisplayMember = "Value";
                 Client.ValueMember = "Key";
-
                 Client.Text = "Клиент";
             }
             DbConnect.Disconnect();
         }
 
-        private void client_SelectedValueChanged(object sender, EventArgs e)
+        private void Client_SelectedValueChanged(object sender, EventArgs e)
         {
             DbConnect.Connect();
-            string query = "SELECT vin FROM Vehicles WHERE client_id = @client_id";
+            string query = "SELECT vehicle_id, vin FROM Vehicles " +
+                "WHERE client_id = @client_id";
             SQLiteCommand command = new SQLiteCommand(query, DbConnect.connection);
             string[] values = Client.SelectedValue.ToString().Split(',');
-            int clientId = Convert.ToInt32(values[0].Trim().Replace('[', ' '));
-            Car.Items.Clear();
+            int clientId = Convert.ToInt32(values[0].Trim().Replace("[", ""));
             command.Parameters.AddWithValue("@client_id", clientId);
+            vehiclesDictionary.Clear();
             using (SQLiteDataReader reader = command.ExecuteReader())
             {
                 while (reader.Read())
                 {
                     string vin = reader["vin"].ToString();
-                    Car.Items.Add(vin);
+                    int id = Convert.ToInt32(reader["vehicle_id"]);
+                    if (vehiclesDictionary.ContainsKey(id))
+                    {
+                        vehiclesDictionary[id] = vin;
+                    }
+                    else
+                    {
+                        vehiclesDictionary.Add(id, vin);
+                    }         
                 }
+                Car.DataSource = new BindingSource(vehiclesDictionary, null);
+                Car.DisplayMember = "Value";
+                Car.ValueMember = "Key";
+                Car.Text = "Автомобиль";
             }
             DbConnect.Disconnect();
         }

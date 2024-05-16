@@ -17,13 +17,17 @@ namespace AutoService.AddForms
 
         public Finances InitializationEmployees()
         {
-            DateTime dateTransaction = Convert.ToDateTime(TransactionDate.Text);
+            if (!float.TryParse(Amount.Text, out float amount) || !DateTime.TryParse(TransactionDate.Text, out DateTime dateTransaction))
+            {
+                MessageBox.Show("Некорректные входные данные");
+                return new Finances();
+            }
 
             Finances finances = new Finances
             {
                 TransactionDate = dateTransaction,
                 TransactionType = TransactionType.Text,
-                Amount = float.Parse(Amount.Text),
+                Amount = amount,
                 Description = Description.Text,
             };
             return finances;

@@ -20,7 +20,7 @@ namespace AutoService.DeleteForms
 
         private void Delete_Click(object sender, EventArgs e)
         {
-            vehiclesImpl.Delete(Convert.ToInt32(IdVehicles));
+            vehiclesImpl.Delete(Convert.ToInt32(IdVehicles.Text));
         }
     }
 }

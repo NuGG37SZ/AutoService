@@ -1,6 +1,7 @@
 ﻿using AutoService.Classes;
 using AutoService.Entity;
 using AutoService.Interface;
+using AutoService.MainForms;
 using AutoService.RepositoryImpl;
 using System;
 using System.Collections.Generic;
@@ -27,13 +28,26 @@ namespace AutoService.AddForms
         }
         public OrderPart InitializationOrderPart()
         {
-            OrderPart orderPart = new OrderPart
+            try
             {
-                OrderId = Convert.ToInt32(Orders.SelectedValue),
-                InventoryId = Convert.ToInt32(Inventory.SelectedValue),
-                Quantity = Convert.ToInt32(Quantity.Text)
-            };
-            return orderPart;
+                OrderPart orderPart = new OrderPart
+                {
+                    OrderId = Convert.ToInt32(Orders.SelectedValue),
+                    InventoryId = Convert.ToInt32(Inventory.SelectedValue),
+                    Quantity = Convert.ToInt32(Quantity.Text)
+                };
+                return orderPart;
+            } 
+            catch (NullReferenceException ex) 
+            {
+                MessageBox.Show(ex.Message);
+                return new OrderPart();
+            } 
+            catch (FormatException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return new OrderPart();
+            }
         }
 
         private void ClearTextBox(object sender, EventArgs e)

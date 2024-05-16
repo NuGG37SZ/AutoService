@@ -1,5 +1,4 @@
-﻿using AutoService.Classes;
-using AutoService.Entity;
+﻿using AutoService.Entity;
 using AutoService.RepositoryImpl;
 using System;
 using System.Linq;
@@ -17,12 +16,18 @@ namespace AutoService.AddForms
 
         public Inventory InitializationInventory()
         {
+            if (!float.TryParse(Price.Text, out float price) || !int.TryParse(Quantity.Text, out int quantity))
+            {
+                MessageBox.Show("Некорректные входные данные");
+                return new Inventory();
+            }
+
             Inventory inventory = new Inventory
             {
                 PartName = PartName.Text,
                 PartNumber = PartNumber.Text,
-                Quantity = Convert.ToInt32(Quantity.Text),
-                Price = float.Parse(Price.Text),
+                Quantity = quantity,
+                Price = price,
                 Supplier = Supplier.Text,
                 Notes = Notes.Text
             };

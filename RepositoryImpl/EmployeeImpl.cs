@@ -12,13 +12,12 @@ namespace AutoService.RepositoryImpl
         public void Add(Employees entity)
         {
             DbConnect.Connect();
-
             var command = DbConnect.connection.CreateCommand();
             command.CommandText = "INSERT INTO Employees (full_name, position, phone_number, email, schedule, skills) " +
                      "VALUES (@full_name, @position, @phone_number, @email, @schedule, @skills)";
-            command.Parameters.AddWithValue("@fullName", entity.FullName);
+            command.Parameters.AddWithValue("@full_name", entity.FullName);
             command.Parameters.AddWithValue("@position", entity.Position);
-            command.Parameters.AddWithValue("@phoneNumber", entity.PhoneNumber);
+            command.Parameters.AddWithValue("@phone_number", entity.PhoneNumber);
             command.Parameters.AddWithValue("@email", entity.Email);
             command.Parameters.AddWithValue("@schedule", entity.Schedule);
             command.Parameters.AddWithValue("@skills", entity.Skills);
@@ -32,7 +31,6 @@ namespace AutoService.RepositoryImpl
             {
                 MessageBox.Show("Произошла ошибка сотрудник не добавлен!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
             DbConnect.Disconnect();
         }
 
@@ -135,7 +133,6 @@ namespace AutoService.RepositoryImpl
             DataGridViewColumn fullName = dataGridView.Columns["ФИО"];
             employeeId.Width = 50;
             fullName.Width = 130;
-
 
             DbConnect.Disconnect();
         }

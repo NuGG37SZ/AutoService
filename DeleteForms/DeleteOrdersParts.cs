@@ -4,6 +4,7 @@ using AutoService.RepositoryImpl;
 using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace AutoService.DeleteForms
@@ -39,10 +40,9 @@ namespace AutoService.DeleteForms
                     string partNumber = reader.GetString(1);
                     inventoryDictionary.Add(inventoryId, partNumber);
                 }
-                Inventory.DataSource = new BindingSource(inventoryDictionary, null);
+                Inventory.DataSource = new BindingSource(inventoryDictionary.ToList(), null);
                 Inventory.DisplayMember = "Value";
                 Inventory.ValueMember = "Key";
-
                 Inventory.Text = "Запчасть";
             }
 
@@ -56,10 +56,8 @@ namespace AutoService.DeleteForms
                     ordersList.Add(ordersId);
                 }
                 Orders.DataSource = ordersList;
-
                 Orders.Text = "Номер заказа";
             }
-
             DbConnect.Disconnect();
         }
 

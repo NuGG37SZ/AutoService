@@ -12,25 +12,31 @@ namespace AutoService.RepositoryImpl
         public void Add(Vehicles entity)
         {
             DbConnect.Connect();
-
-            var command = DbConnect.connection.CreateCommand();
-            command.CommandText = "INSERT INTO Vehicles (client_id, make, model, `year`, vin, notes) " +
-                     "VALUES (@client_id, @make, @model, @year, @vin, @notes)";
-            command.Parameters.AddWithValue("@client_id", entity.ClientId);
-            command.Parameters.AddWithValue("@make", entity.Make);
-            command.Parameters.AddWithValue("@model", entity.Model);
-            command.Parameters.AddWithValue("@year", entity.Year);
-            command.Parameters.AddWithValue("@vin", entity.Vin);
-            command.Parameters.AddWithValue("@notes", entity.Notes);
-            int rowsAffected = command.ExecuteNonQuery();
-
-            if (rowsAffected > 0)
+            try
             {
-                MessageBox.Show("Автомобиль успешно добавлен!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                var command = DbConnect.connection.CreateCommand();
+                command.CommandText = "INSERT INTO Vehicles (client_id, make, model, `year`, vin, notes) " +
+                         "VALUES (@client_id, @make, @model, @year, @vin, @notes)";
+                command.Parameters.AddWithValue("@client_id", entity.ClientId);
+                command.Parameters.AddWithValue("@make", entity.Make);
+                command.Parameters.AddWithValue("@model", entity.Model);
+                command.Parameters.AddWithValue("@year", entity.Year);
+                command.Parameters.AddWithValue("@vin", entity.Vin);
+                command.Parameters.AddWithValue("@notes", entity.Notes);
+                int rowsAffected = command.ExecuteNonQuery();
+
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("Автомобиль успешно добавлен!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Произошла ошибка, автомобиль не добавлен!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
+            catch (SQLiteException ex)
             {
-                MessageBox.Show("Произошла ошибка, автомобиль не добавлен!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             DbConnect.Disconnect();

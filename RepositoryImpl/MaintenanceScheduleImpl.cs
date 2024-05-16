@@ -12,27 +12,32 @@ namespace AutoService.RepositoryImpl
         public void Add(MaintenanceSchedule entity)
         {
             DbConnect.Connect();
-
-            var command = DbConnect.connection.CreateCommand();
-            command.CommandText = "INSERT INTO MaintenanceSchedule (vehicle_id, last_service_date, next_service_date, service_type, " +
-                "notes) " +
-                     "VALUES (@vehicle_id, @last_service_date, @next_service_date, @service_type, @notes)";
-            command.Parameters.AddWithValue("@vehicle_id", entity.VehicleId);
-            command.Parameters.AddWithValue("@last_service_date", entity.LastServiceDate);
-            command.Parameters.AddWithValue("@next_service_date", entity.NextServiceDate);
-            command.Parameters.AddWithValue("@service_type", entity.ServiceType);
-            command.Parameters.AddWithValue("@notes", entity.Notes);
-            int rowsAffected = command.ExecuteNonQuery();
-
-            if (rowsAffected > 0)
+            try
             {
-                MessageBox.Show("Обслуживание успешно добавлено!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show("Произошла ошибка, обслуживание не добавлена!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+                var command = DbConnect.connection.CreateCommand();
+                command.CommandText = "INSERT INTO MaintenanceSchedule (vehicle_id, last_service_date, next_service_date, service_type, " +
+                    "notes) " +
+                         "VALUES (@vehicle_id, @last_service_date, @next_service_date, @service_type, @notes)";
+                command.Parameters.AddWithValue("@vehicle_id", entity.VehicleId);
+                command.Parameters.AddWithValue("@last_service_date", entity.LastServiceDate);
+                command.Parameters.AddWithValue("@next_service_date", entity.NextServiceDate);
+                command.Parameters.AddWithValue("@service_type", entity.ServiceType);
+                command.Parameters.AddWithValue("@notes", entity.Notes);
+                int rowsAffected = command.ExecuteNonQuery();
 
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("Обслуживание успешно добавлено!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Произошла ошибка, обслуживание не добавлена!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            } 
+            catch (SQLiteException ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             DbConnect.Disconnect();
         }
 

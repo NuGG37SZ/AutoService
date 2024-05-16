@@ -14,25 +14,30 @@ namespace AutoService.RepositoryImpl
         public void Add(Finances entity)
         {
             DbConnect.Connect();
-
-            var command = DbConnect.connection.CreateCommand();
-            command.CommandText = "INSERT INTO Finances (transaction_date, transaction_type, amount, description) " +
-                     "VALUES (@transaction_date, @transaction_type, @amount, @description)";
-            command.Parameters.AddWithValue("@transaction_date", entity.TransactionDate);
-            command.Parameters.AddWithValue("@transaction_type", entity.TransactionType);
-            command.Parameters.AddWithValue("@amount", entity.Amount);
-            command.Parameters.AddWithValue("@description", entity.Description);
-            int rowsAffected = command.ExecuteNonQuery();
-
-            if (rowsAffected > 0)
+            try
             {
-                MessageBox.Show("Операция успешно добавлена!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show("Произошла ошибка, операция не добавлена!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+                var command = DbConnect.connection.CreateCommand();
+                command.CommandText = "INSERT INTO Finances (transaction_date, transaction_type, amount, description) " +
+                         "VALUES (@transaction_date, @transaction_type, @amount, @description)";
+                command.Parameters.AddWithValue("@transaction_date", entity.TransactionDate);
+                command.Parameters.AddWithValue("@transaction_type", entity.TransactionType);
+                command.Parameters.AddWithValue("@amount", entity.Amount);
+                command.Parameters.AddWithValue("@description", entity.Description);
+                int rowsAffected = command.ExecuteNonQuery();
 
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("Операция успешно добавлена!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Произошла ошибка, операция не добавлена!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (SQLiteException ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             DbConnect.Disconnect();
         }
 
@@ -40,27 +45,30 @@ namespace AutoService.RepositoryImpl
         {
             DbConnect.Connect();
 
+            string queryDelete = "DELETE FROM Finances " +
+                "WHERE transaction_id = @id";
+            SQLiteCommand command = new SQLiteCommand(queryDelete, DbConnect.connection);
+            command.Parameters.AddWithValue("@id", id);
+            int rowsAffected = command.ExecuteNonQuery();
+
             string idStr = "";
             string querySelect = $"SELECT description FROM Finances " +
                 $"WHERE transaction_id = {id} ";
             SQLiteCommand commandSelect = new SQLiteCommand(querySelect, DbConnect.connection);
             using (SQLiteDataReader reader = commandSelect.ExecuteReader())
             {
-                if (reader.HasRows)
+                while (reader.Read())
                 {
-                    while (reader.Read())
+                    string description = reader.GetString(0);
+
+                    if (description.StartsWith("New order, number "))
                     {
-                        string description = reader.GetString(0);
+                        idStr = getNumberFromString(description);
+                    }
 
-                        if (description.StartsWith("New order, number "))
-                        {
-                            idStr = getNumberFromString(description);
-                        } 
-
-                        if (description.StartsWith("New spare parts, number"))
-                        {
-                            idStr = getNumberFromString(description);
-                        }
+                    if (description.StartsWith("New spare parts, number"))
+                    {
+                        idStr = getNumberFromString(description);
                     }
                 }
             }
@@ -81,12 +89,6 @@ namespace AutoService.RepositoryImpl
             {
                 try
                 {
-                    var command = DbConnect.connection.CreateCommand();
-                    command.CommandText = "DELETE FROM Finances " +
-                        "WHERE transaction_id = @id";
-                    command.Parameters.AddWithValue("@id", id);
-                    int rowsAffected = command.ExecuteNonQuery();
-
                     if (rowsAffected > 0)
                     {
                         MessageBox.Show("Операция успешно удалена!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -135,7 +137,6 @@ namespace AutoService.RepositoryImpl
             command.CommandText = "UPDATE Finances SET transaction_date = @transaction_date, transaction_type = @transaction_type," +
                 (isSparePartsOrder ? " description = @description" : " amount = @amount, description = @description") +
                 " WHERE transaction_id = @id";
-
             command.Parameters.AddWithValue("@transaction_date", entity.TransactionDate);
             command.Parameters.AddWithValue("@transaction_type", entity.TransactionType);
             if (!isSparePartsOrder)

@@ -26,16 +26,23 @@ namespace AutoService.AddForms
 
         public Vehicles InitializationVehicles()
         {
+            if (!int.TryParse(Client.SelectedValue.ToString(), out int clientId) || !int.TryParse(Year.Text, out int year))
+            {
+                MessageBox.Show("Некорректные входные данные");
+                return new Vehicles(); 
+            }
+
             Vehicles vehicles = new Vehicles
             {
-                ClientId = Convert.ToInt32(Client.SelectedValue),
                 Make = Make.Text,
                 Model = Model.Text,
-                Year = Convert.ToInt32(Year.Text),
                 Vin = Vin.Text,
-                Notes = Notes.Text
+                Notes = Notes.Text,
+                ClientId = clientId,
+                Year = year
             };
             return vehicles;
+
         }
 
         private void Save_Click(object sender, EventArgs e)
@@ -51,7 +58,6 @@ namespace AutoService.AddForms
         public void LoadElemntsToCombobox()
         {
             DbConnect.Connect();
-
             string query = "SELECT client_id, full_name FROM Clients ";
             SQLiteCommand command = new SQLiteCommand(query, DbConnect.connection);
             using (SQLiteDataReader reader = command.ExecuteReader())
@@ -67,7 +73,6 @@ namespace AutoService.AddForms
                 Client.ValueMember = "Key";
                 Client.Text = "Клинеты";
             }
-
             DbConnect.Disconnect();
         }
     }

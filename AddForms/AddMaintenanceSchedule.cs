@@ -1,6 +1,7 @@
 ﻿using AutoService.Classes;
 using AutoService.Entity;
 using AutoService.Interface;
+using AutoService.MainForms;
 using AutoService.RepositoryImpl;
 using System;
 using System.Collections.Generic;
@@ -27,13 +28,17 @@ namespace AutoService.AddForms
 
         public MaintenanceSchedule InitializationMaintenanceSchedules()
         {
-            
-            DateTime lastServiceDates = Convert.ToDateTime(LastServiceDate.Text);
-            DateTime nextServiceDates = Convert.ToDateTime(NextServiceDate.Text);
+            if (!int.TryParse(Car.SelectedValue.ToString(), out int vehicleId) || 
+                !DateTime.TryParse(LastServiceDate.Text, out DateTime lastServiceDates) ||
+                !DateTime.TryParse(NextServiceDate.Text, out DateTime nextServiceDates))
+            {
+                MessageBox.Show("Некорректные входные данные");
+                return new MaintenanceSchedule();
+            }
 
             MaintenanceSchedule maintenanceSchedules = new MaintenanceSchedule
             {
-                VehicleId = Convert.ToInt32(Car.SelectedValue),
+                VehicleId = vehicleId,
                 LastServiceDate = lastServiceDates,
                 NextServiceDate = nextServiceDates,
                 ServiceType = ServiceType.Text,

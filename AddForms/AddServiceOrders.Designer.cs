@@ -107,7 +107,7 @@
             this.Client.Size = new System.Drawing.Size(198, 29);
             this.Client.TabIndex = 18;
             this.Client.Text = "Клиент";
-            this.Client.SelectedValueChanged += new System.EventHandler(this.client_SelectedValueChanged);
+            this.Client.SelectedValueChanged += new System.EventHandler(this.Client_SelectedValueChanged);
             // 
             // ServiceType
             // 
