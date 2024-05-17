@@ -11,6 +11,7 @@ namespace AutoService.RepositoryImpl
 {
     public class FinancesImpl : Repository<Finances>
     {
+        // Метод для добавления записей в таблицу Finances
         public void Add(Finances entity)
         {
             DbConnect.Connect();
@@ -41,6 +42,7 @@ namespace AutoService.RepositoryImpl
             DbConnect.Disconnect();
         }
 
+        // Метод для удаления записей в таблицу Employees
         public void Delete(int id)
         {
             DbConnect.Connect();
@@ -50,6 +52,11 @@ namespace AutoService.RepositoryImpl
             SQLiteCommand command = new SQLiteCommand(queryDelete, DbConnect.connection);
             command.Parameters.AddWithValue("@id", id);
             int rowsAffected = command.ExecuteNonQuery();
+
+            /*
+            Если удаление прошло успешно то получаем id удаленой записи и если описание записи начинается с New order, number или New spare parts, number
+            то удаление происходит из соотвествующих таблиц (ServiceOrders или Inventory)
+            */
 
             string idStr = "";
             string querySelect = $"SELECT description FROM Finances " +
@@ -127,6 +134,7 @@ namespace AutoService.RepositoryImpl
             DbConnect.Disconnect();
         }
 
+        // Метод для обновления записей в таблицу Employees
         public void Update(Finances entity)
         {
             DbConnect.Connect();
@@ -146,6 +154,12 @@ namespace AutoService.RepositoryImpl
             command.Parameters.AddWithValue("@description", entity.Description);
             command.Parameters.AddWithValue("@id", entity.Id);
             int rowsAffected = command.ExecuteNonQuery();
+
+            /*
+            Если обновлнеие прошло успешно то получаем id обновленной записи и если описание записи начинается с New order, number,
+            то происходит обновление цены соответствующей записи из таблицы ServiceOrders, а если описание начинается с New spare parts, number,
+            то происходит обновление только описания
+            */
 
             if (entity.Description.StartsWith("New order, number "))
             {
@@ -178,7 +192,7 @@ namespace AutoService.RepositoryImpl
             DbConnect.Disconnect();
         }
 
-
+        // Метод для поиска записей в таблице Finances и вывод их в датагрид
         public void SearchSelect(Control control, DataGridView dataGridView)
         {
             DbConnect.Connect();
@@ -205,6 +219,7 @@ namespace AutoService.RepositoryImpl
             DbConnect.Disconnect();
         }
 
+        // Метод для вывода всех записей в таблице Finances и вывод их в датагрид
         public void SelectAllFields(DataGridView dataGridView)
         {
             DbConnect.Connect();
@@ -234,6 +249,7 @@ namespace AutoService.RepositoryImpl
             DbConnect.Disconnect();
         }
 
+        //Метод для получения числа из строки
         public string getNumberFromString(string str)
         {
             StringBuilder result = new StringBuilder();

@@ -9,6 +9,7 @@ namespace AutoService.RepositoryImpl
 {
     public class VehiclesImpl : Repository<Vehicles>
     {
+        // Метод для добавления записей в таблицу Vehicles
         public void Add(Vehicles entity)
         {
             DbConnect.Connect();
@@ -42,6 +43,7 @@ namespace AutoService.RepositoryImpl
             DbConnect.Disconnect();
         }
 
+        // Метод для удаления записей в таблицу Vehicles
         public void Delete(int id)
         {
             DbConnect.Connect();
@@ -64,6 +66,7 @@ namespace AutoService.RepositoryImpl
             DbConnect.Disconnect();
         }
 
+        // Метод для обновления записей в таблице Vehicles
         public void Update(Vehicles entity)
         {
             DbConnect.Connect();
@@ -93,6 +96,7 @@ namespace AutoService.RepositoryImpl
             DbConnect.Disconnect();
         }
 
+        // Метод для поиска записей в таблице Vehicles и вывод их в датагрид
         public void SearchSelect(Control control, DataGridView dataGridView)
         {
             DbConnect.Connect();
@@ -120,6 +124,7 @@ namespace AutoService.RepositoryImpl
             DbConnect.Disconnect();
         }
 
+        // Метод для вывода всех записей в таблице Vehicles и вывод их в датагрид
         public void SelectAllFields(DataGridView dataGridView)
         {
             DbConnect.Connect();

@@ -9,6 +9,7 @@ namespace AutoService.RepositoryImpl
 {
     public class MaintenanceScheduleImpl : Repository<MaintenanceSchedule>
     {
+        // Метод для добавления записей в таблицу MaintenanceSchedule
         public void Add(MaintenanceSchedule entity)
         {
             DbConnect.Connect();
@@ -41,6 +42,7 @@ namespace AutoService.RepositoryImpl
             DbConnect.Disconnect();
         }
 
+        // Метод для удаления записей в таблицу MaintenanceSchedule
         public void Delete(int id)
         {
             DbConnect.Connect();
@@ -63,6 +65,7 @@ namespace AutoService.RepositoryImpl
             DbConnect.Disconnect();
         }
 
+        // Метод для обновления записей в таблице MaintenanceSchedule
         public void Update(MaintenanceSchedule entity)
         {
             DbConnect.Connect();
@@ -91,6 +94,7 @@ namespace AutoService.RepositoryImpl
             DbConnect.Disconnect();
         }
 
+        // Метод для поиска записей в таблице MaintenanceSchedule и вывод их в датагрид
         public void SearchSelect(Control control, DataGridView dataGridView)
         {
             DbConnect.Connect();
@@ -122,6 +126,7 @@ namespace AutoService.RepositoryImpl
             DbConnect.Disconnect();
         }
 
+        // Метод для вывода всех записей в таблице MaintenanceSchedule и вывод их в датагрид
         public void SelectAllFields(DataGridView dataGridView)
         {
             DbConnect.Connect();

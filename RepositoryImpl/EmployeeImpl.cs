@@ -9,6 +9,7 @@ namespace AutoService.RepositoryImpl
 {
     public class EmployeeImpl : Repository<Employees>
     {
+        // Метод для добавления записей в таблицу Employees
         public void Add(Employees entity)
         {
             DbConnect.Connect();
@@ -34,6 +35,7 @@ namespace AutoService.RepositoryImpl
             DbConnect.Disconnect();
         }
 
+        // Метод для удаления записей в таблицу Employees
         public void Delete(int id)
         {
             DbConnect.Connect();
@@ -56,6 +58,7 @@ namespace AutoService.RepositoryImpl
             DbConnect.Disconnect();
         }
 
+        // Метод для обновления записей в таблице Employees
         public void Update(Employees entity)
         {
             DbConnect.Connect();
@@ -86,6 +89,7 @@ namespace AutoService.RepositoryImpl
             DbConnect.Disconnect();
         }
 
+        // Метод для поиска записей в таблице Employees и вывод их в датагрид
         public void SearchSelect(Control control, DataGridView dataGridView)
         {
             DbConnect.Connect();
@@ -114,6 +118,7 @@ namespace AutoService.RepositoryImpl
             DbConnect.Disconnect();
         }
 
+        // Метод для вывода всех записей в таблице Employees и вывод их в датагрид
         public void SelectAllFields(DataGridView dataGridView)
         {
             DbConnect.Connect();

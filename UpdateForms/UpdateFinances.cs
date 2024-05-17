@@ -13,8 +13,6 @@ namespace AutoService.UpdateForms
     {
         private FinancesImpl financesImpl = new FinancesImpl();
         private List<int> financesIdList = new List<int>();
-        private List<string> financesTransactionType = new List<string>();
-
         public UpdateFinances()
         {
             InitializeComponent();
@@ -28,7 +26,7 @@ namespace AutoService.UpdateForms
             {
                 Id = Convert.ToInt32(Transaction.SelectedValue),
                 TransactionDate = dateTransaction,
-                TransactionType = TransactionType.SelectedValue.ToString(),
+                TransactionType = TransactionType.Text,
                 Amount = float.Parse(Amount.Text),
                 Description = Description.Text,
             };
@@ -85,7 +83,7 @@ namespace AutoService.UpdateForms
                     int transactionId = reader.GetInt32(0);
                     financesIdList.Add(transactionId);
                 }
-                Transaction.DataSource = financesIdList;
+                Transaction.DataSource = new BindingSource(financesIdList, null);
             }
             DbConnect.Disconnect();
         }

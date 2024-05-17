@@ -10,6 +10,7 @@ namespace AutoService.RepositoryImpl
 {
     public class InventoryImpl : Repository<Inventory>
     {
+        // Метод для добавления записей в таблицу Inventory
         public void Add(Inventory entity)
         {
             try
@@ -36,6 +37,8 @@ namespace AutoService.RepositoryImpl
                     MessageBox.Show("Произошла ошибка, запчасть не добавлена!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
+                //при успешном добавлении записи в таблицу Inventory идет добавление записи в таблицу Finances
+                //с расходом и ценой (кол-во * цена) и описанием New spare parts, number
                 int maxId = 0;
                 string query = $"SELECT MAX(inventory_id) FROM Inventory ";
                 SQLiteCommand commandSecond = new SQLiteCommand(query, DbConnect.connection);
@@ -74,6 +77,7 @@ namespace AutoService.RepositoryImpl
             }
         }
 
+        // Метод для удаления записей в таблицу Inventory
         public void Delete(int id)
         {
             DbConnect.Connect();
@@ -84,6 +88,7 @@ namespace AutoService.RepositoryImpl
             command.Parameters.AddWithValue("@id", id);
             int rowsAffected = command.ExecuteNonQuery();
 
+            //при успешном удалении записи из таблицы Inventory, происходит и удаление из таблицы Finances
             var commandDelete = DbConnect.connection.CreateCommand();
             commandDelete.CommandText = $"DELETE FROM Finances " +
                 $"WHERE description = 'New spare parts, number {id}'";
@@ -101,6 +106,7 @@ namespace AutoService.RepositoryImpl
             DbConnect.Disconnect();
         }
 
+        // Метод для обновления записей в таблице Inventory
         public void Update(Inventory entity)
         {
             DbConnect.Connect();
@@ -127,6 +133,7 @@ namespace AutoService.RepositoryImpl
                 MessageBox.Show("Произошла ошибка, запчасть не изменена!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+            //после обновления записи в таблице Inventory, происходит обновление цены и кол-во
             string querySecond = $"SELECT price, quantity FROM Inventory " +
                 $"WHERE inventory_id = {entity.Id}";
             SQLiteCommand commandSecond = new SQLiteCommand(querySecond, DbConnect.connection);
@@ -150,6 +157,7 @@ namespace AutoService.RepositoryImpl
             DbConnect.Disconnect();
         }
 
+        // Метод для поиска записей в таблице Inventory и вывод их в датагрид
         public void SearchSelect(Control control, DataGridView dataGridView)
         {
             DbConnect.Connect();
@@ -179,6 +187,7 @@ namespace AutoService.RepositoryImpl
             DbConnect.Disconnect();
         }
 
+        // Метод для вывода всех записей в таблице Inventory и вывод их в датагрид
         public void SelectAllFields(DataGridView dataGridView)
         {
             DbConnect.Connect();

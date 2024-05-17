@@ -9,6 +9,7 @@ namespace AutoService.RepositoryImpl
 {
     public class OrderPartsImpl
     {
+        // Метод для добавления записей в таблицу OrderPart
         public void Add(OrderPart entity)
         {
             try
@@ -31,6 +32,7 @@ namespace AutoService.RepositoryImpl
                     MessageBox.Show("Произошла ошибка запчасть не добавлена в заказ!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
+                //при успешном добавлении записи в таблицу OrderParts из таблицы Inventory вычитается кол-во деталей которые были добавлены в таблицу OrderParts
                 string findQuery = $"SELECT * FROM OrderParts " +
                     $"WHERE inventory_id = {entity.InventoryId}";
                 SQLiteCommand commandFind = new SQLiteCommand(findQuery, DbConnect.connection);
@@ -65,9 +67,12 @@ namespace AutoService.RepositoryImpl
             }
         }
 
+        // Метод для удаления записей в таблицу OrderParts
         public void Delete(int idOrders, int idInventory)
         {
             DbConnect.Connect();
+            // при удалении вначале запрашивается кол-во деталей из таблицы OrderParts
+            // после чего происходит обновление деталей в таблице Inventory на то кол-во которое было удалено
             string findQuery = $"SELECT * FROM OrderParts " +
                 $"WHERE inventory_id = {idInventory}";
             SQLiteCommand commandFind = new SQLiteCommand(findQuery, DbConnect.connection);
@@ -79,7 +84,7 @@ namespace AutoService.RepositoryImpl
                     {
                         int inventoryId = Convert.ToInt32(reader["inventory_id"]);
                         int quantity = Convert.ToInt32(reader["quantity"]);
-
+                        
                         string updateQuery = $"UPDATE Inventory SET quantity = quantity + {quantity} " +
                             $"WHERE inventory_id = {inventoryId}";
                         SQLiteCommand commandUpdate = new SQLiteCommand(updateQuery, DbConnect.connection);
@@ -108,6 +113,7 @@ namespace AutoService.RepositoryImpl
             DbConnect.Disconnect();
         }
 
+        // Метод для обновления записей в таблицу OrderParts
         public void Update(OrderPart entity)
         {
             DbConnect.Connect();
@@ -166,6 +172,7 @@ namespace AutoService.RepositoryImpl
             DbConnect.Disconnect();
         }
 
+        // Метод для обновления записей в таблице OrderParts
         public void SearchSelect(Control control, DataGridView dataGridView)
         {
             DbConnect.Connect();
@@ -192,6 +199,7 @@ namespace AutoService.RepositoryImpl
             DbConnect.Disconnect();
         }
 
+        // Метод для поиска записей в таблице OrderParts и вывод их в датагрид
         public void SelectAllFields(DataGridView dataGridView)
         {
             DbConnect.Connect();
@@ -220,6 +228,7 @@ namespace AutoService.RepositoryImpl
             DbConnect.Disconnect();
         }
 
+        // Метод для получения старого значения кол-во деталей
         public int getOldValueQuantity(int inventoryId, int orderId)
         {
             int oldValueQuantity = 0;

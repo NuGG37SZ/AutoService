@@ -10,6 +10,7 @@ namespace AutoService.RepositoryImpl
 {
     public class ServiceOrdersImpl : Repository<ServiceOrders>
     {
+        // Метод для добавления записей в таблицу ServiceOrders
         public void Add(ServiceOrders entity)
         {
             try
@@ -35,6 +36,9 @@ namespace AutoService.RepositoryImpl
                 {
                     MessageBox.Show("Произошла ошибка, заказ не добавлен!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+
+                // при успешном добавлении записи в таблицу ServiceOrders происходит добавление записи в таблицу Finances
+                // где добавляется запись с описанием New order, number и ценой услуги
 
                 int maxId = getMaxId();
 
@@ -62,6 +66,7 @@ namespace AutoService.RepositoryImpl
             }
         }
 
+        // Метод для удаления записей в таблицу ServiceOrders
         public void Delete(int id)
         {
             DbConnect.Connect();
@@ -72,6 +77,7 @@ namespace AutoService.RepositoryImpl
             command.Parameters.AddWithValue("@id", id);
             int rowsAffected = command.ExecuteNonQuery();
 
+            //при успешном удалении записи в таблице ServiceOrders происходит удаление и в таблице Finances по описанию
             var commandDelete = DbConnect.connection.CreateCommand();
             commandDelete.CommandText = $"DELETE FROM Finances " +
                 $"WHERE description = 'New order, number {id}'";
@@ -89,6 +95,7 @@ namespace AutoService.RepositoryImpl
             DbConnect.Disconnect();
         }
 
+        // Метод для обновления записей в таблице ServiceOrders
         public void Update(ServiceOrders entity)
         {
             DbConnect.Connect();
@@ -121,6 +128,7 @@ namespace AutoService.RepositoryImpl
                         MessageBox.Show("Произошла ошибка, заказ не изменен!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
+                    // при успешном обновлении записи в таблице ServiceOrders происходит обновление цены в таблице Finances
                     string updateFinancesQuery = "UPDATE Finances " +
                     "SET amount = @estimated_cost " +
                     "WHERE description = @description";
@@ -155,6 +163,7 @@ namespace AutoService.RepositoryImpl
             DbConnect.Disconnect();
         }
 
+        // Метод для поиска записей в таблице ServiceOrders и вывод их в датагрид
         public void SearchSelect(Control control, DataGridView dataGridView)
         {
             DbConnect.Connect();
@@ -185,6 +194,7 @@ namespace AutoService.RepositoryImpl
             DbConnect.Disconnect();
         }
 
+        // Метод для вывода всех записей в таблице ServiceOrders и вывод их в датагрид
         public void SelectAllFields(DataGridView dataGridView)
         {
             DbConnect.Connect();
@@ -209,6 +219,7 @@ namespace AutoService.RepositoryImpl
             DbConnect.Disconnect();
         }
 
+        // Метод для получения максисмального id в таблице ServiceOrders
         public int getMaxId()
         {
             int orderId = 0;
